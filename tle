@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TLE Accounting Exam Notes - Inventory Systems</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 8px 16px;
+            background-color: #7f8c8d;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .btn-back:hover {
+            background-color: #626d6e;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2980b9;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #2c3e50;
+        }
+        tr:nth-child(even) {
+            background-color: #fbfbfb;
+        }
+        .scenario-box {
+            background: #fdfdfd;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #2980b9;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .scenario-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .terms {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .pov {
+            margin-top: 8px;
+        }
+        code {
+            background-color: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            border-top: 1px solid #eaeaea;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="btn-back">&larr; Back to Main Page</a>
+
+    <h1>TLE Accounting: Inventory Systems & Shipping Terms</h1>
+
+    <!-- Core Theory -->
+    <h2>1. Periodic vs. Perpetual Inventory Systems</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Periodic Inventory System</th>
+                <th>Perpetual Inventory System</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Tracking</strong></td>
+                <td>Updated only at period-end via physical count.</td>
+                <td>Updated continuously with every sale/purchase.</td>
+            </tr>
+            <tr>
+                <td><strong>COGS Calculation</strong></td>
+                <td>Beginning Inv + Net Purchases - Ending Inv</td>
+                <td>Recorded at the moment of every sale.</td>
+            </tr>
+            <tr>
+                <td><strong>Inventory Accounts Used</strong></td>
+                <td>Purchases, Freight-In, Purchase Discounts, etc.</td>
+                <td>Merchandise Inventory (directly credited/debited)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>2. Shipping Terms Summary</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Shipping Term</th>
+                <th>Ownership Transfers At</th>
+                <th>Who Bears Freight?</th>
+                <th>Freight Account Used</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>FOB Shipping Point</strong></td>
+                <td>Seller's Shipping Dock</td>
+                <td>Buyer</td>
+                <td>Freight-In / Merchandise Inventory</td>
+            </tr>
+            <tr>
+                <td><strong>FOB Destination</strong></td>
+                <td>Buyer's Receiving Dock</td>
+                <td>Seller</td>
+                <td>Freight-Out / Delivery Expense</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- PART 1: PERIODIC -->
+    <h2>Part 1: Periodic Inventory System (Scenarios 1 - 20)</h2>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 1: FOB Shipping Point, Freight Collect</div>
+        <div class="terms">Terms: CU1,000 merchandise, Freight Collect (CU50 paid by buyer), n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase: <code>Dr. Purchases 1,000 / Cr. AP 1,000</code><br>
+        Freight: <code>Dr. Freight-In 50 / Cr. Cash 50</code><br>
+        Settlement: <code>Dr. AP 1,000 / Cr. Cash 1,000</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale: <code>Dr. AR 1,000 / Cr. Sales 1,000</code><br>
+        Settlement: <code>Dr. Cash 1,000 / Cr. AR 1,000</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 2: FOB Shipping Point, Freight Prepaid (Added to Invoice)</div>
+        <div class="terms">Terms: CU2,000 merchandise, Freight Prepaid by seller (CU100 added to invoice), n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase: <code>Dr. Purchases 2,000, Dr. Freight-In 100 / Cr. AP 2,100</code><br>
+        Settlement: <code>Dr. AP 2,100 / Cr. Cash 2,100</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & Freight: <code>Dr. AR 2,100 / Cr. Sales 2,000, Cr. Cash 100</code><br>
+        Settlement: <code>Dr. Cash 2,100 / Cr. AR 2,100</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 3: FOB Destination, Freight Prepaid</div>
+        <div class="terms">Terms: CU1,500 merchandise, Freight Prepaid by seller (CU80), n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase: <code>Dr. Purchases 1,500 / Cr. AP 1,500</code><br>
+        Settlement: <code>Dr. AP 1,500 / Cr. Cash 1,500</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale: <code>Dr. AR 1,500 / Cr. Sales 1,500</code><br>
+        Freight: <code>Dr. Delivery Expense 80 / Cr. Cash 80</code><br>
+        Settlement: <code>Dr. Cash 1,500 / Cr. AR 1,500</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 4: FOB Destination, Freight Collect</div>
+        <div class="terms">Terms: CU3,000 merchandise, Freight Collect (CU120 paid by buyer), n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase: <code>Dr. Purchases 3,000 / Cr. AP 3,000</code><br>
+        Freight Paid & Deducted: <code>Dr. AP 120 / Cr. Cash 120</code><br>
+        Settlement: <code>Dr. AP 2,880 / Cr. Cash 2,880</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale: <code>Dr. AR 3,000 / Cr. Sales 3,000</code><br>
+        Freight Deduction: <code>Dr. Delivery Expense 120 / Cr. AR 120</code><br>
+        Settlement: <code>Dr. Cash 2,880 / Cr. AR 2,880</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 5: FOB Shipping Point with Discount (Paid within terms)</div>
+        <div class="terms">Terms: CU1,200 merchandise, Freight Collect (CU60), Terms: 2/10, n/30. Paid within 10 days.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Purchases 1,200 / Cr. AP 1,200</code>; <code>Dr. Freight-In 60 / Cr. Cash 60</code><br>
+        Settlement: <code>Dr. AP 1,200 / Cr. Purchase Discounts 24, Cr. Cash 1,176</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale: <code>Dr. AR 1,200 / Cr. Sales 1,200</code><br>
+        Settlement: <code>Dr. Cash 1,176, Dr. Sales Discounts 24 / Cr. AR 1,200</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 6: FOB Shipping Point, Freight Prepaid with Discount</div>
+        <div class="terms">Terms: CU2,500 merchandise, Freight Prepaid (CU150), Terms: 2/10, n/30. Paid within 10 days.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Purchases 2,500, Dr. Freight-In 150 / Cr. AP 2,650</code><br>
+        Settlement: <code>Dr. AP 2,650 / Cr. Purchase Discounts 50, Cr. Cash 2,600</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & Freight: <code>Dr. AR 2,650 / Cr. Sales 2,500, Cr. Cash 150</code><br>
+        Settlement: <code>Dr. Cash 2,600, Dr. Sales Discounts 50 / Cr. AR 2,650</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 7: FOB Shipping Point, Freight Collect, Paid After Discount</div>
+        <div class="terms">Terms: CU1,800 merchandise, Freight Collect (CU90), Terms: 1/10, n/30. Paid after 10 days.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Purchases 1,800 / Cr. AP 1,800</code>; <code>Dr. Freight-In 90 / Cr. Cash 90</code><br>
+        Settlement: <code>Dr. AP 1,800 / Cr. Cash 1,800</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale: <code>Dr. AR 1,800 / Cr. Sales 1,800</code><br>
+        Settlement: <code>Dr. Cash 1,800 / Cr. AR 1,800</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 8: Cash Purchase/Sale, FOB Shipping Point</div>
+        <div class="terms">Terms: CU800 merchandise, Freight Collect (CU40), Cash transaction.</div>
+        <div class="pov"><strong>Buyer POV:</strong> <code>Dr. Purchases 800, Dr. Freight-In 40 / Cr. Cash 840</code></div>
+        <div class="pov"><strong>Seller POV:</strong> <code>Dr. Cash 800 / Cr. Sales 800</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 9: Cash Purchase/Sale, FOB Destination</div>
+        <div class="terms">Terms: CU1,000 merchandise, Freight Prepaid (CU50), Cash transaction.</div>
+        <div class="pov"><strong>Buyer POV:</strong> <code>Dr. Purchases 1,000 / Cr. Cash 1,000</code></div>
+        <div class="pov"><strong>Seller POV:</strong> <code>Dr. Cash 1,000 / Cr. Sales 1,000</code>; <code>Dr. Delivery Expense 50 / Cr. Cash 50</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 10: Purchase/Sale with Return (FOB Shipping Point)</div>
+        <div class="terms">Terms: CU2,000 merchandise, Freight Collect (CU100). CU400 returned, n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Purchases 2,000 / Cr. AP 2,000</code>; <code>Dr. Freight-In 100 / Cr. Cash 100</code><br>
+        Return: <code>Dr. AP 400 / Cr. Purchase Returns 400</code><br>
+        Settlement: <code>Dr. AP 1,600 / Cr. Cash 1,600</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale: <code>Dr. AR 2,000 / Cr. Sales 2,000</code><br>
+        Return: <code>Dr. Sales Returns 400 / Cr. AR 400</code><br>
+        Settlement: <code>Dr. Cash 1,600 / Cr. AR 1,600</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 11: Purchase/Sale with Allowance (FOB Destination)</div>
+        <div class="terms">Terms: CU1,500 merchandise, Freight Prepaid (CU75). CU200 allowance, n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase: <code>Dr. Purchases 1,500 / Cr. AP 1,500</code><br>
+        Allowance: <code>Dr. AP 200 / Cr. Purchase Returns 200</code><br>
+        Settlement: <code>Dr. AP 1,300 / Cr. Cash 1,300</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & Freight: <code>Dr. AR 1,500 / Cr. Sales 1,500</code>; <code>Dr. Delivery Expense 75 / Cr. Cash 75</code><br>
+        Allowance: <code>Dr. Sales Returns 200 / Cr. AR 200</code><br>
+        Settlement: <code>Dr. Cash 1,300 / Cr. AR 1,300</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 12: Return, Prepaid Freight, and Discount</div>
+        <div class="terms">Terms: CU4,000 merchandise, Freight Prepaid (CU200), Terms: 2/10, n/30. CU500 returned before payment.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Purchases 4,000, Dr. Freight-In 200 / Cr. AP 4,200</code><br>
+        Return: <code>Dr. AP 500 / Cr. Purchase Returns 500</code><br>
+        Settlement: <code>Dr. AP 3,700 / Cr. Purchase Discounts 70, Cr. Cash 3,630</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & Freight: <code>Dr. AR 4,200 / Cr. Sales 4,000, Cr. Cash 200</code><br>
+        Return: <code>Dr. Sales Returns 500 / Cr. AR 500</code><br>
+        Settlement: <code>Dr. Cash 3,630, Dr. Sales Discounts 70 / Cr. AR 3,700</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 13: FOB Destination Collect with Full Settlement</div>
+        <div class="terms">Terms: CU2,200 merchandise, Freight Collect (CU100), n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Purchases 2,200 / Cr. AP 2,200</code>; <code>Dr. AP 100 / Cr. Cash 100</code><br>
+        Settlement: <code>Dr. AP 2,100 / Cr. Cash 2,100</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & Freight: <code>Dr. AR 2,200 / Cr. Sales 2,200</code>; <code>Dr. Delivery Expense 100 / Cr. AR 100</code><br>
+        Settlement: <code>Dr. Cash 2,100 / Cr. AR 2,100</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 14: Standard Discount Sale (FOB Shipping Point, Collect)</div>
+        <div class="terms">Terms: CU3,500 merchandise, Freight Collect (CU175), Terms: 2/10, n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Purchases 3,500 / Cr. AP 3,500</code>; <code>Dr. Freight-In 175 / Cr. Cash 175</code><br>
+        Settlement: <code>Dr. AP 3,500 / Cr. Purchase Discounts 70, Cr. Cash 3,430</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale: <code>Dr. AR 3,500 / Cr. Sales 3,500</code><br>
+        Settlement: <code>Dr. Cash 3,430, Dr. Sales Discounts 70 / Cr. AR 3,500</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 15: FOB Destination Prepaid with Discount</div>
+        <div class="terms">Terms: CU1,600 merchandise, Freight Prepaid (CU90), Terms: 1/10, n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase: <code>Dr. Purchases 1,600 / Cr. AP 1,600</code><br>
+        Settlement: <code>Dr. AP 1,600 / Cr. Purchase Discounts 16, Cr. Cash 1,584</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & Freight: <code>Dr. AR 1,600 / Cr. Sales 1,600</code>; <code>Dr. Delivery Expense 90 / Cr. Cash 90</code><br>
+        Settlement: <code>Dr. Cash 1,584, Dr. Sales Discounts 16 / Cr. AR 1,600</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 16: Large Freight Prepaid Order</div>
+        <div class="terms">Terms: CU5,000 merchandise, Freight Prepaid (CU250), n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase: <code>Dr. Purchases 5,000, Dr. Freight-In 250 / Cr. AP 5,250</code><br>
+        Settlement: <code>Dr. AP 5,250 / Cr. Cash 5,250</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & Freight: <code>Dr. AR 5,250 / Cr. Sales 5,000, Cr. Cash 250</code><br>
+        Settlement: <code>Dr. Cash 5,250 / Cr. AR 5,250</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 17: Partial Payment with Discount (FOB Shipping Point)</div>
+        <div class="terms">Terms: CU2,800 merchandise, Freight Collect (CU140), Terms: 2/10, n/30. CU1,000 paid within discount period.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Purchases 2,800 / Cr. AP 2,800</code>; <code>Dr. Freight-In 140 / Cr. Cash 140</code><br>
+        Partial Settlement: <code>Dr. AP 1,000 / Cr. Purchase Discounts 20, Cr. Cash 980</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale: <code>Dr. AR 2,800 / Cr. Sales 2,800</code><br>
+        Partial Settlement: <code>Dr. Cash 980, Dr. Sales Discounts 20 / Cr. AR 1,000</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 18: Standard FOB Destination Collect</div>
+        <div class="terms">Terms: CU1,100 merchandise, Freight Collect (CU60), n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Purchases 1,100 / Cr. AP 1,100</code>; <code>Dr. AP 60 / Cr. Cash 60</code><br>
+        Settlement: <code>Dr. AP 1,040 / Cr. Cash 1,040</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & Freight: <code>Dr. AR 1,100 / Cr. Sales 1,100</code>; <code>Dr. Delivery Expense 60 / Cr. AR 60</code><br>
+        Settlement: <code>Dr. Cash 1,040 / Cr. AR 1,040</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 19: High-Value FOB Shipping Point with Discount</div>
+        <div class="terms">Terms: CU6,000 merchandise, Freight Prepaid (CU300), Terms: 2/10, n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Purchases 6,000, Dr. Freight-In 300 / Cr. AP 6,300</code><br>
+        Settlement: <code>Dr. AP 6,300 / Cr. Purchase Discounts 120, Cr. Cash 6,180</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & Freight: <code>Dr. AR 6,300 / Cr. Sales 6,000, Cr. Cash 300</code><br>
+        Settlement: <code>Dr. Cash 6,180, Dr. Sales Discounts 120 / Cr. AR 6,300</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 20: FOB Destination Prepaid with Discount</div>
+        <div class="terms">Terms: CU2,400 merchandise, Freight Prepaid (CU120), Terms: 2/10, n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase: <code>Dr. Purchases 2,400 / Cr. AP 2,400</code><br>
+        Settlement: <code>Dr. AP 2,400 / Cr. Purchase Discounts 48, Cr. Cash 2,352</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & Freight: <code>Dr. AR 2,400 / Cr. Sales 2,400</code>; <code>Dr. Delivery Expense 120 / Cr. Cash 120</code><br>
+        Settlement: <code>Dr. Cash 2,352, Dr. Sales Discounts 48 / Cr. AR 2,400</code></div>
+    </div>
+
+    <!-- PART 2: PERPETUAL -->
+    <h2>Part 2: Perpetual Inventory System (Scenarios 1 - 20)</h2>
+    <p><em>Note: Cost of Goods Sold (COGS) is assumed at 60% of merchandise selling price for seller entries.</em></p>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 1: FOB Shipping Point, Freight Collect</div>
+        <div class="terms">Terms: CU1,000 merchandise (Cost CU600), Freight Collect (CU50), n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase: <code>Dr. Merchandise Inventory 1,000 / Cr. AP 1,000</code><br>
+        Freight: <code>Dr. Merchandise Inventory 50 / Cr. Cash 50</code><br>
+        Settlement: <code>Dr. AP 1,000 / Cr. Cash 1,000</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & COGS: <code>Dr. AR 1,000 / Cr. Sales 1,000</code> AND <code>Dr. COGS 600 / Cr. Merchandise Inventory 600</code><br>
+        Settlement: <code>Dr. Cash 1,000 / Cr. AR 1,000</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 2: FOB Shipping Point, Freight Prepaid</div>
+        <div class="terms">Terms: CU2,000 merchandise (Cost CU1,200), Freight Prepaid (CU100), n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Merchandise Inventory 2,100 / Cr. AP 2,100</code><br>
+        Settlement: <code>Dr. AP 2,100 / Cr. Cash 2,100</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & Freight: <code>Dr. AR 2,100 / Cr. Sales 2,000, Cr. Cash 100</code> AND <code>Dr. COGS 1,200 / Cr. Merchandise Inventory 1,200</code><br>
+        Settlement: <code>Dr. Cash 2,100 / Cr. AR 2,100</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 3: FOB Destination, Freight Prepaid</div>
+        <div class="terms">Terms: CU1,500 merchandise (Cost CU900), Freight Prepaid (CU80), n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase: <code>Dr. Merchandise Inventory 1,500 / Cr. AP 1,500</code><br>
+        Settlement: <code>Dr. AP 1,500 / Cr. Cash 1,500</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & COGS: <code>Dr. AR 1,500 / Cr. Sales 1,500</code> AND <code>Dr. COGS 900 / Cr. Merchandise Inventory 900</code><br>
+        Freight: <code>Dr. Delivery Expense 80 / Cr. Cash 80</code><br>
+        Settlement: <code>Dr. Cash 1,500 / Cr. AR 1,500</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 4: FOB Destination, Freight Collect</div>
+        <div class="terms">Terms: CU3,000 merchandise (Cost CU1,800), Freight Collect (CU120), n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase: <code>Dr. Merchandise Inventory 3,000 / Cr. AP 3,000</code><br>
+        Freight Paid & Deducted: <code>Dr. AP 120 / Cr. Cash 120</code><br>
+        Settlement: <code>Dr. AP 2,880 / Cr. Cash 2,880</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & COGS: <code>Dr. AR 3,000 / Cr. Sales 3,000</code> AND <code>Dr. COGS 1,800 / Cr. Merchandise Inventory 1,800</code><br>
+        Freight Deduction: <code>Dr. Delivery Expense 120 / Cr. AR 120</code><br>
+        Settlement: <code>Dr. Cash 2,880 / Cr. AR 2,880</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 5: FOB Shipping Point with Discount</div>
+        <div class="terms">Terms: CU1,200 merchandise (Cost CU720), Freight Collect (CU60), Terms: 2/10, n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Merchandise Inventory 1,200 / Cr. AP 1,200</code>; <code>Dr. Merchandise Inventory 60 / Cr. Cash 60</code><br>
+        Settlement: <code>Dr. AP 1,200 / Cr. Merchandise Inventory 24, Cr. Cash 1,176</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & COGS: <code>Dr. AR 1,200 / Cr. Sales 1,200</code> AND <code>Dr. COGS 720 / Cr. Merchandise Inventory 720</code><br>
+        Settlement: <code>Dr. Cash 1,176, Dr. Sales Discounts 24 / Cr. AR 1,200</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 6: FOB Shipping Point, Freight Prepaid with Discount</div>
+        <div class="terms">Terms: CU2,500 merchandise (Cost CU1,500), Freight Prepaid (CU150), Terms: 2/10, n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Merchandise Inventory 2,650 / Cr. AP 2,650</code><br>
+        Settlement: <code>Dr. AP 2,650 / Cr. Merchandise Inventory 50, Cr. Cash 2,600</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale, COGS & Freight: <code>Dr. AR 2,650 / Cr. Sales 2,500, Cr. Cash 150</code> AND <code>Dr. COGS 1,500 / Cr. Merchandise Inventory 1,500</code><br>
+        Settlement: <code>Dr. Cash 2,600, Dr. Sales Discounts 50 / Cr. AR 2,650</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 7: FOB Shipping Point, Freight Collect, Paid After Discount</div>
+        <div class="terms">Terms: CU1,800 merchandise (Cost CU1,080), Freight Collect (CU90), Terms: 1/10, n/30. Paid after 10 days.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Merchandise Inventory 1,800 / Cr. AP 1,800</code>; <code>Dr. Merchandise Inventory 90 / Cr. Cash 90</code><br>
+        Settlement: <code>Dr. AP 1,800 / Cr. Cash 1,800</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & COGS: <code>Dr. AR 1,800 / Cr. Sales 1,800</code> AND <code>Dr. COGS 1,080 / Cr. Merchandise Inventory 1,080</code><br>
+        Settlement: <code>Dr. Cash 1,800 / Cr. AR 1,800</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 8: Cash Purchase/Sale, FOB Shipping Point</div>
+        <div class="terms">Terms: CU800 merchandise (Cost CU480), Freight Collect (CU40), Cash transaction.</div>
+        <div class="pov"><strong>Buyer POV:</strong> <code>Dr. Merchandise Inventory 840 / Cr. Cash 840</code></div>
+        <div class="pov"><strong>Seller POV:</strong> <code>Dr. Cash 800 / Cr. Sales 800</code> AND <code>Dr. COGS 480 / Cr. Merchandise Inventory 480</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 9: Cash Purchase/Sale, FOB Destination</div>
+        <div class="terms">Terms: CU1,000 merchandise (Cost CU600), Freight Prepaid (CU50), Cash transaction.</div>
+        <div class="pov"><strong>Buyer POV:</strong> <code>Dr. Merchandise Inventory 1,000 / Cr. Cash 1,000</code></div>
+        <div class="pov"><strong>Seller POV:</strong> <code>Dr. Cash 1,000 / Cr. Sales 1,000</code>; <code>Dr. Delivery Expense 50 / Cr. Cash 50</code> AND <code>Dr. COGS 600 / Cr. Merchandise Inventory 600</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 10: Purchase/Sale with Return (FOB Shipping Point)</div>
+        <div class="terms">Terms: CU2,000 merchandise (Cost CU1,200), Freight Collect (CU100). CU400 returned (Cost CU240).</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Merchandise Inventory 2,000 / Cr. AP 2,000</code>; <code>Dr. Merchandise Inventory 100 / Cr. Cash 100</code><br>
+        Return: <code>Dr. AP 400 / Cr. Merchandise Inventory 400</code><br>
+        Settlement: <code>Dr. AP 1,600 / Cr. Cash 1,600</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & COGS: <code>Dr. AR 2,000 / Cr. Sales 2,000</code> AND <code>Dr. COGS 1,200 / Cr. Merchandise Inventory 1,200</code><br>
+        Return: <code>Dr. Sales Returns 400 / Cr. AR 400</code> AND <code>Dr. Merchandise Inventory 240 / Cr. COGS 240</code><br>
+        Settlement: <code>Dr. Cash 1,600 / Cr. AR 1,600</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 11: Purchase/Sale with Allowance (FOB Destination)</div>
+        <div class="terms">Terms: CU1,500 merchandise (Cost CU900), Freight Prepaid (CU75). CU200 allowance.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase: <code>Dr. Merchandise Inventory 1,500 / Cr. AP 1,500</code><br>
+        Allowance: <code>Dr. AP 200 / Cr. Merchandise Inventory 200</code><br>
+        Settlement: <code>Dr. AP 1,300 / Cr. Cash 1,300</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale, COGS & Freight: <code>Dr. AR 1,500 / Cr. Sales 1,500</code> AND <code>Dr. COGS 900 / Cr. Merchandise Inventory 900</code>; <code>Dr. Delivery Expense 75 / Cr. Cash 75</code><br>
+        Allowance: <code>Dr. Sales Returns 200 / Cr. AR 200</code><br>
+        Settlement: <code>Dr. Cash 1,300 / Cr. AR 1,300</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 12: Return, Prepaid Freight, and Discount</div>
+        <div class="terms">Terms: CU4,000 merchandise (Cost CU2,400), Freight Prepaid (CU200), Terms: 2/10, n/30. CU500 returned (Cost CU300).</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Merchandise Inventory 4,200 / Cr. AP 4,200</code><br>
+        Return: <code>Dr. AP 500 / Cr. Merchandise Inventory 500</code><br>
+        Settlement: <code>Dr. AP 3,700 / Cr. Merchandise Inventory 70, Cr. Cash 3,630</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale, COGS & Freight: <code>Dr. AR 4,200 / Cr. Sales 4,000, Cr. Cash 200</code> AND <code>Dr. COGS 2,400 / Cr. Merchandise Inventory 2,400</code><br>
+        Return: <code>Dr. Sales Returns 500 / Cr. AR 500</code> AND <code>Dr. Merchandise Inventory 300 / Cr. COGS 300</code><br>
+        Settlement: <code>Dr. Cash 3,630, Dr. Sales Discounts 70 / Cr. AR 3,700</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 13: FOB Destination Collect with Full Settlement</div>
+        <div class="terms">Terms: CU2,200 merchandise (Cost CU1,320), Freight Collect (CU100), n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Merchandise Inventory 2,200 / Cr. AP 2,200</code>; <code>Dr. AP 100 / Cr. Cash 100</code><br>
+        Settlement: <code>Dr. AP 2,100 / Cr. Cash 2,100</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & COGS: <code>Dr. AR 2,200 / Cr. Sales 2,200</code> AND <code>Dr. COGS 1,320 / Cr. Merchandise Inventory 1,320</code><br>
+        Freight Offset: <code>Dr. Delivery Expense 100 / Cr. AR 100</code><br>
+        Settlement: <code>Dr. Cash 2,100 / Cr. AR 2,100</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 14: Standard Discount Sale (FOB Shipping Point, Collect)</div>
+        <div class="terms">Terms: CU3,500 merchandise (Cost CU2,100), Freight Collect (CU175), Terms: 2/10, n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Merchandise Inventory 3,500 / Cr. AP 3,500</code>; <code>Dr. Merchandise Inventory 175 / Cr. Cash 175</code><br>
+        Settlement: <code>Dr. AP 3,500 / Cr. Merchandise Inventory 70, Cr. Cash 3,430</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & COGS: <code>Dr. AR 3,500 / Cr. Sales 3,500</code> AND <code>Dr. COGS 2,100 / Cr. Merchandise Inventory 2,100</code><br>
+        Settlement: <code>Dr. Cash 3,430, Dr. Sales Discounts 70 / Cr. AR 3,500</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 15: FOB Destination Prepaid with Discount</div>
+        <div class="terms">Terms: CU1,600 merchandise (Cost CU960), Freight Prepaid (CU90), Terms: 1/10, n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase: <code>Dr. Merchandise Inventory 1,600 / Cr. AP 1,600</code><br>
+        Settlement: <code>Dr. AP 1,600 / Cr. Merchandise Inventory 16, Cr. Cash 1,584</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale, COGS & Freight: <code>Dr. AR 1,600 / Cr. Sales 1,600</code> AND <code>Dr. COGS 960 / Cr. Merchandise Inventory 960</code>; <code>Dr. Delivery Expense 90 / Cr. Cash 90</code><br>
+        Settlement: <code>Dr. Cash 1,584, Dr. Sales Discounts 16 / Cr. AR 1,600</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 16: Large Freight Prepaid Order</div>
+        <div class="terms">Terms: CU5,000 merchandise (Cost CU3,000), Freight Prepaid (CU250), n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase: <code>Dr. Merchandise Inventory 5,250 / Cr. AP 5,250</code><br>
+        Settlement: <code>Dr. AP 5,250 / Cr. Cash 5,250</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale, COGS & Freight: <code>Dr. AR 5,250 / Cr. Sales 5,000, Cr. Cash 250</code> AND <code>Dr. COGS 3,000 / Cr. Merchandise Inventory 3,000</code><br>
+        Settlement: <code>Dr. Cash 5,250 / Cr. AR 5,250</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 17: Partial Payment with Discount (FOB Shipping Point)</div>
+        <div class="terms">Terms: CU2,800 merchandise (Cost CU1,680), Freight Collect (CU140), Terms: 2/10, n/30. CU1,000 paid in discount period.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Merchandise Inventory 2,800 / Cr. AP 2,800</code>; <code>Dr. Merchandise Inventory 140 / Cr. Cash 140</code><br>
+        Partial Settlement: <code>Dr. AP 1,000 / Cr. Merchandise Inventory 20, Cr. Cash 980</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & COGS: <code>Dr. AR 2,800 / Cr. Sales 2,800</code> AND <code>Dr. COGS 1,680 / Cr. Merchandise Inventory 1,680</code><br>
+        Partial Settlement: <code>Dr. Cash 980, Dr. Sales Discounts 20 / Cr. AR 1,000</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 18: Standard FOB Destination Collect</div>
+        <div class="terms">Terms: CU1,100 merchandise (Cost CU660), Freight Collect (CU60), n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Merchandise Inventory 1,100 / Cr. AP 1,100</code>; <code>Dr. AP 60 / Cr. Cash 60</code><br>
+        Settlement: <code>Dr. AP 1,040 / Cr. Cash 1,040</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale & COGS: <code>Dr. AR 1,100 / Cr. Sales 1,100</code> AND <code>Dr. COGS 660 / Cr. Merchandise Inventory 660</code><br>
+        Freight Offset: <code>Dr. Delivery Expense 60 / Cr. AR 60</code><br>
+        Settlement: <code>Dr. Cash 1,040 / Cr. AR 1,040</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 19: High-Value FOB Shipping Point with Discount</div>
+        <div class="terms">Terms: CU6,000 merchandise (Cost CU3,600), Freight Prepaid (CU300), Terms: 2/10, n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase & Freight: <code>Dr. Merchandise Inventory 6,300 / Cr. AP 6,300</code><br>
+        Settlement: <code>Dr. AP 6,300 / Cr. Merchandise Inventory 120, Cr. Cash 6,180</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale, COGS & Freight: <code>Dr. AR 6,300 / Cr. Sales 6,000, Cr. Cash 300</code> AND <code>Dr. COGS 3,600 / Cr. Merchandise Inventory 3,600</code><br>
+        Settlement: <code>Dr. Cash 6,180, Dr. Sales Discounts 120 / Cr. AR 6,300</code></div>
+    </div>
+
+    <div class="scenario-box">
+        <div class="scenario-title">Scenario 20: FOB Destination Prepaid with Discount</div>
+        <div class="terms">Terms: CU2,400 merchandise (Cost CU1,440), Freight Prepaid (CU120), Terms: 2/10, n/30.</div>
+        <div class="pov"><strong>Buyer POV:</strong><br>
+        Purchase: <code>Dr. Merchandise Inventory 2,400 / Cr. AP 2,400</code><br>
+        Settlement: <code>Dr. AP 2,400 / Cr. Merchandise Inventory 48, Cr. Cash 2,352</code></div>
+        <div class="pov"><strong>Seller POV:</strong><br>
+        Sale, COGS & Freight: <code>Dr. AR 2,400 / Cr. Sales 2,400</code> AND <code>Dr. COGS 1,440 / Cr. Merchandise Inventory 1,440</code>; <code>Dr. Delivery Expense 120 / Cr. Cash 120</code><br>
+        Settlement: <code>Dr. Cash 2,352, Dr. Sales Discounts 48 / Cr. AR 2,400</code></div>
+    </div>
+
+    <footer>
+        <a href="index.html" class="btn-back">&larr; Back to Main Page</a>
+    </footer>
+</div>
+
+</body>
+</html>
