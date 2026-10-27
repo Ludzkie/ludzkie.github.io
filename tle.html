@@ -51,6 +51,13 @@
             color: #34495e;
             margin-top: 25px;
         }
+        ul {
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -167,6 +174,42 @@
         </tbody>
     </table>
 
+    <!-- Quick Study Section -->
+    <h2>3. Quick Study Cheat Sheet for Shipping Terms</h2>
+    <ul>
+        <li><strong>SP Collect and Destination Prepaid:</strong> Direct Freight — party responsible pays carrier directly upon delivery/shipment.</li>
+        <li><strong>SP Prepaid and Destination Prepaid:</strong> Focuses on account billing and reduces cash for the seller upfront (`Cr. Cash`).</li>
+        <li><strong>SP Collect and Destination Collect:</strong> Focuses on cash at destination (`Cr. Cash` by buyer) and reduces accounts (Receivable & Payable) to adjust ownership/responsibility.</li>
+        <li><strong>SP Prepaid and Destination Collect:</strong> The opposite party actually pays cash to the carrier compared to who should bear the expense, requiring reimbursement/offset entries.</li>
+    </ul>
+
+    <!-- Debit & Credit Memos -->
+    <h2>4. Debit Memo & Credit Memo Rules</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Document</th>
+                <th>Issued By (Issuance)</th>
+                <th>Received By (Receipt)</th>
+                <th>Accounting Purpose</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Debit Memo</strong></td>
+                <td><strong>Buyer</strong></td>
+                <td><strong>Seller</strong></td>
+                <td>Informs the seller that their Accounts Payable has been debited (reduced) due to returns/allowances.</td>
+            </tr>
+            <tr>
+                <td><strong>Credit Memo</strong></td>
+                <td><strong>Seller</strong></td>
+                <td><strong>Buyer</strong></td>
+                <td>Informs the buyer that their Accounts Receivable has been credited (reduced) for accepted returns/allowances.</td>
+            </tr>
+        </tbody>
+    </table>
+
     <!-- PART 1: PERIODIC -->
     <h2>Part 1: Periodic Inventory System (Scenarios 1 - 20)</h2>
 
@@ -266,15 +309,15 @@
     </div>
 
     <div class="scenario-box">
-        <div class="scenario-title">Scenario 10: Purchase/Sale with Return (FOB Shipping Point)</div>
-        <div class="terms">Terms: CU2,000 merchandise, Freight Collect (CU100). CU400 returned, n/30.</div>
-        <div class="pov"><strong>Buyer POV:</strong><br>
+        <div class="scenario-title">Scenario 10: Purchase/Sale with Return (Debit/Credit Memo Issued)</div>
+        <div class="terms">Terms: CU2,000 merchandise, Freight Collect (CU100). CU400 returned, n/30. Buyer issues Debit Memo, Seller issues Credit Memo.</div>
+        <div class="pov"><strong>Buyer POV (Debit Memo Issued):</strong><br>
         Purchase & Freight: <code>Dr. Purchases 2,000 / Cr. AP 2,000</code>; <code>Dr. Freight-In 100 / Cr. Cash 100</code><br>
-        Return: <code>Dr. AP 400 / Cr. Purchase Returns 400</code><br>
+        Return (Debit Memo): <code>Dr. AP 400 / Cr. Purchase Returns 400</code><br>
         Settlement: <code>Dr. AP 1,600 / Cr. Cash 1,600</code></div>
-        <div class="pov"><strong>Seller POV:</strong><br>
+        <div class="pov"><strong>Seller POV (Credit Memo Issued):</strong><br>
         Sale: <code>Dr. AR 2,000 / Cr. Sales 2,000</code><br>
-        Return: <code>Dr. Sales Returns 400 / Cr. AR 400</code><br>
+        Return (Credit Memo): <code>Dr. Sales Returns 400 / Cr. AR 400</code><br>
         Settlement: <code>Dr. Cash 1,600 / Cr. AR 1,600</code></div>
     </div>
 
@@ -415,7 +458,7 @@
         Purchase & Freight: <code>Dr. Merchandise Inventory 2,100 / Cr. AP 2,100</code><br>
         Settlement: <code>Dr. AP 2,100 / Cr. Cash 2,100</code></div>
         <div class="pov"><strong>Seller POV:</strong><br>
-        Sale & Freight: <code>Dr. AR 2,100 / Cr. Sales 2,000, Cr. Cash 100</code> AND <code>Dr. COGS 1,200 / Cr. Merchandise Inventory 1,200</code><br>
+        Sale, COGS & Freight: <code>Dr. AR 2,100 / Cr. Sales 2,000, Cr. Cash 100</code> AND <code>Dr. COGS 1,200 / Cr. Merchandise Inventory 1,200</code><br>
         Settlement: <code>Dr. Cash 2,100 / Cr. AR 2,100</code></div>
     </div>
 
@@ -492,15 +535,15 @@
     </div>
 
     <div class="scenario-box">
-        <div class="scenario-title">Scenario 10: Purchase/Sale with Return (FOB Shipping Point)</div>
-        <div class="terms">Terms: CU2,000 merchandise (Cost CU1,200), Freight Collect (CU100). CU400 returned (Cost CU240).</div>
-        <div class="pov"><strong>Buyer POV:</strong><br>
+        <div class="scenario-title">Scenario 10: Purchase/Sale with Return (Debit/Credit Memo Issued)</div>
+        <div class="terms">Terms: CU2,000 merchandise (Cost CU1,200), Freight Collect (CU100). CU400 returned (Cost CU240). Buyer issues Debit Memo, Seller issues Credit Memo.</div>
+        <div class="pov"><strong>Buyer POV (Debit Memo Issued):</strong><br>
         Purchase & Freight: <code>Dr. Merchandise Inventory 2,000 / Cr. AP 2,000</code>; <code>Dr. Merchandise Inventory 100 / Cr. Cash 100</code><br>
-        Return: <code>Dr. AP 400 / Cr. Merchandise Inventory 400</code><br>
+        Return (Debit Memo): <code>Dr. AP 400 / Cr. Merchandise Inventory 400</code><br>
         Settlement: <code>Dr. AP 1,600 / Cr. Cash 1,600</code></div>
-        <div class="pov"><strong>Seller POV:</strong><br>
+        <div class="pov"><strong>Seller POV (Credit Memo Issued):</strong><br>
         Sale & COGS: <code>Dr. AR 2,000 / Cr. Sales 2,000</code> AND <code>Dr. COGS 1,200 / Cr. Merchandise Inventory 1,200</code><br>
-        Return: <code>Dr. Sales Returns 400 / Cr. AR 400</code> AND <code>Dr. Merchandise Inventory 240 / Cr. COGS 240</code><br>
+        Return (Credit Memo): <code>Dr. Sales Returns 400 / Cr. AR 400</code> AND <code>Dr. Merchandise Inventory 240 / Cr. COGS 240</code><br>
         Settlement: <code>Dr. Cash 1,600 / Cr. AR 1,600</code></div>
     </div>
 
