@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Exam Review Notes - Quadrilaterals & Geometry</title>
+    <title>Master Math Exam Review Notes - Geometry & Proofs</title>
     <!-- MathJax for rendering math equations cleanly -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -12,17 +12,17 @@
             font-family: Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f9f9f9;
+            background-color: #f4f6f8;
             margin: 0;
             padding: 20px;
         }
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
             background: #fff;
             padding: 40px;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
         .btn-back {
             display: inline-block;
@@ -48,7 +48,7 @@
             color: #2980b9;
             border-bottom: 1px solid #eaeaea;
             padding-bottom: 8px;
-            margin-top: 40px;
+            margin-top: 45px;
         }
         h3 {
             color: #34495e;
@@ -59,12 +59,12 @@
             margin-top: 18px;
             margin-bottom: 8px;
         }
-        ul, ol {
+        ul {
             margin-top: 5px;
             margin-bottom: 15px;
         }
         li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         table {
             width: 100%;
@@ -92,14 +92,13 @@
             border: 1px solid #e2e2e2;
             margin: 15px 0;
         }
-        .note-callout {
-            background-color: #eef7fa;
-            border-left: 4px solid #2980b9;
-            padding: 12px 16px;
-            margin: 15px 0;
-            border-radius: 0 4px 4px 0;
+        .diagram-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
         }
-        /* Geometry SVG Diagram Containers */
         .diagram-box {
             display: flex;
             flex-direction: column;
@@ -109,12 +108,14 @@
             border: 1px solid #e0e0e0;
             border-radius: 6px;
             padding: 15px;
-            margin: 20px 0;
+            flex: 1;
+            min-width: 280px;
         }
         .diagram-caption {
             font-size: 0.85em;
             color: #555;
             margin-top: 8px;
+            text-align: center;
             font-style: italic;
         }
         footer {
@@ -132,166 +133,268 @@
 <div class="container">
     <a href="index.html" class="btn-back">&larr; Back to Main Page</a>
 
-    <h1>Math Exam Review Notes: Quadrilaterals, Proofs & Triangles</h1>
+    <h1>Master Math Exam Review Notes: Geometry, Proofs & Triangles</h1>
 
-    <!-- SECTION 1: QUADRILATERALS -->
+    <!-- 1. QUADRILATERALS -->
     <h2>1. Quadrilaterals</h2>
+    
+    <h3>Line Relationships & Geometry Basics</h3>
+    
+    <div class="diagram-container">
+        <div class="diagram-box">
+            <svg width="280" height="140" viewBox="0 0 280 140" xmlns="http://www.w3.org/2000/svg">
+                <!-- Parallel lines -->
+                <line x1="20" y1="40" x2="260" y2="40" stroke="#2980b9" stroke-width="2"/>
+                <line x1="20" y1="100" x2="260" y2="100" stroke="#2980b9" stroke-width="2"/>
+                <!-- Transversal -->
+                <line x1="80" y1="15" x2="200" y2="125" stroke="#e74c3c" stroke-width="2"/>
+                <!-- Labels -->
+                <text x="230" y="30" fill="#2980b9" font-weight="bold">Line m</text>
+                <text x="230" y="120" fill="#2980b9" font-weight="bold">Line n</text>
+                <text x="205" y="115" fill="#e74c3c" font-weight="bold">t</text>
+            </svg>
+            <div class="diagram-caption">Parallelism: Lines m || n cut by transversal t</div>
+        </div>
+        <div class="diagram-box">
+            <svg width="280" height="140" viewBox="0 0 280 140" xmlns="http://www.w3.org/2000/svg">
+                <!-- Perpendicular lines -->
+                <line x1="40" y1="80" x2="240" y2="80" stroke="#2c3e50" stroke-width="2"/>
+                <line x1="140" y1="20" x2="140" y2="120" stroke="#2c3e50" stroke-width="2"/>
+                <!-- Right angle box -->
+                <rect x="140" y="70" width="10" height="10" fill="none" stroke="#e74c3c" stroke-width="1.5"/>
+            </svg>
+            <div class="diagram-caption">Perpendicularity: Intersecting at 90&deg; right angles</div>
+        </div>
+    </div>
 
-    <h3>Fundamental Geometric Relationships</h3>
     <ul>
-        <li><strong>Parallelism (\(\parallel\)):</strong> Lines, rays, or segments in the same plane that never intersect.</li>
-        <li><strong>Perpendicularity (\(\perp\)):</strong> Lines or segments that intersect to form right angles (\(90^\circ\)).</li>
-        <li><strong>Coplanar Lines:</strong> Lines lying within the same flat 2D plane.</li>
-        <li><strong>Skew Lines:</strong> Non-coplanar lines that do not intersect and are not parallel (3D space).</li>
+        <li><strong>Parallelism (\(\parallel\)):</strong> Coplanar lines, segments, or rays that maintain a fixed distance and never intersect.</li>
+        <li><strong>Perpendicularity (\(\perp\)):</strong> Lines, segments, or rays that intersect to form right angles (\(90^\circ\)).</li>
+        <li><strong>Coplanar Lines:</strong> Lines that exist within the exact same flat 2D plane.</li>
+        <li><strong>Skew Lines:</strong> Non-coplanar lines that do not intersect and are not parallel (exist across different 3D planes).</li>
+        <li><strong>Etc. (Angle Pairs):</strong> Alternate interior angles, alternate exterior angles, corresponding angles, and consecutive interior angles.</li>
     </ul>
 
-    <h3>Polygons & Quadrilaterals</h3>
+    <h3>What's a Polygon & Quadrilateral</h3>
     <ul>
-        <li><strong>Polygon:</strong> A closed plane figure with straight line sides.
-            <ul>
-                <li><em>Interior Angle Sum Formula:</em> \(S = (n - 2) \times 180^\circ\)</li>
-            </ul>
-        </li>
-        <li><strong>Quadrilateral:</strong> A 4-sided polygon (\(n = 4\)).
-            <ul>
-                <li><strong>Interior Angle Sum:</strong> \(S = (4 - 2) \times 180^\circ = 360^\circ\).</li>
-            </ul>
-        </li>
+        <li><strong>Polygon:</strong> A closed plane figure bounded by three or more line segments intersecting only at endpoints. Interior angle sum: \(S = (n - 2) \times 180^\circ\).</li>
+        <li><strong>Quadrilateral:</strong> A 4-sided polygon with interior angles summing to \(360^\circ\).</li>
     </ul>
 
-    <!-- SECTION 2: PROPERTIES OF A PARALLELOGRAM -->
+    <h3>Specific Quadrilateral Classifications</h3>
+    <ul>
+        <li><strong>Parallelogram:</strong> Two pairs of parallel opposite sides.</li>
+        <li><strong>Rectangle:</strong> A parallelogram with four right angles (\(90^\circ\)).</li>
+        <li><strong>Rhombus:</strong> A parallelogram with four congruent sides.</li>
+        <li><strong>Squares:</strong> A regular quadrilateral combining a rectangle and a rhombus.</li>
+        <li><strong>Trapezoid:</strong> Exactly one pair of parallel sides.
+            <ul>
+                <li><strong>Trapezoid Types:</strong> Right trapezoid (contains right angles), Isosceles trapezoid (congruent legs), Scalene trapezoid (no equal sides).</li>
+            </ul>
+        </li>
+        <li><strong>Kite:</strong> Two distinct pairs of adjacent, congruent sides.</li>
+    </ul>
+
+
+    <!-- 2. PROPERTIES OF A PARALLELOGRAM -->
     <h2>2. Properties of a Parallelogram</h2>
 
-    <div class="diagram-box">
-        <svg width="340" height="180" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
-            <!-- Shape Fill & Outline -->
-            <polygon points="60,140 120,40 280,40 220,140" fill="#e8f4f8" stroke="#2980b9" stroke-width="2"/>
-            <!-- Diagonals -->
-            <line x1="60" y1="140" x2="280" y2="40" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4"/>
-            <line x1="120" y1="40" x2="220" y2="140" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4"/>
-            <!-- Labels -->
-            <text x="40" y="155" font-family="Arial" font-size="14" fill="#2c3e50" font-weight="bold">A</text>
-            <text x="110" y="30" font-family="Arial" font-size="14" fill="#2c3e50" font-weight="bold">B</text>
-            <text x="290" y="35" font-family="Arial" font-size="14" fill="#2c3e50" font-weight="bold">C</text>
-            <text x="230" y="155" font-family="Arial" font-size="14" fill="#2c3e50" font-weight="bold">D</text>
-            <text x="173" y="100" font-family="Arial" font-size="12" fill="#c0392b" font-weight="bold">M</text>
+    <div class="diagram-box" style="max-width: 450px; margin: 0 auto 20px auto;">
+        <svg width="340" height="170" viewBox="0 0 340 170" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="60,130 110,40 270,40 220,130" fill="#e8f4f8" stroke="#2980b9" stroke-width="2"/>
+            <line x1="60" y1="130" x2="270" y2="40" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4"/>
+            <line x1="110" y1="40" x2="220" y2="130" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4"/>
+            <!-- Congruence tick marks on sides -->
+            <line x1="82" y1="80" x2="88" y2="90" stroke="#2980b9" stroke-width="2"/>
+            <line x1="242" y1="80" x2="248" y2="90" stroke="#2980b9" stroke-width="2"/>
+            <line x1="130" y1="35" x2="140" y2="45" stroke="#2980b9" stroke-width="2"/>
+            <line x1="130" y1="125" x2="140" y2="135" stroke="#2980b9" stroke-width="2"/>
+            <text x="45" y="140" font-weight="bold" fill="#2c3e50">A</text>
+            <text x="100" y="30" font-weight="bold" fill="#2c3e50">B</text>
+            <text x="280" y="35" font-weight="bold" fill="#2c3e50">C</text>
+            <text x="230" y="145" font-weight="bold" fill="#2c3e50">D</text>
+            <text x="160" y="90" font-weight="bold" fill="#c0392b">M</text>
         </svg>
-        <div class="diagram-caption">Figure 1: Parallelogram ABCD with bisecting diagonals intersecting at midpoint M</div>
+        <div class="diagram-caption">Parallelogram ABCD: Congruent opposite sides, opposite angles, and bisecting diagonals at midpoint M</div>
     </div>
 
     <ul>
-        <li><strong>Opposite Sides:</strong> \(AB \parallel CD\), \(AD \parallel BC\), and \(AB \cong CD\), \(AD \cong BC\).</li>
-        <li><strong>Opposite Angles:</strong> \(\angle A \cong \angle C\) and \(\angle B \cong \angle D\).</li>
-        <li><strong>Consecutive Angles:</strong> \(m\angle A + m\angle B = 180^\circ\).</li>
-        <li><strong>Diagonals:</strong> Bisect each other at midpoint \(M\) (\(AM \cong MC\), \(BM \cong MD\)).</li>
+        <li><strong>Opposite sides:</strong> Opposite sides are parallel and congruent (\(AB \parallel CD\), \(AD \parallel BC\) & \(AB \cong CD\), \(AD \cong BC\)).</li>
+        <li><strong>Opposite angles:</strong> Opposite angles are congruent (\(\angle A \cong \angle C\), \(\angle B \cong \angle D\)).</li>
+        <li><strong>Consecutive angles:</strong> Consecutive interior angles are supplementary ($180^\circ$).</li>
+        <li><strong>Adjacent angles:</strong> Adjacent angles sharing a side are supplementary.</li>
+        <li><strong>Diagonals:</strong> Segments connecting opposite vertices.</li>
+        <li><strong>Bisect:</strong> Diagonals bisect each other into two equal segments at their intersection point.</li>
     </ul>
 
-    <!-- SECTION 3: TRAPEZOIDS AND KITES -->
+
+    <!-- 3. TRAPEZOIDS AND KITES -->
     <h2>3. Trapezoids and Kites</h2>
 
-    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
-        <!-- Isosceles Trapezoid SVG -->
-        <div class="diagram-box" style="flex: 1; min-width: 280px;">
-            <svg width="280" height="180" viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg">
-                <!-- Trapezoid -->
-                <polygon points="40,140 80,50 200,50 240,140" fill="#fef9e7" stroke="#f39c12" stroke-width="2"/>
-                <!-- Median -->
-                <line x1="60" y1="95" x2="220" y2="95" stroke="#27ae60" stroke-width="2" stroke-dasharray="3"/>
-                <!-- Altitude -->
-                <line x1="80" y1="50" x2="80" y2="140" stroke="#8e44ad" stroke-width="1.5" stroke-dasharray="2"/>
-                <rect x="80" y="130" width="10" height="10" fill="none" stroke="#8e44ad" stroke-width="1"/>
-                <!-- Labels -->
-                <text x="130" y="42" font-family="Arial" font-size="12" fill="#7f8c8d">Base 1 (b₁)</text>
-                <text x="120" y="160" font-family="Arial" font-size="12" fill="#7f8c8d">Base 2 (b₂)</text>
-                <text x="110" y="90" font-family="Arial" font-size="12" fill="#27ae60" font-weight="bold">Median</text>
-                <text x="85" y="100" font-family="Arial" font-size="11" fill="#8e44ad">h</text>
+    <div class="diagram-container">
+        <div class="diagram-box">
+            <svg width="280" height="160" viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="40,130 80,40 200,40 240,130" fill="#fef9e7" stroke="#f39c12" stroke-width="2"/>
+                <line x1="60" y1="85" x2="220" y2="85" stroke="#27ae60" stroke-width="2" stroke-dasharray="3"/>
+                <line x1="80" y1="40" x2="80" y2="130" stroke="#8e44ad" stroke-width="1.5" stroke-dasharray="2"/>
+                <text x="125" y="32" font-size="11" fill="#7f8c8d">Base 1</text>
+                <text x="120" y="150" font-size="11" fill="#7f8c8d">Base 2</text>
+                <text x="110" y="80" font-size="11" fill="#27ae60" font-weight="bold">Median</text>
             </svg>
-            <div class="diagram-caption">Figure 2: Isosceles Trapezoid with Altitude (h) & Median</div>
+            <div class="diagram-caption">Trapezoid: Bases, Legs, Altitude, and Median</div>
         </div>
-
-        <!-- Kite SVG -->
-        <div class="diagram-box" style="flex: 1; min-width: 280px;">
-            <svg width="240" height="180" viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
-                <!-- Kite Shape -->
-                <polygon points="120,10 200,70 120,160 40,70" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
-                <!-- Diagonals -->
-                <line x1="120" y1="10" x2="120" y2="160" stroke="#e74c3c" stroke-width="1.5"/>
-                <line x1="40" y1="70" x2="200" y2="70" stroke="#e74c3c" stroke-width="1.5"/>
-                <!-- Perpendicular symbol -->
-                <rect x="120" y="70" width="10" height="10" fill="none" stroke="#e74c3c" stroke-width="1"/>
-                <!-- Labels -->
-                <text x="115" y="8" font-family="Arial" font-size="12" fill="#2c3e50" font-weight="bold">A</text>
-                <text x="205" y="75" font-family="Arial" font-size="12" fill="#2c3e50" font-weight="bold">B</text>
-                <text x="115" y="175" font-family="Arial" font-size="12" fill="#2c3e50" font-weight="bold">C</text>
-                <text x="25" y="75" font-family="Arial" font-size="12" fill="#2c3e50" font-weight="bold">D</text>
+        <div class="diagram-box">
+            <svg width="260" height="160" viewBox="0 0 260 160" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="130,10 200,70 130,150 60,70" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
+                <line x1="130" y1="10" x2="130" y2="150" stroke="#e74c3c" stroke-width="1.5"/>
+                <line x1="60" y1="70" x2="200" y2="70" stroke="#e74c3c" stroke-width="1.5"/>
+                <rect x="130" y="70" width="10" height="10" fill="none" stroke="#e74c3c" stroke-width="1"/>
             </svg>
-            <div class="diagram-caption">Figure 3: Kite ABCD with Perpendicular Diagonals (\(AC \perp BD\))</div>
+            <div class="diagram-caption">Kite: Perpendicular diagonals & adjacent congruent sides</div>
         </div>
     </div>
 
-    <div class="formula-box">
-        Trapezoid Median = \(\frac{b_1 + b_2}{2}\) &nbsp;&nbsp;|&nbsp;&nbsp; Kite Area = \(\frac{d_1 \times d_2}{2}\)
-    </div>
-
-    <!-- SECTION 4: INDUCTIVE & DEDUCTIVE REASONING -->
-    <h2>4. Inductive and Deductive Reasoning</h2>
+    <h3>Trapezoid</h3>
     <ul>
-        <li><strong>Inductive Reasoning:</strong> Making generalizations based on patterns (creates a <em>conjecture</em>).</li>
-        <li><strong>Deductive Reasoning:</strong> Reaching logical conclusions based on definitions, postulates, and theorems.</li>
-        <li><strong>Undefined Terms:</strong> Point, Line, Plane.</li>
-        <li><strong>Axioms & Postulates:</strong> Rules accepted as true without proof.</li>
-        <li><strong>Theorem:</strong> A statement logically proven true.</li>
+        <li><strong>Trapezoid Properties:</strong> Exactly one pair of parallel bases; consecutive interior angles supplementary.
+            <ul>
+                <li><strong>Bases:</strong> The parallel sides.</li>
+                <li><strong>Legs:</strong> The non-parallel sides.</li>
+            </ul>
+        </li>
+        <li><strong>Altitude:</strong> Perpendicular distance height between bases.</li>
+        <li><strong>Median:</strong> Midsegment connecting leg midpoints (\(\text{Median} = \frac{b_1 + b_2}{2}\)).</li>
+        <li><strong>Midpoint:</strong> Point dividing segments into equal parts.</li>
     </ul>
 
-    <!-- SECTION 5: CONGRUENT TRIANGLES -->
+    <h3>Isosceles Trapezoids</h3>
+    <ul>
+        <li><strong>Properties of Isosceles Trapezoid:</strong> Equal legs, congruent base angle pairs, congruent diagonals.
+            <ul>
+                <li><strong>Legs (isosceles):</strong> Non-parallel legs are equal in length.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Kites</h3>
+    <ul>
+        <li><strong>Properties of Kite:</strong> Two pairs of adjacent equal sides, perpendicular diagonals, main diagonal bisects vertex angles.</li>
+    </ul>
+
+
+    <!-- 4. INDUCTIVE AND DEDUCTIVE REASONING -->
+    <h2>4. Inductive and Deductive Reasoning</h2>
+    <ul>
+        <li><strong>Inductive Reasoning:</strong> Reaching a general rule by observing patterns and specific cases.
+            <ul>
+                <li><strong>Conjecture:</strong> An unproven statement derived from inductive reasoning.</li>
+            </ul>
+        </li>
+        <li><strong>Deductive Reasoning:</strong> Reaching logical conclusions using accepted definitions, postulates, and theorems.</li>
+        <li><strong>Postulates:</strong> Geometric rules accepted as true without proof.</li>
+        <li><strong>Theorem:</strong> A proven mathematical statement.</li>
+        <li><strong>Undefined Terms:</strong> Fundamental concepts (Point, Line, Plane) accepted without formal definition.</li>
+        <li><strong>Axioms:</strong> Universal mathematical rules accepted as true.</li>
+    </ul>
+
+
+    <!-- 5. CONGRUENT TRIANGLES -->
     <h2>5. Congruent Triangles</h2>
 
-    <div class="diagram-box">
-        <svg width="360" height="150" viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg">
-            <!-- Triangle 1 -->
-            <polygon points="30,130 90,30 150,130" fill="#e8f8f5" stroke="#16a085" stroke-width="2"/>
-            <!-- Triangle 2 -->
-            <polygon points="210,130 270,30 330,130" fill="#e8f8f5" stroke="#16a085" stroke-width="2"/>
-            <!-- Ticks/Marks -->
-            <line x1="55" y1="75" x2="65" y2="85" stroke="#16a085" stroke-width="2"/>
-            <line x1="235" y1="75" x2="245" y2="85" stroke="#16a085" stroke-width="2"/>
-            <line x1="115" y1="75" x2="125" y2="85" stroke="#16a085" stroke-width="2"/>
-            <line x1="295" y1="75" x2="305" y2="85" stroke="#16a085" stroke-width="2"/>
-            <!-- Labels -->
-            <text x="85" y="20" font-family="Arial" font-size="12" font-weight="bold">A</text>
-            <text x="15" y="140" font-family="Arial" font-size="12" font-weight="bold">B</text>
-            <text x="155" y="140" font-family="Arial" font-size="12" font-weight="bold">C</text>
-            <text x="265" y="20" font-family="Arial" font-size="12" font-weight="bold">D</text>
-            <text x="195" y="140" font-family="Arial" font-size="12" font-weight="bold">E</text>
-            <text x="335" y="140" font-family="Arial" font-size="12" font-weight="bold">F</text>
-        </svg>
-        <div class="diagram-caption">Figure 4: Congruent Triangles (\(\triangle ABC \cong \triangle DEF\))</div>
+    <div class="diagram-container">
+        <div class="diagram-box">
+            <svg width="280" height="140" viewBox="0 0 280 140" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="40,120 100,20 160,120" fill="#e8f8f5" stroke="#16a085" stroke-width="2"/>
+                <!-- Altitude line -->
+                <line x1="100" y1="20" x2="100" y2="120" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="3"/>
+                <!-- Median line (slightly offset or dotted) -->
+                <line x1="100" y1="20" x2="130" y2="120" stroke="#2980b9" stroke-width="1.5" stroke-dasharray="2"/>
+                <text x="105" y="70" fill="#e74c3c" font-size="11">Altitude</text>
+                <text x="135" y="100" fill="#2980b9" font-size="11">Median</text>
+            </svg>
+            <div class="diagram-caption">Triangle Segments: Altitude & Median from vertex</div>
+        </div>
+        <div class="diagram-box">
+            <svg width="280" height="140" viewBox="0 0 280 140" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="140,20 60,120 220,120" fill="#fef5e7" stroke="#d35400" stroke-width="2"/>
+                <!-- Symmetry / Angle Bisector -->
+                <line x1="140" y1="20" x2="140" y2="120" stroke="#d35400" stroke-width="1.5" stroke-dasharray="3"/>
+                <text x="145" y="60" fill="#d35400" font-size="11">Vertex Angle</text>
+                <text x="80" y="135" fill="#d35400" font-size="11">Base Angle</text>
+                <text x="175" y="135" fill="#d35400" font-size="11">Base Angle</text>
+            </svg>
+            <div class="diagram-caption">Isosceles Triangle: Vertex Angle & Base Angles</div>
+        </div>
     </div>
 
+    <ul>
+        <li><strong>Triangle:</strong> 3-sided polygon with interior angles summing to \(180^\circ\).</li>
+        <li><strong>Angle Bisector:</strong> Ray/segment dividing an angle into two equal halves.</li>
+        <li><strong>Altitude:</strong> Perpendicular height segment from vertex to opposite side.</li>
+        <li><strong>Median:</strong> Segment connecting vertex to opposite side's midpoint.</li>
+        <li><strong>Midline:</strong> Segment connecting midpoints of two sides.
+            <ul>
+                <li><strong>Midline Theorem:</strong> Midline is parallel to the third side and half its length.</li>
+            </ul>
+        </li>
+        <li><strong>Perpendicular Bisector:</strong> Line perpendicular to a side at its midpoint.
+            <ul>
+                <li><strong>Perpendicular Bisector Theorem:</strong> Points on it are equidistant from endpoints.</li>
+            </ul>
+        </li>
+        <li><strong>Isosceles Triangle:</strong> Triangle with two congruent sides.
+            <ul>
+                <li><strong>Base angles:</strong> Angles opposite the congruent legs.</li>
+                <li><strong>Vertex angle:</strong> Angle enclosed between congruent legs.</li>
+                <li><strong>Theorems in Isosceles Triangle:</strong> Base Angles Theorem and converse.</li>
+            </ul>
+        </li>
+        <li><strong>Congruent Triangles:</strong> Triangles identical in shape and size.
+            <ul>
+                <li><strong>Postulates & Theorems:</strong>
+                    <ul>
+                        <li><em>SSS (Side-Side-Side)</em></li>
+                        <li><em>SAS (Side-Angle-Side)</em></li>
+                        <li><em>ASA (Angle-Side-Angle)</em></li>
+                        <li><em>AAS Theorem (Angle-Angle-Side):</em> Labeled a theorem because it is formally derived from ASA and the Triangle Angle Sum Theorem.</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Right Triangle:</strong> Triangle with a \(90^\circ\) right angle.
+            <ul>
+                <li><strong>Hypotenuse:</strong> Side opposite the right angle.</li>
+                <li><strong>Legs:</strong> Sides forming the right angle.</li>
+                <li><strong>Right Triangle Theorems:</strong>
+                    <ul>
+                        <li><em>LL (Leg-Leg)</em></li>
+                        <li><em>LA (Leg-Angle)</em></li>
+                        <li><em>HL (Hypotenuse-Leg)</em></li>
+                        <li><em>HA (Hypotenuse-Angle)</em></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+
+    <!-- 6. CONSTRUCTING SEGMENTS, ANGLES, TRIANGLES, AND TWO-COLUMN PROOFS -->
+    <h2>6. Constructing Segments, Angles, Triangles, and Two-Column Proofs</h2>
+    <ul>
+        <li><strong>Geometric Construction:</strong> Precise drawing using only an unmarked straightedge and compass (altitude, angle bisector, median, perpendicular bisector).</li>
+        <li><strong>Two-Column Proof:</strong> Structured format for logical geometric proofs.
+            <ul>
+                <li><strong>Statement:</strong> Sequential claims made from givens to final conclusion.</li>
+                <li><strong>Reason:</strong> Formal justification for each step (Definition, Postulate, Theorem).</li>
+            </ul>
+        </li>
+    </ul>
+
     <table>
         <thead>
             <tr>
-                <th>Postulate / Theorem</th>
-                <th>Criteria</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td><strong>SSS Postulate</strong></td><td>Side-Side-Side</td></tr>
-            <tr><td><strong>SAS Postulate</strong></td><td>Side-Angle-Side</td></tr>
-            <tr><td><strong>ASA Postulate</strong></td><td>Angle-Side-Angle</td></tr>
-            <tr><td><strong>AAS Theorem</strong></td><td>Angle-Angle-Side</td></tr>
-        </tbody>
-    </table>
-
-    <!-- SECTION 6: CONSTRUCTIONS & TWO-COLUMN PROOFS -->
-    <h2>6. Geometric Constructions & Two-Column Proofs</h2>
-    <p>Constructed using only an unmarked <strong>straightedge</strong> and a <strong>compass</strong>.</p>
-
-    <table>
-        <thead>
-            <tr>
-                <th style="width: 50%;">Statements (Left Column)</th>
-                <th style="width: 50%;">Reasons (Right Column)</th>
+                <th style="width: 50%;">Statements</th>
+                <th style="width: 50%;">Reasons</th>
             </tr>
         </thead>
         <tbody>
@@ -301,11 +404,11 @@
             </tr>
             <tr>
                 <td>2. Draw diagonal \(AC\)</td>
-                <td>2. Line Postulate</td>
+                <td>2. Line Postulate (Two points determine a line)</td>
             </tr>
             <tr>
                 <td>3. \(AC \cong AC\)</td>
-                <td>3. Reflexive Property</td>
+                <td>3. Reflexive Property of Congruence</td>
             </tr>
             <tr>
                 <td>4. \(\triangle ABC \cong \triangle CDA\)</td>
