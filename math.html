@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Exam Review Notes - Quadrilaterals & Geometry</title>
+    <!-- MathJax for rendering math equations cleanly -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 8px 16px;
+            background-color: #7f8c8d;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .btn-back:hover {
+            background-color: #626d6e;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2980b9;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+        }
+        h4 {
+            color: #2c3e50;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+        ul, ol {
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #2c3e50;
+        }
+        tr:nth-child(even) {
+            background-color: #fbfbfb;
+        }
+        .formula-box {
+            text-align: center;
+            font-weight: bold;
+            background-color: #f2f2f2;
+            padding: 12px;
+            border-radius: 4px;
+            border: 1px solid #e2e2e2;
+            margin: 15px 0;
+        }
+        .note-callout {
+            background-color: #eef7fa;
+            border-left: 4px solid #2980b9;
+            padding: 12px 16px;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            border-top: 1px solid #eaeaea;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="btn-back">&larr; Back to Main Page</a>
+
+    <h1>Math Exam Review Notes: Quadrilaterals, Proofs & Triangles</h1>
+
+    <!-- SECTION 1: QUADRILATERALS -->
+    <h2>1. Quadrilaterals</h2>
+
+    <h3>Fundamental Geometric Relationships</h3>
+    <ul>
+        <li><strong>Parallelism (\(\parallel\)):</strong> Two or more coplanar lines, rays, or segments that maintain a constant distance apart and never intersect, regardless of extension distance.
+            <ul>
+                <li><em>Parallel Line Postulate:</em> If two parallel lines are cut by a transversal, alternate interior angles are equal (\(\angle 1 \cong \angle 2\)), and consecutive interior angles are supplementary (\(m\angle 1 + m\angle 3 = 180^\circ\)).</li>
+            </ul>
+        </li>
+        <li><strong>Perpendicularity (\(\perp\)):</strong> Lines, segments, or rays that intersect at a single point to form four right angles (\(90^\circ\)).
+            <ul>
+                <li><em>Perpendicular Line Theorem:</em> Two intersecting lines form four \(90^\circ\) angles. If two lines are perpendicular to the same line, they are parallel to each other.</li>
+            </ul>
+        </li>
+        <li><strong>Coplanar Lines:</strong> Lines that lie completely within the same flat two-dimensional surface (plane).</li>
+        <li><strong>Skew Lines:</strong> Non-coplanar lines that do <strong>not</strong> intersect and are <strong>not</strong> parallel (they exist only in 3D space across different planes).</li>
+    </ul>
+
+    <h3>Polygons & Quadrilaterals</h3>
+    <ul>
+        <li><strong>Polygon:</strong> A closed plane figure bounded by at least three straight line segments (sides) intersecting at non-collinear endpoints (vertices).
+            <ul>
+                <li><em>Polygon Interior Angle Sum Formula:</em> \(S = (n - 2) \times 180^\circ\), where \(n\) is the number of sides.</li>
+            </ul>
+        </li>
+        <li><strong>Quadrilateral:</strong> A 4-sided polygon (\(n = 4\)).
+            <ul>
+                <li><strong>Interior Angle Sum:</strong> \(S = (4 - 2) \times 180^\circ = 360^\circ\). The four interior angles always sum to \(360^\circ\).</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Classification of Quadrilaterals</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Shape Type</th>
+                <th>Defining Criteria</th>
+                <th>Key Mathematical Properties</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Parallelogram</strong></td>
+                <td>2 pairs of parallel opposite sides</td>
+                <td>Opposite sides \(\cong\), opposite angles \(\cong\), consecutive angles supplementary, diagonals bisect each other.</td>
+            </tr>
+            <tr>
+                <td><strong>Rectangle</strong></td>
+                <td>Parallelogram with 4 right angles (\(90^\circ\))</td>
+                <td>Inherits all parallelogram properties + 4 equal angles + diagonals are <strong>congruent</strong> (\(AC \cong BD\)).</td>
+            </tr>
+            <tr>
+                <td><strong>Rhombus</strong></td>
+                <td>Parallelogram with 4 equal sides</td>
+                <td>Inherits all parallelogram properties + 4 equal sides + diagonals are <strong>perpendicular</strong> (\(AC \perp BD\)) and bisect vertex angles.</td>
+            </tr>
+            <tr>
+                <td><strong>Square</strong></td>
+                <td>Regular quadrilateral (both Rectangle & Rhombus)</td>
+                <td>4 equal sides + 4 right angles. Diagonals are congruent, perpendicular, and bisect vertex angles into \(45^\circ\) segments.</td>
+            </tr>
+            <tr>
+                <td><strong>Trapezoid</strong></td>
+                <td>Exactly 1 pair of parallel sides</td>
+                <td>Parallel sides are <em>bases</em>, non-parallel sides are <em>legs</em>. Consecutive interior angles between distinct bases are supplementary.</td>
+            </tr>
+            <tr>
+                <td><strong>Isosceles Trapezoid</strong></td>
+                <td>Trapezoid with congruent non-parallel legs</td>
+                <td>Legs \(\cong\), base angles along each base \(\cong\), diagonals \(\cong\), opposite angles supplementary.</td>
+            </tr>
+            <tr>
+                <td><strong>Kite</strong></td>
+                <td>2 distinct pairs of adjacent congruent sides</td>
+                <td>Diagonals \(\perp\), main diagonal bisects cross diagonal, one pair of opposite angles \(\cong\), main diagonal bisects vertex angles.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- SECTION 2: PROPERTIES OF A PARALLELOGRAM -->
+    <h2>2. Properties of a Parallelogram</h2>
+
+    <p>Given a parallelogram \(ABCD\):</p>
+    <ul>
+        <li><strong>Opposite Sides Theorem:</strong>
+            <ul>
+                <li>\(AB \parallel CD\) and \(AD \parallel BC\) (By Definition).</li>
+                <li>\(AB \cong CD\) and \(AD \cong BC\) (Opposite sides are congruent).</li>
+            </ul>
+        </li>
+        <li><strong>Opposite Angles Theorem:</strong>
+            <ul>
+                <li>\(\angle A \cong \angle C\) and \(\angle B \cong \angle D\) (Opposite interior angles are congruent).</li>
+            </ul>
+        </li>
+        <li><strong>Consecutive / Adjacent Angles Theorem:</strong>
+            <ul>
+                <li>Consecutive interior angles sharing a common side are supplementary:
+                    <br>\(m\angle A + m\angle B = 180^\circ\), \(m\angle B + m\angle C = 180^\circ\), \(m\angle C + m\angle D = 180^\circ\), \(m\angle D + m\angle A = 180^\circ\).
+                </li>
+            </ul>
+        </li>
+        <li><strong>Diagonals Bisect Theorem:</strong>
+            <ul>
+                <li>The diagonals \(AC\) and \(BD\) intersect at a central midpoint \(M\).</li>
+                <li>\(AM \cong MC\) and \(BM \cong MD\) (Diagonals bisect each other into two equal halves).</li>
+                <li>Each diagonal divides the parallelogram into two congruent triangles (\(\triangle ABC \cong \triangle CDA\)).</li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- SECTION 3: TRAPEZOIDS AND KITES -->
+    <h2>3. Trapezoids and Kites</h2>
+
+    <h3>Trapezoid Elements & Theorems</h3>
+    <ul>
+        <li><strong>Bases (\(b_1, b_2\)):</strong> The two parallel sides of a trapezoid (\(AB \parallel CD\)).</li>
+        <li><strong>Legs:</strong> The two non-parallel sides (\(AD\) and \(BC\)).</li>
+        <li><strong>Altitude (\(h\)):</strong> The perpendicular line distance drawn from any point on one base line to the opposite base line.</li>
+        <li><strong>Midpoint:</strong> The exact point dividing a segment into two equal lengths.</li>
+        <li><strong>Median (Midsegment):</strong> The line segment connecting the midpoints of the non-parallel legs.</li>
+    </ul>
+
+    <div class="formula-box">
+        Trapezoid Midsegment Length Theorem: \(\text{Median} = \frac{b_1 + b_2}{2}\)
+    </div>
+
+    <div class="note-callout">
+        <strong>Property:</strong> The median/midsegment of a trapezoid is always parallel to both bases (\(\text{Median} \parallel b_1 \parallel b_2\)).
+    </div>
+
+    <h3>Isosceles Trapezoid Special Properties</h3>
+    <p>An isosceles trapezoid is a trapezoid whose non-parallel legs are equal in length (\(AD \cong BC\)).</p>
+    <ul>
+        <li><strong>Legs:</strong> Non-parallel side lengths are congruent (\(AD = BC\)).</li>
+        <li><strong>Base Angles Theorem:</strong> Base angles along the same base line are congruent (\(\angle A \cong \angle B\) and \(\angle C \cong \angle D\)).</li>
+        <li><strong>Diagonals Theorem:</strong> Diagonals connecting opposite vertices are congruent (\(AC \cong BD\)).</li>
+        <li><strong>Opposite Angles:</strong> Opposite angles are supplementary (\(m\angle A + m\angle C = 180^\circ\) and \(m\angle B + m\angle D = 180^\circ\)).</li>
+    </ul>
+
+    <h3>Kite Properties & Theorems</h3>
+    <ul>
+        <li><strong>Adjacent Sides:</strong> Two separate pairs of adjacent, equal sides (\(AB \cong AD\) and \(BC \cong DC\)). Opposite sides are <em>not</em> congruent.</li>
+        <li><strong>Perpendicular Diagonals:</strong> Diagonals intersect at exact \(90^\circ\) angles (\(AC \perp BD\)).</li>
+        <li><strong>Diagonal Bisector:</strong> The primary symmetry diagonal (\(AC\)) bisects the secondary diagonal (\(BD\)).</li>
+        <li><strong>Opposite Angles:</strong> Exactly one pair of opposite angles (the angles between the non-congruent sides) is congruent (\(\angle B \cong \angle D\)).</li>
+        <li><strong>Angle Bisectors:</strong> The main diagonal bisects its vertex interior angles (\(\angle A\) and \(\angle C\)).</li>
+    </ul>
+
+    <div class="formula-box">
+        Kite Area Formula: \(\text{Area} = \frac{d_1 \times d_2}{2}\) (where \(d_1\) and \(d_2\) are the diagonal lengths)
+    </div>
+
+    <!-- SECTION 4: INDUCTIVE AND DEDUCTIVE REASONING -->
+    <h2>4. Inductive and Deductive Reasoning</h2>
+
+    <h3>Logic & Reasoning Methods</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Inductive Reasoning</th>
+                <th>Deductive Reasoning</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Process</strong></td>
+                <td>Moving from specific observations/examples to a general rule.</td>
+                <td>Moving from general established rules/principles to a specific logical outcome.</td>
+            </tr>
+            <tr>
+                <td><strong>Output</strong></td>
+                <td>Generates a <strong>Conjecture</strong> (an unproven hypothesis based on trends).</td>
+                <td>Produces a <strong>Logical Proof / Certainty</strong> (proven true if premises are true).</td>
+            </tr>
+            <tr>
+                <td><strong>Example</strong></td>
+                <td>"The last 4 quadrilaterals drawn had sum \(360^\circ\), so all quadrilaterals must sum to \(360^\circ\)."</td>
+                <td>"All quadrilaterals have angle sums of \(360^\circ\). Figure A is a quadrilateral, so its angles sum to \(360^\circ\)."</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Foundational Terms in Geometry</h3>
+    <ul>
+        <li><strong>Undefined Terms:</strong> Core foundational concepts accepted without formal definitions because they are self-evident building blocks:
+            <ul>
+                <li><strong>Point:</strong> Indicates a location in space; has no dimension (no length, width, or depth).</li>
+                <li><strong>Line:</strong> A 1-dimensional continuous path of infinite points extending endlessly in two opposite directions.</li>
+                <li><strong>Plane:</strong> A 2-dimensional flat surface extending endlessly in all directions.</li>
+            </ul>
+        </li>
+        <li><strong>Axioms:</strong> General mathematical rules accepted as true without proof across all fields of mathematics (e.g., <em>Transitive Property: If \(a = b\) and \(b = c\), then \(a = c\)</em>).</li>
+        <li><strong>Postulates:</strong> Fundamental geometry statements accepted as true without proof (e.g., <em>Segment Addition Postulate: If \(B\) is between \(A\) and \(C\), then \(AB + BC = AC\)</em>).</li>
+        <li><strong>Theorem:</strong> A statement or principle that has been formally proven using logical deductive arguments, undefined terms, axioms, postulates, and existing theorems.</li>
+    </ul>
+
+    <!-- SECTION 5: CONGRUENT TRIANGLES -->
+    <h2>5. Congruent Triangles</h2>
+
+    <h3>Triangle Components & Key Line Segments</h3>
+    <ul>
+        <li><strong>Triangle (\(\triangle\)):</strong> A 3-sided polygon with interior angles summing to \(180^\circ\).</li>
+        <li><strong>Angle Bisector:</strong> A segment or ray that divides an interior angle into two equal congruent angles.</li>
+        <li><strong>Altitude:</strong> A perpendicular segment drawn from a vertex to the line containing the opposite side (defines the height \(h\)).</li>
+        <li><strong>Median:</strong> A segment extending from a vertex to the exact midpoint of the opposite side.</li>
+        <li><strong>Midline (Midsegment):</strong> A segment connecting the midpoints of two sides of a triangle.
+            <ul>
+                <li><strong>Midline Theorem:</strong> The midline connecting midpoints of two sides is parallel to the third base side and measures exactly half its length (\(\text{Midline} = \frac{1}{2} \times \text{Base}\)).</li>
+            </ul>
+        </li>
+        <li><strong>Perpendicular Bisector:</strong> A line or segment perpendicular to a side that cuts that side into two equal halves at its midpoint.
+            <ul>
+                <li><strong>Perpendicular Bisector Theorem:</strong> Any point located on the perpendicular bisector of a segment is equidistant from the segment's two endpoints.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Isosceles Triangles</h3>
+    <ul>
+        <li><strong>Legs:</strong> The two congruent sides.</li>
+        <li><strong>Base:</strong> The non-congruent third side.</li>
+        <li><strong>Vertex Angle:</strong> The angle contained between the two congruent legs.</li>
+        <li><strong>Base Angles:</strong> The two angles adjacent to the base.</li>
+        <li><strong>Isosceles Triangle Theorems:</strong>
+            <ul>
+                <li><em>Base Angles Theorem:</em> If two sides of a triangle are congruent, then the angles opposite those sides are congruent (\(\angle B \cong \angle C\)).</li>
+                <li><em>Converse of Base Angles Theorem:</em> If two angles of a triangle are congruent, then the sides opposite those angles are congruent.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>General Triangle Congruence Postulates & Theorems</h3>
+    <p>Two triangles are congruent (\(\cong\)) when all corresponding sides and corresponding angles are equal (CPCTC: <em>Corresponding Parts of Congruent Triangles are Congruent</em>).</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Postulate / Theorem</th>
+                <th>Criteria</th>
+                <th>Explanation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>SSS Postulate</strong></td>
+                <td>Side-Side-Side</td>
+                <td>Three sides of one triangle are congruent to three sides of another triangle.</td>
+            </tr>
+            <tr>
+                <td><strong>SAS Postulate</strong></td>
+                <td>Side-Angle-Side</td>
+                <td>Two sides and the <em>included angle</em> (the angle between the sides) are congruent.</td>
+            </tr>
+            <tr>
+                <td><strong>ASA Postulate</strong></td>
+                <td>Angle-Side-Angle</td>
+                <td>Two angles and the <em>included side</em> (the side between the angles) are congruent.</td>
+            </tr>
+            <tr>
+                <td><strong>AAS Theorem</strong></td>
+                <td>Angle-Angle-Side</td>
+                <td>Two angles and a <em>non-included side</em> are congruent.<br><em>(Note: Labeled a theorem because it is mathematically proven by combining the ASA Postulate with the Triangle Angle Sum Theorem).</em></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Right Triangle Congruence Theorems</h3>
+    <p>In a right triangle, the side opposite the \(90^\circ\) angle is the <strong>Hypotenuse</strong>, and the remaining sides are <strong>Legs</strong>.</p>
+    <ul>
+        <li><strong>LL Theorem (Leg-Leg):</strong> If two legs of one right triangle are congruent to two legs of another right triangle, the triangles are congruent (special case of SAS).</li>
+        <li><strong>LA Theorem (Leg-Angle):</strong> If one leg and an acute angle of a right triangle are congruent to a leg and an acute angle of another, the triangles are congruent (special case of ASA or AAS).</li>
+        <li><strong>HL Theorem (Hypotenuse-Leg):</strong> If the hypotenuse and one leg of a right triangle are congruent to the hypotenuse and one leg of another, the triangles are congruent.</li>
+        <li><strong>HA Theorem (Hypotenuse-Angle):</strong> If the hypotenuse and an acute angle of one right triangle are congruent to the hypotenuse and an acute angle of another, the triangles are congruent (special case of AAS).</li>
+    </ul>
+
+    <!-- SECTION 6: CONSTRUCTIONS & TWO-COLUMN PROOFS -->
+    <h2>6. Geometric Constructions & Two-Column Proofs</h2>
+
+    <h3>Geometric Construction</h3>
+    <p>The precise drawing of geometric shapes, bisectors, and lines using strictly two classical tools:</p>
+    <ol>
+        <li><strong>Straightedge (Unmarked Ruler):</strong> Used exclusively to draw straight lines through points.</li>
+        <li><strong>Compass:</strong> Used exclusively to draw arcs and circles of defined radii.</li>
+    </ol>
+    <ul>
+        <li><em>Key Constructions:</em> Copying a segment, copying an angle, bisecting an angle, constructing a perpendicular bisector, constructing an altitude, and drawing parallel lines.</li>
+    </ul>
+
+    <h3>Two-Column Proofs</h3>
+    <p>A formal structured table used to organize deductive arguments step-by-step to prove geometric theorems or statements.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 50%;">Statements (Left Column)</th>
+                <th style="width: 50%;">Reasons (Right Column)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Logical mathematical claims made step-by-step from start to finish.</td>
+                <td>Justifications for each statement using Givens, Definitions, Postulates, Axioms, or Theorems.</td>
+            </tr>
+            <tr>
+                <td>1. \(AB \cong CD\), \(AD \cong BC\)</td>
+                <td>1. Given</td>
+            </tr>
+            <tr>
+                <td>2. Draw diagonal \(AC\)</td>
+                <td>2. Line Postulate (Two points determine a line)</td>
+            </tr>
+            <tr>
+                <td>3. \(AC \cong AC\)</td>
+                <td>3. Reflexive Property of Congruence</td>
+            </tr>
+            <tr>
+                <td>4. \(\triangle ABC \cong \triangle CDA\)</td>
+                <td>4. SSS Postulate</td>
+            </tr>
+            <tr>
+                <td>5. \(\angle BAC \cong \angle DCA\)</td>
+                <td>5. CPCTC (Corresponding Parts of Congruent Triangles are Congruent)</td>
+            </tr>
+            <tr>
+                <td>6. \(AB \parallel CD\)</td>
+                <td>6. Alternate Interior Angles Converse Theorem</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <footer>
+        <a href="index.html" class="btn-back">&larr; Back to Main Page</a>
+    </footer>
+</div>
+
+</body>
+</html>
