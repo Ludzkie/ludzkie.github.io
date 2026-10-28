@@ -17,7 +17,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 950px;
+            max-width: 980px;
             margin: 0 auto;
             background: #fff;
             padding: 40px;
@@ -164,30 +164,37 @@
                 <text x="210" y="115" fill="#2980b9" font-weight="bold" font-size="12">Line n</text>
                 <text x="185" y="115" fill="#e74c3c" font-weight="bold" font-size="12">t</text>
             </svg>
-            <div class="diagram-caption">Figure 1.1: Parallelism (m || n) cut by transversal t</div>
+            <div class="diagram-caption">Figure 1.1: Parallelism (\(m \parallel n\)) cut by transversal \(t\)</div>
         </div>
         <div class="diagram-box">
             <svg width="280" height="140" viewBox="0 0 280 140" xmlns="http://www.w3.org/2000/svg">
                 <line x1="40" y1="80" x2="240" y2="80" stroke="#2c3e50" stroke-width="2"/>
                 <line x1="140" y1="20" x2="140" y2="120" stroke="#2c3e50" stroke-width="2"/>
                 <rect x="140" y="70" width="10" height="10" fill="none" stroke="#e74c3c" stroke-width="1.5"/>
-                <text x="150" y="35" fill="#2c3e50" font-size="12">Line A</text>
-                <text x="170" y="75" fill="#2c3e50" font-size="12">Line B</text>
+                <text x="155" y="35" fill="#2c3e50" font-size="12" font-weight="bold">Line A</text>
+                <text x="175" y="75" fill="#2c3e50" font-size="12" font-weight="bold">Line B</text>
             </svg>
-            <div class="diagram-caption">Figure 1.2: Perpendicularity intersecting at 90&deg;</div>
+            <div class="diagram-caption">Figure 1.2: Perpendicularity (\(A \perp B\)) forming \(90^\circ\) right angles</div>
         </div>
     </div>
 
     <ul>
-        <li><strong>Parallelism (\(\parallel\)):</strong> Coplanar lines, segments, or rays that maintain a constant perpendicular distance and never intersect.</li>
-        <li><strong>Perpendicularity (\(\perp\)):</strong> Lines, segments, or rays that intersect at a single point to form four \(90^\circ\) right angles.</li>
-        <li><strong>Coplanar Lines:</strong> Lines that lie completely within the same flat two-dimensional plane.</li>
-        <li><strong>Skew Lines:</strong> Non-coplanar lines that do not intersect and are not parallel (exist across different 3D dimensions).</li>
-        <li><strong>Etc. (Transversal Angle Pairs):</strong> Corresponding angles, alternate interior angles, alternate exterior angles, and consecutive interior angles.</li>
+        <li><strong>Parallelism (\(\parallel\)):</strong> Two or more lines, rays, or line segments that lie within the same plane and maintain a constant perpendicular distance, ensuring they never intersect regardless of extension length.</li>
+        <li><strong>Perpendicularity (\(\perp\)):</strong> Two lines, rays, or line segments that intersect at a single point to form exact \(90^\circ\) right angles.</li>
+        <li><strong>Coplanar Lines:</strong> Lines that lie entirely within the exact same two-dimensional flat plane.</li>
+        <li><strong>Skew Lines:</strong> Non-coplanar lines that do not intersect and are not parallel (they exist across different three-dimensional planes).</li>
+        <li><strong>Etc. (Transversal Angle Relationships):</strong> When a transversal line intersects two parallel lines, specific angle pairs are established:
+            <ul>
+                <li><em>Corresponding Angles:</em> Equal in measure (\(\angle 1 = \angle 5\)).</li>
+                <li><em>Alternate Interior Angles:</em> Equal in measure (\(\angle 3 = \angle 6\)).</li>
+                <li><em>Alternate Exterior Angles:</em> Equal in measure (\(\angle 1 = \angle 8\)).</li>
+                <li><em>Consecutive Interior Angles:</em> Supplementary; sum to \(180^\circ\) (\(\angle 3 + \angle 5 = 180^\circ\)).</li>
+            </ul>
+        </li>
     </ul>
 
     <h3>What's a Polygon & Quadrilateral</h3>
-    
+
     <div class="diagram-container">
         <div class="diagram-box">
             <svg width="260" height="140" viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg">
@@ -197,35 +204,209 @@
                 <text x="175" y="20" font-size="11" fill="#2c3e50" font-weight="bold">C</text>
                 <text x="215" y="125" font-size="11" fill="#2c3e50" font-weight="bold">D</text>
             </svg>
-            <div class="diagram-caption">Figure 1.3: General Quadrilateral ABCD (Sum = 360&deg;)</div>
+            <div class="diagram-caption">Figure 1.3: General Quadrilateral ABCD (Interior Sum = \(360^\circ\))</div>
         </div>
     </div>
 
     <ul>
-        <li><strong>Polygon:</strong> A closed plane figure bounded by three or more straight line segments meeting at vertices. Interior angle sum formula: \(S = (n - 2) \times 180^\circ\).</li>
-        <li><strong>Quadrilateral:</strong> A 4-sided polygon (\(n = 4\)). The sum of its interior angles is always \((4 - 2) \times 180^\circ = 360^\circ\).</li>
+        <li><strong>Polygon:</strong> A closed two-dimensional plane figure formed by three or more straight line segments (sides) that intersect only at their endpoints (vertices).
+            <ul>
+                <li><em>Interior Angle Sum Formula:</em> \(S = (n - 2) \times 180^\circ\), where \(n\) represents the total number of sides.</li>
+            </ul>
+        </li>
+        <li><strong>Quadrilateral:</strong> A four-sided polygon (\(n = 4\)).
+            <ul>
+                <li><em>Interior Angle Sum:</em> \(S = (4 - 2) \times 180^\circ = 360^\circ\). The four interior angles always sum to exactly \(360^\circ\).</li>
+            </ul>
+        </li>
     </ul>
 
     <div class="example-box">
         <div class="example-title">Worked Example: Finding a Missing Angle in a Quadrilateral</div>
-        <p>A quadrilateral has three interior angles measuring \(80^\circ\), \(115^\circ\), and \(95^\circ\). Find the measure of the fourth angle \(x\).</p>
-        <p><strong>Solution:</strong></p>
-        <p>\(80^\circ + 115^\circ + 95^\circ + x = 360^\circ\)</p>
+        <p>A quadrilateral has three interior angles measuring \(85^\circ\), \(110^\circ\), and \(95^\circ\). Find the measure of the fourth interior angle \(x\).</p>
+        <p><strong>Solution:</strong> The sum of interior angles in any quadrilateral is \(360^\circ\).</p>
+        <p>\(85^\circ + 110^\circ + 95^\circ + x = 360^\circ\)</p>
         <p>\(290^\circ + x = 360^\circ \implies x = 360^\circ - 290^\circ = 70^\circ\)</p>
     </div>
 
-    <h3>Specific Quadrilateral Classifications</h3>
+    <h3>Detailed Quadrilateral Breakdown & Visual Characteristics</h3>
+
+    <!-- PARALLELOGRAM -->
+    <h4>1. Parallelogram</h4>
+    <div class="diagram-box" style="max-width: 380px; margin: 15px auto;">
+        <svg width="300" height="150" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,110 90,30 250,30 210,110" fill="#e8f4f8" stroke="#2980b9" stroke-width="2"/>
+            <line x1="50" y1="110" x2="250" y2="30" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4"/>
+            <line x1="90" y1="30" x2="210" y2="110" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4"/>
+            <text x="35" y="115" font-weight="bold" fill="#2c3e50">A</text>
+            <text x="80" y="20" font-weight="bold" fill="#2c3e50">B</text>
+            <text x="260" y="25" font-weight="bold" fill="#2c3e50">C</text>
+            <text x="215" y="125" font-weight="bold" fill="#2c3e50">D</text>
+            <text x="145" y="75" font-weight="bold" fill="#c0392b" font-size="11">M</text>
+        </svg>
+        <div class="diagram-caption">Figure 1.4: Parallelogram ABCD with bisecting diagonals at M</div>
+    </div>
     <ul>
-        <li><strong>Parallelogram:</strong> A quadrilateral with two pairs of parallel opposite sides.</li>
-        <li><strong>Rectangle:</strong> A parallelogram with four right angles (\(90^\circ\)).</li>
-        <li><strong>Rhombus:</strong> A parallelogram with four congruent sides.</li>
-        <li><strong>Squares:</strong> A regular quadrilateral combining both a rectangle and a rhombus.</li>
-        <li><strong>Trapezoid:</strong> A quadrilateral with exactly one pair of parallel sides.
+        <li><strong>Definition:</strong> A quadrilateral with two pairs of parallel opposite sides.</li>
+        <li><strong>Characteristics:</strong>
             <ul>
-                <li><strong>Trapezoid Types:</strong> Right trapezoid (has right angles), Isosceles trapezoid (congruent non-parallel legs), Scalene trapezoid (no equal sides).</li>
+                <li>Opposite sides are parallel (\(AB \parallel CD\), \(AD \parallel BC\)).</li>
+                <li>Opposite sides are congruent (\(AB \cong CD\), \(AD \cong BC\)).</li>
+                <li>Opposite interior angles are congruent (\(\angle A \cong \angle C\), \(\angle B \cong \angle D\)).</li>
+                <li>Consecutive interior angles are supplementary (\(m\angle A + m\angle B = 180^\circ\)).</li>
+                <li>Diagonals bisect each other at central midpoint \(M\) (\(AM \cong MC\), \(BM \cong MD\)).</li>
             </ul>
         </li>
-        <li><strong>Kite:</strong> A quadrilateral with two distinct pairs of adjacent, congruent sides.</li>
+    </ul>
+
+    <!-- RECTANGLE -->
+    <h4>2. Rectangle</h4>
+    <div class="diagram-box" style="max-width: 380px; margin: 15px auto;">
+        <svg width="300" height="150" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+            <rect x="50" y="30" width="200" height="80" fill="#eefaf1" stroke="#27ae60" stroke-width="2"/>
+            <line x1="50" y1="30" x2="250" y2="110" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4"/>
+            <line x1="50" y1="110" x2="250" y2="30" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4"/>
+            <rect x="50" y="30" width="10" height="10" fill="none" stroke="#27ae60" stroke-width="1.5"/>
+            <rect x="240" y="30" width="10" height="10" fill="none" stroke="#27ae60" stroke-width="1.5"/>
+            <rect x="240" y="100" width="10" height="10" fill="none" stroke="#27ae60" stroke-width="1.5"/>
+            <rect x="50" y="100" width="10" height="10" fill="none" stroke="#27ae60" stroke-width="1.5"/>
+            <text x="35" y="25" font-weight="bold" fill="#2c3e50">A</text>
+            <text x="260" y="25" font-weight="bold" fill="#2c3e50">B</text>
+            <text x="260" y="125" font-weight="bold" fill="#2c3e50">C</text>
+            <text x="35" y="125" font-weight="bold" fill="#2c3e50">D</text>
+        </svg>
+        <div class="diagram-caption">Figure 1.5: Rectangle ABCD with congruent diagonals (\(AC \cong BD\))</div>
+    </div>
+    <ul>
+        <li><strong>Definition:</strong> A parallelogram containing four right angles (\(90^\circ\)).</li>
+        <li><strong>Characteristics:</strong>
+            <ul>
+                <li>Inherits all standard parallelogram properties.</li>
+                <li>Four interior angles equal \(90^\circ\).</li>
+                <li>Diagonals are congruent (\(AC \cong BD\)) and bisect each other.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- RHOMBUS -->
+    <h4>3. Rhombus</h4>
+    <div class="diagram-box" style="max-width: 380px; margin: 15px auto;">
+        <svg width="300" height="160" viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="150,10 230,80 150,150 70,80" fill="#fef5e7" stroke="#d35400" stroke-width="2"/>
+            <line x1="150" y1="10" x2="150" y2="150" stroke="#e74c3c" stroke-width="1.5"/>
+            <line x1="70" y1="80" x2="230" y2="80" stroke="#e74c3c" stroke-width="1.5"/>
+            <rect x="150" y="80" width="10" height="10" fill="none" stroke="#e74c3c" stroke-width="1.5"/>
+            <text x="145" y="8" font-weight="bold" fill="#2c3e50">A</text>
+            <text x="240" y="85" font-weight="bold" fill="#2c3e50">B</text>
+            <text x="145" y="165" font-weight="bold" fill="#2c3e50">C</text>
+            <text x="50" y="85" font-weight="bold" fill="#2c3e50">D</text>
+        </svg>
+        <div class="diagram-caption">Figure 1.6: Rhombus ABCD with perpendicular diagonals (\(AC \perp BD\))</div>
+    </div>
+    <ul>
+        <li><strong>Definition:</strong> A parallelogram with four congruent sides.</li>
+        <li><strong>Characteristics:</strong>
+            <ul>
+                <li>Inherits all standard parallelogram properties.</li>
+                <li>All four sides are equal in length (\(AB = BC = CD = DA\)).</li>
+                <li>Diagonals are perpendicular (\(AC \perp BD\)).</li>
+                <li>Diagonals bisect interior vertex angles.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- SQUARE -->
+    <h4>4. Square</h4>
+    <div class="diagram-box" style="max-width: 380px; margin: 15px auto;">
+        <svg width="300" height="160" viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+            <rect x="90" y="25" width="110" height="110" fill="#f4ecf7" stroke="#8e44ad" stroke-width="2"/>
+            <line x1="90" y1="25" x2="200" y2="135" stroke="#e74c3c" stroke-width="1.5"/>
+            <line x1="90" y1="135" x2="200" y2="25" stroke="#e74c3c" stroke-width="1.5"/>
+            <rect x="90" y="25" width="10" height="10" fill="none" stroke="#8e44ad" stroke-width="1.5"/>
+            <text x="75" y="20" font-weight="bold" fill="#2c3e50">A</text>
+            <text x="210" y="20" font-weight="bold" fill="#2c3e50">B</text>
+            <text x="210" y="145" font-weight="bold" fill="#2c3e50">C</text>
+            <text x="75" y="145" font-weight="bold" fill="#2c3e50">D</text>
+        </svg>
+        <div class="diagram-caption">Figure 1.7: Square ABCD combining Rectangle & Rhombus properties</div>
+    </div>
+    <ul>
+        <li><strong>Definition:</strong> A regular quadrilateral that is both a rectangle (four right angles) and a rhombus (four equal sides).</li>
+        <li><strong>Characteristics:</strong>
+            <ul>
+                <li>Four congruent sides and four \(90^\circ\) right interior angles.</li>
+                <li>Diagonals are congruent, perpendicular, and bisect vertex angles into \(45^\circ\) segments.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- TRAPEZOIDS -->
+    <h4>5. Trapezoid & Trapezoid Types</h4>
+    
+    <div class="diagram-container">
+        <!-- Right Trapezoid -->
+        <div class="diagram-box">
+            <svg width="240" height="140" viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="50,110 50,30 150,30 200,110" fill="#fef9e7" stroke="#f39c12" stroke-width="2"/>
+                <rect x="50" y="30" width="10" height="10" fill="none" stroke="#f39c12" stroke-width="1.5"/>
+                <rect x="50" y="100" width="10" height="10" fill="none" stroke="#f39c12" stroke-width="1.5"/>
+            </svg>
+            <div class="diagram-caption">Figure 1.8: Right Trapezoid</div>
+        </div>
+        <!-- Isosceles Trapezoid -->
+        <div class="diagram-box">
+            <svg width="240" height="140" viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="40,110 70,30 170,30 200,110" fill="#fef9e7" stroke="#f39c12" stroke-width="2"/>
+                <line x1="50" y1="65" x2="60" y2="75" stroke="#f39c12" stroke-width="2"/>
+                <line x1="180" y1="75" x2="190" y2="65" stroke="#f39c12" stroke-width="2"/>
+            </svg>
+            <div class="diagram-caption">Figure 1.9: Isosceles Trapezoid (Equal Legs)</div>
+        </div>
+        <!-- Scalene Trapezoid -->
+        <div class="diagram-box">
+            <svg width="240" height="140" viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="30,110 80,30 140,30 210,110" fill="#fef9e7" stroke="#f39c12" stroke-width="2"/>
+            </svg>
+            <div class="diagram-caption">Figure 1.10: Scalene Trapezoid</div>
+        </div>
+    </div>
+
+    <ul>
+        <li><strong>Definition:</strong> A quadrilateral with <strong>exactly one pair</strong> of parallel sides (bases). The non-parallel sides are legs.</li>
+        <li><strong>Trapezoid Types:</strong>
+            <ul>
+                <li><em>Right Trapezoid:</em> Contains at least two right angles adjacent to the height line.</li>
+                <li><em>Isosceles Trapezoid:</em> Non-parallel legs are congruent in length, and base angles along each base are equal.</li>
+                <li><em>Scalene Trapezoid:</em> Neither legs nor interior angles are equal in measure.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- KITE -->
+    <h4>6. Kite</h4>
+    <div class="diagram-box" style="max-width: 380px; margin: 15px auto;">
+        <svg width="300" height="160" viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="150,10 220,70 150,150 80,70" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
+            <line x1="150" y1="10" x2="150" y2="150" stroke="#e74c3c" stroke-width="1.5"/>
+            <line x1="80" y1="70" x2="220" y2="70" stroke="#e74c3c" stroke-width="1.5"/>
+            <rect x="150" y="70" width="10" height="10" fill="none" stroke="#e74c3c" stroke-width="1.5"/>
+            <text x="145" y="8" font-weight="bold" fill="#2c3e50">A</text>
+            <text x="230" y="75" font-weight="bold" fill="#2c3e50">B</text>
+            <text x="145" y="165" font-weight="bold" fill="#2c3e50">C</text>
+            <text x="65" y="75" font-weight="bold" fill="#2c3e50">D</text>
+        </svg>
+        <div class="diagram-caption">Figure 1.11: Kite ABCD with perpendicular diagonals</div>
+    </div>
+    <ul>
+        <li><strong>Definition:</strong> A quadrilateral with two distinct pairs of adjacent, congruent sides.</li>
+        <li><strong>Characteristics:</strong>
+            <ul>
+                <li>Two pairs of adjacent equal sides (\(AB \cong AD\), \(BC \cong DC\)).</li>
+                <li>Diagonals intersect at perpendicular \(90^\circ\) angles (\(AC \perp BD\)).</li>
+                <li>Main diagonal bisects the cross diagonal into equal halves.</li>
+                <li>One pair of opposite angles between non-congruent sides is congruent (\(\angle B \cong \angle D\)).</li>
+            </ul>
+        </li>
     </ul>
 
 
@@ -234,37 +415,24 @@
     <!-- ========================================== -->
     <h2>2. Properties of a Parallelogram</h2>
 
-    <div class="diagram-box" style="max-width: 480px; margin: 20px auto;">
-        <svg width="340" height="170" viewBox="0 0 340 170" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="60,130 110,40 270,40 220,130" fill="#e8f4f8" stroke="#2980b9" stroke-width="2"/>
-            <line x1="60" y1="130" x2="270" y2="40" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4"/>
-            <line x1="110" y1="40" x2="220" y2="130" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4"/>
-            <!-- Tick marks for sides -->
-            <line x1="82" y1="80" x2="88" y2="90" stroke="#2980b9" stroke-width="2"/>
-            <line x1="242" y1="80" x2="248" y2="90" stroke="#2980b9" stroke-width="2"/>
-            <text x="45" y="140" font-weight="bold" fill="#2c3e50">A</text>
-            <text x="100" y="30" font-weight="bold" fill="#2c3e50">B</text>
-            <text x="280" y="35" font-weight="bold" fill="#2c3e50">C</text>
-            <text x="230" y="145" font-weight="bold" fill="#2c3e50">D</text>
-            <text x="160" y="90" font-weight="bold" fill="#c0392b">M</text>
-        </svg>
-        <div class="diagram-caption">Figure 2.1: Parallelogram with opposite sides equal and diagonals bisecting at M</div>
-    </div>
-
+    <p>Given a standard parallelogram \(ABCD\):</p>
     <ul>
-        <li><strong>Opposite sides:</strong> Opposite sides are parallel and congruent (\(AB \parallel CD\), \(AD \parallel BC\) & \(AB \cong CD\), \(AD \cong BC\)).</li>
+        <li><strong>Opposite sides:</strong> Opposite sides are parallel (\(AB \parallel CD\), \(AD \parallel BC\)) and congruent (\(AB \cong CD\), \(AD \cong BC\)).</li>
         <li><strong>Opposite angles:</strong> Opposite interior angles are congruent (\(\angle A \cong \angle C\), \(\angle B \cong \angle D\)).</li>
-        <li><strong>Consecutive angles:</strong> Consecutive interior angles are supplementary (add up to \(180^\circ\)).</li>
-        <li><strong>Adjacent angles:</strong> Adjacent angles sharing a common side are supplementary.</li>
-        <li><strong>Diagonals:</strong> Segments connecting opposite vertices across the interior.</li>
-        <li><strong>Bisect:</strong> The diagonals of a parallelogram bisect each other, meeting at their mutual midpoint.</li>
+        <li><strong>Consecutive angles:</strong> Interior angles following each other along a side are supplementary (\(m\angle A + m\angle B = 180^\circ\)).</li>
+        <li><strong>Adjacent angles:</strong> Angles sharing a common side add up to \(180^\circ\).</li>
+        <li><strong>Diagonals:</strong> Line segments connecting non-adjacent vertices (\(AC\) and \(BD\)).</li>
+        <li><strong>Bisect:</strong> Diagonals bisect each other into equal halves at their mutual midpoint \(M\).</li>
     </ul>
 
     <div class="example-box">
-        <div class="example-title">Worked Example: Parallelogram Diagonal Segments</div>
-        <p>In parallelogram \(EFGH\), diagonals \(EG\) and \(FH\) intersect at point \(M\). If \(EM = 3x + 2\) and \(MG = 20\text{ cm}\), find \(x\).</p>
-        <p><strong>Solution:</strong> Diagonals of a parallelogram bisect each other, so \(EM = MG\).</p>
-        <p>\(3x + 2 = 20 \implies 3x = 18 \implies x = 6\).</p>
+        <div class="example-title">Worked Example: Parallelogram Angle & Side Calculation</div>
+        <p>In parallelogram \(ABCD\), if \(m\angle A = (4x + 10)^\circ\) and consecutive angle \(m\angle B = (2x + 20)^\circ\), solve for \(x\) and determine the measure of \(\angle C\).</p>
+        <p><strong>Solution:</strong> Consecutive angles in a parallelogram are supplementary.</p>
+        <p>\((4x + 10) + (2x + 20) = 180^\circ\)</p>
+        <p>\(6x + 30 = 180 \implies 6x = 150 \implies x = 25\)</p>
+        <p>Substitute \(x = 25\) into \(m\angle A\): \(m\angle A = 4(25) + 10 = 110^\circ\).</p>
+        <p>Since opposite angles are congruent, \(m\angle C = m\angle A = 110^\circ\).</p>
     </div>
 
 
@@ -279,72 +447,56 @@
                 <polygon points="40,130 80,40 200,40 240,130" fill="#fef9e7" stroke="#f39c12" stroke-width="2"/>
                 <line x1="60" y1="85" x2="220" y2="85" stroke="#27ae60" stroke-width="2" stroke-dasharray="3"/>
                 <line x1="80" y1="40" x2="80" y2="130" stroke="#8e44ad" stroke-width="1.5" stroke-dasharray="2"/>
-                <text x="125" y="32" font-size="11" fill="#7f8c8d">Base 1 (12)</text>
-                <text x="110" y="150" font-size="11" fill="#7f8c8d">Base 2 (20)</text>
+                <rect x="80" y="120" width="10" height="10" fill="none" stroke="#8e44ad" stroke-width="1"/>
+                <text x="125" y="32" font-size="11" fill="#7f8c8d">Base 1 (b₁)</text>
+                <text x="120" y="150" font-size="11" fill="#7f8c8d">Base 2 (b₂)</text>
                 <text x="115" y="78" font-size="11" fill="#27ae60" font-weight="bold">Median</text>
+                <text x="85" y="90" font-size="11" fill="#8e44ad">Altitude (h)</text>
             </svg>
-            <div class="diagram-caption">Figure 3.1: Trapezoid Bases, Altitude, and Median</div>
-        </div>
-        <div class="diagram-box">
-            <svg width="260" height="160" viewBox="0 0 260 160" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="130,10 200,70 130,150 60,70" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
-                <line x1="130" y1="10" x2="130" y2="150" stroke="#e74c3c" stroke-width="1.5"/>
-                <line x1="60" y1="70" x2="200" y2="70" stroke="#e74c3c" stroke-width="1.5"/>
-                <rect x="130" y="70" width="10" height="10" fill="none" stroke="#e74c3c" stroke-width="1"/>
-                <text x="135" y="40" font-size="11" fill="#e74c3c">d₁</text>
-                <text x="160" y="65" font-size="11" fill="#e74c3c">d₂</text>
-            </svg>
-            <div class="diagram-caption">Figure 3.2: Kite with Perpendicular Diagonals (d₁ &perp; d₂)</div>
+            <div class="diagram-caption">Figure 3.1: Trapezoid Bases, Altitude, and Midsegment/Median</div>
         </div>
     </div>
 
-    <h3>Trapezoid</h3>
+    <h3>Trapezoid Elements & Formulas</h3>
     <ul>
-        <li><strong>Trapezoid Properties:</strong> Exactly one pair of parallel bases; consecutive interior angles between bases are supplementary.
-            <ul>
-                <li><strong>Bases:</strong> The two parallel sides.</li>
-                <li><strong>Legs:</strong> The two non-parallel sides.</li>
-            </ul>
-        </li>
-        <li><strong>Altitude:</strong> Perpendicular height distance between the bases.</li>
-        <li><strong>Median:</strong> Midsegment connecting leg midpoints.</li>
-        <li><strong>Midpoint:</strong> Point dividing segments into equal parts.</li>
+        <li><strong>Trapezoid Properties:</strong> Exactly one pair of parallel bases; consecutive interior angles between distinct bases are supplementary.</li>
+        <li><strong>Bases:</strong> The two parallel sides (\(b_1\) and \(b_2\)).</li>
+        <li><strong>Legs:</strong> The two non-parallel sides.</li>
+        <li><strong>Altitude:</strong> Perpendicular line segment measuring the height distance (\(h\)) between bases.</li>
+        <li><strong>Median (Midsegment):</strong> The line segment connecting the midpoints of the two non-parallel legs.</li>
+        <li><strong>Midpoint:</strong> The central point that cuts a leg segment into two equal lengths.</li>
     </ul>
 
     <div class="formula-box">
-        Trapezoid Median Formula: \(\text{Median} = \frac{\text{Base}_1 + \text{Base}_2}{2}\)
+        Trapezoid Median Formula: \(\text{Median} = \frac{b_1 + b_2}{2}\)
     </div>
 
     <div class="example-box">
         <div class="example-title">Worked Example: Trapezoid Median Calculation</div>
-        <p>Find the length of the median of a trapezoid where Base 1 = \(12\text{ cm}\) and Base 2 = \(20\text{ cm}\).</p>
+        <p>A trapezoid has base lengths measuring \(14\text{ cm}\) and \(22\text{ cm}\). Calculate the length of its median.</p>
         <p><strong>Solution:</strong></p>
-        <p>\(\text{Median} = \frac{12 + 20}{2} = \frac{32}{2} = 16\text{ cm}\).</p>
+        <p>\(\text{Median} = \frac{14 + 22}{2} = \frac{36}{2} = 18\text{ cm}\).</p>
     </div>
 
-    <h3>Isosceles Trapezoids</h3>
+    <h3>Isosceles Trapezoids & Kites</h3>
     <ul>
-        <li><strong>Properties of Isosceles Trapezoid:</strong> Congruent non-parallel legs, equal base angle pairs, congruent diagonals, and supplementary opposite angles.
+        <li><strong>Isosceles Trapezoids:</strong>
             <ul>
-                <li><strong>Legs (isosceles):</strong> Non-parallel legs are equal in length.</li>
+                <li>Non-parallel legs are congruent in length (\(\text{Leg}_1 \cong \text{Leg}_2\)).</li>
+                <li>Base angles along each base are congruent.</li>
+                <li>Diagonals are congruent.</li>
+            </ul>
+        </li>
+        <li><strong>Kites:</strong>
+            <ul>
+                <li>Two pairs of adjacent equal sides.</li>
+                <li>Diagonals intersect perpendicularly (\(d_1 \perp d_2\)).</li>
             </ul>
         </li>
     </ul>
 
-    <h3>Kites</h3>
-    <ul>
-        <li><strong>Properties of Kite:</strong> Two distinct pairs of adjacent congruent sides, perpendicular diagonals (\(d_1 \perp d_2\)), main diagonal bisects vertex angles and cross diagonal, one pair of opposite angles is congruent.</li>
-    </ul>
-
     <div class="formula-box">
         Kite Area Formula: \(\text{Area} = \frac{d_1 \times d_2}{2}\)
-    </div>
-
-    <div class="example-box">
-        <div class="example-title">Worked Example: Kite Area Calculation</div>
-        <p>Find the area of a kite with diagonal lengths \(d_1 = 10\text{ cm}\) and \(d_2 = 14\text{ cm}\).</p>
-        <p><strong>Solution:</strong></p>
-        <p>\(\text{Area} = \frac{10 \times 14}{2} = \frac{140}{2} = 70\text{ cm}^2\).</p>
     </div>
 
 
@@ -352,44 +504,38 @@
     <!-- SECTION 4: INDUCTIVE & DEDUCTIVE REASONING -->
     <!-- ========================================== -->
     <h2>4. Inductive and Deductive Reasoning</h2>
-    
+
     <div class="diagram-container">
         <div class="diagram-box">
-            <svg width="280" height="130" viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
-                <rect x="20" y="20" width="100" height="40" fill="#e8f4f8" stroke="#2980b9" rx="4"/>
-                <text x="35" y="45" font-size="12" fill="#2980b9" font-weight="bold">Specific Cases</text>
-                <line x1="120" y1="40" x2="160" y2="40" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrow)"/>
-                <rect x="160" y="20" width="100" height="40" fill="#fef9e7" stroke="#f39c12" rx="4"/>
-                <text x="175" y="45" font-size="12" fill="#d35400" font-weight="bold">Conjecture</text>
-                <!-- Deductive row -->
-                <rect x="20" y="80" width="100" height="40" fill="#e8f8f5" stroke="#16a085" rx="4"/>
-                <text x="35" y="105" font-size="12" fill="#16a085" font-weight="bold">General Rule</text>
-                <line x1="120" y1="100" x2="160" y2="100" stroke="#7f8c8d" stroke-width="2"/>
-                <rect x="160" y="80" width="100" height="40" fill="#f4ecf7" stroke="#8e44ad" rx="4"/>
-                <text x="172" y="105" font-size="12" fill="#8e44ad" font-weight="bold">Logical Proof</text>
+            <svg width="320" height="120" viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="15" width="110" height="35" fill="#e8f4f8" stroke="#2980b9" rx="4"/>
+                <text x="30" y="37" font-size="11" fill="#2980b9" font-weight="bold">Observations</text>
+                <text x="140" y="37" font-size="14" fill="#7f8c8d">&rarr;</text>
+                <rect x="160" y="15" width="110" height="35" fill="#fef9e7" stroke="#f39c12" rx="4"/>
+                <text x="175" y="37" font-size="11" fill="#d35400" font-weight="bold">Conjecture</text>
+                <!-- Deductive Row -->
+                <rect x="20" y="70" width="110" height="35" fill="#e8f8f5" stroke="#16a085" rx="4"/>
+                <text x="32" y="92" font-size="11" fill="#16a085" font-weight="bold">General Rules</text>
+                <text x="140" y="92" font-size="14" fill="#7f8c8d">&rarr;</text>
+                <rect x="160" y="70" width="110" height="35" fill="#f4ecf7" stroke="#8e44ad" rx="4"/>
+                <text x="170" y="92" font-size="11" fill="#8e44ad" font-weight="bold">Logical Proof</text>
             </svg>
-            <div class="diagram-caption">Figure 4.1: Inductive (Top) vs. Deductive (Bottom) Logic</div>
+            <div class="diagram-caption">Figure 4.1: Inductive Reasoning (Top) vs. Deductive Reasoning (Bottom)</div>
         </div>
     </div>
 
     <ul>
-        <li><strong>Inductive Reasoning:</strong> Reaching a general conclusion by observing specific patterns, examples, and trends.
+        <li><strong>Inductive Reasoning:</strong> Process of drawing a general conclusion based on repeated specific observations, examples, or patterns.
             <ul>
-                <li><strong>Conjecture:</strong> An unproven working statement arrived at through inductive reasoning.</li>
+                <li><strong>Conjecture:</strong> An unproven mathematical statement or hypothesis based on inductive reasoning.</li>
             </ul>
         </li>
-        <li><strong>Deductive Reasoning:</strong> Reaching a logically sound and certain conclusion using accepted definitions, postulates, axioms, and theorems.</li>
-        <li><strong>Postulates:</strong> Geometric statements accepted as true without formal proof.</li>
-        <li><strong>Theorem:</strong> A formal statement proven true using logic and definitions.</li>
-        <li><strong>Undefined Terms:</strong> Fundamental building blocks of geometry: Point, Line, and Plane.</li>
-        <li><strong>Axioms:</strong> Universally accepted mathematical rules or equations.</li>
+        <li><strong>Deductive Reasoning:</strong> Process of reaching a logically certain conclusion using accepted definitions, postulates, axioms, and proven theorems.</li>
+        <li><strong>Postulates:</strong> Fundamental geometry statements accepted as true without formal proof.</li>
+        <li><strong>Theorem:</strong> A statement logically proven true using undefined terms, definitions, postulates, and previous theorems.</li>
+        <li><strong>Undefined Terms:</strong> Core foundational concepts accepted without formal definitions: Point, Line, and Plane.</li>
+        <li><strong>Axioms:</strong> General mathematical rules accepted as true across logic and algebra.</li>
     </ul>
-
-    <div class="example-box">
-        <div class="example-title">Worked Example: Inductive Reasoning Pattern</div>
-        <p>Given the numeric sequence: \(5, 10, 15, 20, \dots\)</p>
-        <p><strong>Conjecture:</strong> Each successive term increases by \(5\). The next two terms are \(25\) and \(30\).</p>
-    </div>
 
 
     <!-- ========================================== -->
@@ -398,83 +544,263 @@
     <h2>5. Congruent Triangles</h2>
 
     <div class="diagram-container">
+        <!-- Triangle Segments -->
         <div class="diagram-box">
-            <svg width="280" height="140" viewBox="0 0 280 140" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="140,20 50,120 230,120" fill="#e8f8f5" stroke="#16a085" stroke-width="2"/>
-                <line x1="140" y1="20" x2="140" y2="120" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="3"/>
-                <text x="145" y="70" fill="#e74c3c" font-size="11">Altitude (h)</text>
+            <svg width="280" height="150" viewBox="0 0 280 150" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="140,20 40,130 240,130" fill="#e8f8f5" stroke="#16a085" stroke-width="2"/>
+                <line x1="140" y1="20" x2="140" y2="130" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="3"/>
+                <line x1="140" y1="20" x2="140" y2="130" stroke="#2980b9" stroke-width="1.5"/>
+                <text x="145" y="75" font-size="11" fill="#e74c3c">Altitude / Median</text>
             </svg>
-            <div class="diagram-caption">Figure 5.1: Triangle Altitude from Vertex</div>
+            <div class="diagram-caption">Figure 5.1: Triangle Altitude & Median Segments</div>
         </div>
+        <!-- Isosceles Triangle -->
         <div class="diagram-box">
-            <svg width="280" height="140" viewBox="0 0 280 140" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="140,20 50,120 230,120" fill="#fef5e7" stroke="#d35400" stroke-width="2"/>
-                <line x1="140" y1="20" x2="140" y2="120" stroke="#d35400" stroke-width="1.5" stroke-dasharray="3"/>
-                <text x="145" y="60" fill="#d35400" font-size="11">Vertex Angle</text>
-                <text x="65" y="135" fill="#d35400" font-size="11">Base Angle</text>
-                <text x="195" y="135" fill="#d35400" font-size="11">Base Angle</text>
+            <svg width="280" height="150" viewBox="0 0 280 150" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="140,20 50,130 230,130" fill="#fef5e7" stroke="#d35400" stroke-width="2"/>
+                <line x1="90" y1="70" x2="100" y2="80" stroke="#d35400" stroke-width="2"/>
+                <line x1="180" y1="80" x2="190" y2="70" stroke="#d35400" stroke-width="2"/>
+                <text x="115" y="45" font-size="11" fill="#d35400">Vertex Angle</text>
+                <text x="65" y="120" font-size="11" fill="#d35400">Base Angle</text>
+                <text x="175" y="120" font-size="11" fill="#d35400">Base Angle</text>
             </svg>
-            <div class="diagram-caption">Figure 5.2: Isosceles Triangle Angles</div>
+            <div class="diagram-caption">Figure 5.2: Isosceles Triangle Parts</div>
+        </div>
+    </div>
+
+    <h3>Triangle Elements & Segments</h3>
+    <ul>
+        <li><strong>Triangle:</strong> A three-sided polygon whose interior angles sum to \(180^\circ\).</li>
+        <li><strong>Angle Bisector:</strong> A ray/segment dividing an angle into two congruent angles.</li>
+        <li><strong>Altitude:</strong> A perpendicular segment drawn from a vertex to the line containing the opposite side.</li>
+        <li><strong>Median:</strong> A segment connecting a vertex to the midpoint of the opposite side.</li>
+        <li><strong>Midline (Midsegment):</strong> A segment connecting midpoints of two sides of a triangle.
+            <ul>
+                <li><strong>Midline Theorem:</strong> The midline is parallel to the third base side and half its length (\(\text{Midline} = \frac{1}{2} \times \text{Base}\)).</li>
+            </ul>
+        </li>
+        <li><strong>Perpendicular Bisector:</strong> A line perpendicular to a side at its midpoint.
+            <ul>
+                <li><strong>Perpendicular Bisector Theorem:</strong> Points on a perpendicular bisector are equidistant from the endpoints.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Isosceles Triangles</h3>
+    <ul>
+        <li><strong>Legs:</strong> The two congruent sides.</li>
+        <li><strong>Base:</strong> The non-congruent third side.</li>
+        <li><strong>Vertex Angle:</strong> The angle contained between the congruent legs.</li>
+        <li><strong>Base Angles:</strong> The two angles adjacent to the base.
+            <ul>
+                <li><strong>Base Angles Theorem:</strong> If two sides of a triangle are congruent, the angles opposite those sides are congruent.</li>
+            </ul>
+        </li>
+    </ul>
+
+<h3>Congruence Postulates & Right Triangles</h3>
+
+    <p>Two triangles are <strong>congruent</strong> (\(\cong\)) if and only if all corresponding pairs of sides are equal in length and all corresponding pairs of angles are equal in measure. The foundational rule for working with congruent figures is <strong>CPCTC</strong>: <em>Corresponding Parts of Congruent Triangles are Congruent</em>.</p>
+
+    <h4>1. General Triangle Congruence Postulates & Theorems</h4>
+    <p>Rather than measuring all 3 sides and all 3 angles (6 pairs total), geometry allows us to prove two triangles congruent using minimum combinations of 3 corresponding parts.</p>
+
+    <div class="diagram-container">
+        <!-- SSS Diagram -->
+        <div class="diagram-box">
+            <svg width="240" height="130" viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
+                <!-- Triangle 1 -->
+                <polygon points="20,100 60,30 100,100" fill="#e8f4f8" stroke="#2980b9" stroke-width="2"/>
+                <!-- Triangle 2 -->
+                <polygon points="140,100 180,30 220,100" fill="#e8f4f8" stroke="#2980b9" stroke-width="2"/>
+                <!-- Side Marks T1 -->
+                <line x1="37" y1="62" x2="43" y2="68" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="77" y1="62" x2="83" y2="68" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="79" y1="60" x2="85" y2="66" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="57" y1="100" x2="57" y2="108" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="63" y1="100" x2="63" y2="108" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="60" y1="100" x2="60" y2="108" stroke="#e74c3c" stroke-width="2"/>
+                <!-- Side Marks T2 -->
+                <line x1="157" y1="62" x2="163" y2="68" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="197" y1="62" x2="203" y2="68" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="199" y1="60" x2="205" y2="66" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="177" y1="100" x2="177" y2="108" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="183" y1="100" x2="183" y2="108" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="180" y1="100" x2="180" y2="108" stroke="#e74c3c" stroke-width="2"/>
+            </svg>
+            <div class="diagram-caption">Figure 5.3: SSS (Side-Side-Side) Postulate</div>
+        </div>
+
+        <!-- SAS Diagram -->
+        <div class="diagram-box">
+            <svg width="240" height="130" viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
+                <!-- Triangle 1 -->
+                <polygon points="20,100 60,30 100,100" fill="#e8f8f5" stroke="#16a085" stroke-width="2"/>
+                <!-- Triangle 2 -->
+                <polygon points="140,100 180,30 220,100" fill="#e8f8f5" stroke="#16a085" stroke-width="2"/>
+                <!-- Side Marks -->
+                <line x1="37" y1="62" x2="43" y2="68" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="157" y1="62" x2="163" y2="68" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="60" y1="100" x2="60" y2="108" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="180" y1="100" x2="180" y2="108" stroke="#e74c3c" stroke-width="2"/>
+                <!-- Included Angle Arcs -->
+                <path d="M 32 100 A 15 15 0 0 0 28 86" fill="none" stroke="#e74c3c" stroke-width="2"/>
+                <path d="M 152 100 A 15 15 0 0 0 148 86" fill="none" stroke="#e74c3c" stroke-width="2"/>
+            </svg>
+            <div class="diagram-caption">Figure 5.4: SAS (Side-Angle-Side) Postulate</div>
+        </div>
+
+        <!-- ASA Diagram -->
+        <div class="diagram-box">
+            <svg width="240" height="130" viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
+                <!-- Triangle 1 -->
+                <polygon points="20,100 60,30 100,100" fill="#fef5e7" stroke="#d35400" stroke-width="2"/>
+                <!-- Triangle 2 -->
+                <polygon points="140,100 180,30 220,100" fill="#fef5e7" stroke="#d35400" stroke-width="2"/>
+                <!-- Included Side Marks -->
+                <line x1="60" y1="100" x2="60" y2="108" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="180" y1="100" x2="180" y2="108" stroke="#e74c3c" stroke-width="2"/>
+                <!-- Angle Arcs 1 -->
+                <path d="M 32 100 A 15 15 0 0 0 28 86" fill="none" stroke="#e74c3c" stroke-width="2"/>
+                <path d="M 152 100 A 15 15 0 0 0 148 86" fill="none" stroke="#e74c3c" stroke-width="2"/>
+                <!-- Angle Arcs 2 -->
+                <path d="M 88 100 A 15 15 0 0 1 92 86" fill="none" stroke="#e74c3c" stroke-width="2"/>
+                <path d="M 208 100 A 15 15 0 0 1 212 86" fill="none" stroke="#e74c3c" stroke-width="2"/>
+            </svg>
+            <div class="diagram-caption">Figure 5.5: ASA (Angle-Side-Angle) Postulate</div>
+        </div>
+
+        <!-- AAS Diagram -->
+        <div class="diagram-box">
+            <svg width="240" height="130" viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
+                <!-- Triangle 1 -->
+                <polygon points="20,100 60,30 100,100" fill="#f4ecf7" stroke="#8e44ad" stroke-width="2"/>
+                <!-- Triangle 2 -->
+                <polygon points="140,100 180,30 220,100" fill="#f4ecf7" stroke="#8e44ad" stroke-width="2"/>
+                <!-- Non-included Side Marks -->
+                <line x1="77" y1="62" x2="83" y2="68" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="197" y1="62" x2="203" y2="68" stroke="#e74c3c" stroke-width="2"/>
+                <!-- Angle Arcs 1 -->
+                <path d="M 32 100 A 15 15 0 0 0 28 86" fill="none" stroke="#e74c3c" stroke-width="2"/>
+                <path d="M 152 100 A 15 15 0 0 0 148 86" fill="none" stroke="#e74c3c" stroke-width="2"/>
+                <!-- Angle Arcs 2 -->
+                <path d="M 52 44 A 15 15 0 0 0 68 44" fill="none" stroke="#e74c3c" stroke-width="2"/>
+                <path d="M 172 44 A 15 15 0 0 0 188 44" fill="none" stroke="#e74c3c" stroke-width="2"/>
+            </svg>
+            <div class="diagram-caption">Figure 5.6: AAS (Angle-Angle-Side) Theorem</div>
         </div>
     </div>
 
     <ul>
-        <li><strong>Triangle:</strong> A 3-sided polygon with interior angles summing to \(180^\circ\).</li>
-        <li><strong>Angle Bisector:</strong> Ray/segment dividing an angle into two equal parts.</li>
-        <li><strong>Altitude:</strong> Perpendicular height segment from vertex to opposite side.</li>
-        <li><strong>Median:</strong> Segment connecting vertex to opposite side's midpoint.</li>
-        <li><strong>Midline:</strong> Segment connecting midpoints of two sides of a triangle.
-            <ul>
-                <li><strong>Midline Theorem:</strong> The midline is parallel to the third side and half its length.</li>
-            </ul>
-        </li>
-        <li><strong>Perpendicular Bisector:</strong> Line perpendicular to a side at its midpoint.
-            <ul>
-                <li><strong>Perpendicular Bisector Theorem:</strong> Points on it are equidistant from segment endpoints.</li>
-            </ul>
-        </li>
-        <li><strong>Isosceles Triangle:</strong> Triangle with two congruent sides.
-            <ul>
-                <li><strong>Base angles:</strong> Angles opposite the congruent legs.</li>
-                <li><strong>Vertex angle:</strong> Angle enclosed between congruent legs.</li>
-                <li><strong>Theorems in Isosceles Triangle:</strong> Base Angles Theorem and its converse.</li>
-            </ul>
+        <li><strong>SSS (Side-Side-Side) Postulate:</strong> If three sides of one triangle are congruent to three sides of another triangle, then the two triangles are congruent (\(\triangle ABC \cong \triangle DEF\)).</li>
+        <li><strong>SAS (Side-Angle-Side) Postulate:</strong> If two sides and the <em>included angle</em> (the interior angle located directly between those two sides) of one triangle are congruent to two sides and the included angle of another triangle, the triangles are congruent.</li>
+        <li><strong>ASA (Angle-Side-Angle) Postulate:</strong> If two angles and the <em>included side</em> (the side shared directly between those two angles) of one triangle are congruent to two angles and the included side of another triangle, the triangles are congruent.</li>
+        <li><strong>AAS (Angle-Angle-Side) Theorem:</strong> If two angles and a <em>non-included side</em> of one triangle are congruent to two corresponding angles and non-included side of another triangle, the triangles are congruent.
+            <br><em>*Note on Textbook Classification:*</em> It is categorized as a <strong>theorem</strong> rather than a postulate because it can be proved logically using the ASA Postulate together with the Triangle Angle Sum Theorem (since knowing two interior angles automatically determines the exact measure of the third angle: \(\angle 3 = 180^\circ - (\angle 1 + \angle 2)\)).
         </li>
     </ul>
 
     <div class="example-box">
-        <div class="example-title">Worked Example: Isosceles Triangle Angle Problem</div>
-        <p>In an isosceles triangle, the vertex angle measures \(50^\circ\). Find the measure of each base angle.</p>
-        <p><strong>Solution:</strong> Total angles sum to \(180^\circ\). Base angles are equal (\(x\)).</p>
-        <p>\(50^\circ + x + x = 180^\circ \implies 2x = 130^\circ \implies x = 65^\circ\).</p>
-        <p>Each base angle is \(65^\circ\).</p>
+        <div class="example-title">Warning: Invalid Congruence Shortcuts (AAA and SSA)</div>
+        <ul>
+            <li><strong>AAA (Angle-Angle-Angle):</strong> Proves <em>Similarity</em> (\(\sim\)), NOT Congruence (\(\cong\)). Triangles can have identical angles but completely different side lengths (e.g., an equilateral triangle with side length 2 vs. side length 20).</li>
+            <li><strong>SSA (Side-Side-Angle / "ASS"):</strong> Does <strong>NOT</strong> prove congruence because it creates the "Ambiguous Case." Knowing two side lengths and a non-included angle can form two entirely different geometric triangles (one acute, one obtuse).</li>
+        </ul>
     </div>
 
-    <h3>Congruent Triangles Postulates & Right Triangle Theorems</h3>
-    
+    <h4>2. Right Triangle Congruence Theorems</h4>
+    <p>In a right-angled triangle, the side opposite the \(90^\circ\) right angle is the <strong>Hypotenuse</strong> (the longest side). The remaining two sides that form the right angle are called <strong>Legs</strong>. Because the \(90^\circ\) angle is always fixed and known, special simplified congruence theorems apply.</p>
+
     <div class="diagram-container">
+        <!-- LL Diagram -->
         <div class="diagram-box">
-            <svg width="320" height="130" viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg">
-                <!-- Triangle 1 -->
-                <polygon points="30,110 80,30 130,110" fill="#e8f4f8" stroke="#2980b9" stroke-width="2"/>
-                <!-- Triangle 2 -->
-                <polygon points="190,110 240,30 290,110" fill="#e8f4f8" stroke="#2980b9" stroke-width="2"/>
-                <text x="70" y="75" font-size="12" fill="#2980b9">SSS / SAS</text>
-                <text x="230" y="75" font-size="12" fill="#2980b9">Congruent</text>
+            <svg width="220" height="130" viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="20,100 20,30 90,100" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
+                <polygon points="130,100 130,30 200,100" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
+                <rect x="20" y="90" width="10" height="10" fill="none" stroke="#2980b9" stroke-width="1.5"/>
+                <rect x="130" y="90" width="10" height="10" fill="none" stroke="#2980b9" stroke-width="1.5"/>
+                <!-- Ticks on legs -->
+                <line x1="20" y1="62" x2="26" y2="68" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="130" y1="62" x2="136" y2="68" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="52" y1="100" x2="52" y2="108" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="162" y1="100" x2="162" y2="108" stroke="#e74c3c" stroke-width="2"/>
             </svg>
-            <div class="diagram-caption">Figure 5.3: Congruent Triangles Correspondence</div>
+            <div class="diagram-caption">Figure 5.7: LL (Leg-Leg) Theorem</div>
+        </div>
+
+        <!-- LA Diagram -->
+        <div class="diagram-box">
+            <svg width="220" height="130" viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="20,100 20,30 90,100" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
+                <polygon points="130,100 130,30 200,100" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
+                <rect x="20" y="90" width="10" height="10" fill="none" stroke="#2980b9" stroke-width="1.5"/>
+                <rect x="130" y="90" width="10" height="10" fill="none" stroke="#2980b9" stroke-width="1.5"/>
+                <!-- Tick on leg -->
+                <line x1="20" y1="62" x2="26" y2="68" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="130" y1="62" x2="136" y2="68" stroke="#e74c3c" stroke-width="2"/>
+                <!-- Angle arc -->
+                <path d="M 78 100 A 12 12 0 0 0 72 88" fill="none" stroke="#e74c3c" stroke-width="2"/>
+                <path d="M 188 100 A 12 12 0 0 0 182 88" fill="none" stroke="#e74c3c" stroke-width="2"/>
+            </svg>
+            <div class="diagram-caption">Figure 5.8: LA (Leg-Angle) Theorem</div>
+        </div>
+
+        <!-- HL Diagram -->
+        <div class="diagram-box">
+            <svg width="220" height="130" viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="20,100 20,30 90,100" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
+                <polygon points="130,100 130,30 200,100" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
+                <rect x="20" y="90" width="10" height="10" fill="none" stroke="#2980b9" stroke-width="1.5"/>
+                <rect x="130" y="90" width="10" height="10" fill="none" stroke="#2980b9" stroke-width="1.5"/>
+                <!-- Tick on leg -->
+                <line x1="20" y1="62" x2="26" y2="68" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="130" y1="62" x2="136" y2="68" stroke="#e74c3c" stroke-width="2"/>
+                <!-- Tick on hypotenuse -->
+                <line x1="52" y1="62" x2="58" y2="68" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="162" y1="62" x2="168" y2="68" stroke="#e74c3c" stroke-width="2"/>
+            </svg>
+            <div class="diagram-caption">Figure 5.9: HL (Hypotenuse-Leg) Theorem</div>
+        </div>
+
+        <!-- HA Diagram -->
+        <div class="diagram-box">
+            <svg width="220" height="130" viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="20,100 20,30 90,100" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
+                <polygon points="130,100 130,30 200,100" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
+                <rect x="20" y="90" width="10" height="10" fill="none" stroke="#2980b9" stroke-width="1.5"/>
+                <rect x="130" y="90" width="10" height="10" fill="none" stroke="#2980b9" stroke-width="1.5"/>
+                <!-- Tick on hypotenuse -->
+                <line x1="52" y1="62" x2="58" y2="68" stroke="#e74c3c" stroke-width="2"/>
+                <line x1="162" y1="62" x2="168" y2="68" stroke="#e74c3c" stroke-width="2"/>
+                <!-- Angle arc -->
+                <path d="M 78 100 A 12 12 0 0 0 72 88" fill="none" stroke="#e74c3c" stroke-width="2"/>
+                <path d="M 188 100 A 12 12 0 0 0 182 88" fill="none" stroke="#e74c3c" stroke-width="2"/>
+            </svg>
+            <div class="diagram-caption">Figure 5.10: HA (Hypotenuse-Angle) Theorem</div>
         </div>
     </div>
 
     <ul>
-        <li><strong>Congruent Triangles Postulates:</strong> SSS (Side-Side-Side), SAS (Side-Angle-Side), ASA (Angle-Side-Angle), AAS Theorem (Angle-Angle-Side).</li>
-        <li><strong>Right Triangle Theorems:</strong> LL (Leg-Leg), LA (Leg-Angle), HL (Hypotenuse-Leg), HA (Hypotenuse-Angle).
-            <ul>
-                <li><strong>Hypotenuse:</strong> The longest side opposite the \(90^\circ\) angle.</li>
-                <li><strong>Legs:</strong> The two sides forming the right angle.</li>
-            </ul>
+        <li><strong>LL (Leg-Leg) Theorem:</strong> If the two legs of one right triangle are congruent to the two legs of another right triangle, then the triangles are congruent.
+            <br><em>*General Postulate Equivalent:*</em> This is a direct application of the <strong>SAS Postulate</strong>, where the $90^\circ$ right angle acts as the included angle between the two legs.
+        </li>
+        <li><strong>LA (Leg-Angle) Theorem:</strong> If a leg and an acute angle of one right triangle are congruent to a leg and an acute angle of another right triangle, the triangles are congruent.
+            <br><em>*General Postulate Equivalent:*</em> Derived from <strong>ASA</strong> (if the angle is adjacent to the leg) or <strong>AAS</strong> (if the angle is opposite the leg).
+        </li>
+        <li><strong>HL (Hypotenuse-Leg) Theorem:</strong> If the hypotenuse and one leg of a right triangle are congruent to the hypotenuse and one leg of another right triangle, the triangles are congruent.
+            <br><em>*Special Note:*</em> Even though this looks like "SSA" (which is normally invalid), the Pythagorean Theorem (\(a^2 + b^2 = c^2\)) guarantees that if the hypotenuse (\(c\)) and one leg (\(a\)) match, the third leg (\(b = \sqrt{c^2 - a^2}\)) must also match, rendering it equivalent to <strong>SSS</strong>.
+        </li>
+        <li><strong>HA (Hypotenuse-Angle) Theorem:</strong> If the hypotenuse and an acute angle of one right triangle are congruent to the hypotenuse and an acute angle of another right triangle, the triangles are congruent.
+            <br><em>*General Postulate Equivalent:*</em> Derived directly from the <strong>AAS Theorem</strong>.
         </li>
     </ul>
+
+    <div class="example-box">
+        <div class="example-title">Worked Example: Identifying Right Triangle Congruence</div>
+        <p>Two right triangles \(\triangle PQR\) and \(\triangle STU\) both have a right angle at vertices \(Q\) and \(T\). You are given that hypotenuse \(PR = 13\text{ cm}\), hypotenuse \(SU = 13\text{ cm}\), acute angle \(m\angle P = 35^\circ\), and acute angle \(m\angle S = 35^\circ\).</p>
+        <p><strong>Question:</strong> Are the triangles congruent, and which theorem proves it?</p>
+        <p><strong>Solution:</strong> Yes, \(\triangle PQR \cong \triangle STU\). Since both triangles share a congruent hypotenuse (\(PR \cong SU = 13\text{ cm}\)) and a congruent acute angle (\(\angle P \cong \angle S = 35^\circ\)), they are congruent by the <strong>HA (Hypotenuse-Angle) Theorem</strong> (or AAS).</p>
+    </div>
 
 
     <!-- ========================================== -->
@@ -482,17 +808,17 @@
     <!-- ========================================== -->
     <h2>6. Constructing Segments, Angles, Triangles, and Two-Column Proofs</h2>
     <ul>
-        <li><strong>Geometric Construction:</strong> Precise drawing of figures using only an unmarked straightedge and a compass (altitude, angle bisector, median, perpendicular bisector).</li>
-        <li><strong>Two-Column Proof:</strong> Structured format presenting logical arguments in geometry.
+        <li><strong>Geometric Construction:</strong> Drawing accurate figures using only an unmarked straightedge and a compass (copying segments/angles, perpendicular bisectors, angle bisectors, altitudes, medians).</li>
+        <li><strong>Two-Column Proofs:</strong> A structured table organizing logical arguments step-by-step:
             <ul>
-                <li><strong>Statement:</strong> Mathematical claims made step-by-step from start to finish.</li>
-                <li><strong>Reason:</strong> Mathematical justifications using Givens, Definitions, Postulates, or Theorems.</li>
+                <li><strong>Statement Column (Left):</strong> Sequential claims leading from given information to the final conclusion.</li>
+                <li><strong>Reason Column (Right):</strong> Formal mathematical justifications (Givens, Definitions, Postulates, Theorems).</li>
             </ul>
         </li>
     </ul>
 
     <div class="example-box">
-        <div class="example-title">Sample Two-Column Proof: Proving Triangles Congruent</div>
+        <div class="example-title">Sample Two-Column Proof: Proving Congruent Triangles</div>
         <p><strong>Given:</strong> \(AB \parallel CD\), \(AB \cong CD\)</p>
         <p><strong>Prove:</strong> \(\triangle ABC \cong \triangle CDA\)</p>
         <table>
