@@ -1,140 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>3D Glowing Lotus - Three.js</title>
-<style>
-body {
-margin: 0;
-overflow: hidden;
-background-color: #000;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-canvas {
-display: block;
-}
-</style>
-<!-- استدعاء مكتبة Three.js ثلاثية الأبعاد -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #1a0b2e 0%, #05020a 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        .message-container {
+            position: absolute;
+            top: 15%;
+            width: 100%;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 2s ease, transform 2s ease;
+            pointer-events: none;
+        }
+
+        .message-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1 {
+            color: #ff758c;
+            font-size: clamp(2.5rem, 5vw, 5rem);
+            margin: 0;
+            text-shadow: 0 0 20px rgba(255, 117, 140, 0.6), 0 0 40px rgba(255, 117, 140, 0.4);
+            letter-spacing: 2px;
+        }
+
+        p {
+            color: #ffeb3b;
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            margin-top: 10px;
+            text-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
+        }
+    </style>
 </head>
 <body>
 
-<script>
-// 1. إعداد المشهد والكاميرا
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(0, 2, 8);
+    <div class="message-container" id="messageContainer">
+        <h1>Happy Birthday!</h1>
+        <p>Wishing you a day as bright and beautiful as this bloom.</p>
+    </div>
 
-const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setPixelRatio(window.devicePixelRatio);
-document.body.appendChild(renderer.domElement);
+    <canvas id="canvas"></canvas>
 
-// 2. الإضاءة السحرية (Ambient & Point Lights)
-const ambientLight = new THREE.AmbientLight(0xffb6c1, 0.8);
-scene.add(ambientLight);
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
 
-const centerLight = new THREE.PointLight(0xff69b4, 3, 20);
-centerLight.position.set(0, 1, 0);
-scene.add(centerLight);
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
 
-// 3. خامة البتلات الكريستالية المضيئة (Glass/Glow Material)
-const petalMaterial = new THREE.MeshPhysicalMaterial({
-color: 0xffb6c1,
-emissive: 0xff1493,
-emissiveIntensity: 0.3,
-roughness: 0.1,
-transmission: 0.6, // شفافية زجاجية
-thickness: 1.2,
-clearcoat: 1.0,
-clearcoatRoughness: 0.1,
-side: THREE.DoubleSide,
-transparent: true,
-opacity: 0.85
-});
+        let progress = 0;
+        let animationFinished = false;
 
-// 4. بناء شكل البتلة (Petal Geometry)
-function createPetalShape() {
-const shape = new THREE.Shape();
-shape.moveTo(0, 0);
-shape.bezierCurveTo(0.8, 1, 1.2, 2.5, 0, 4);
-shape.bezierCurveTo(-1.2, 2.5, -0.8, 1, 0, 0);
+        // Particle system for celebration sparkles
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 4 + 1;
+                this.speedX = (Math.random() - 0.5) * 4;
+                this.speedY = (Math.random() - 0.5) * 4 - 1;
+                this.color = `hsl(${Math.random() * 60 + 320}, 100%, 75%)`;
+                this.alpha = 1;
+                this.decay = Math.random() * 0.015 + 0.005;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.alpha -= this.decay;
+            }
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = Math.max(0, this.alpha);
+                ctx.fillStyle = this.color;
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
 
-const extrudeSettings = { depth: 0.05, bevelEnabled: true, bevelSegments: 3, steps: 1, bevelSize: 0.02 };
-return new THREE.ExtrudeGeometry(shape, extrudeSettings);
-}
+        let particles = [];
 
-const petalGeometry = createPetalShape();
-const flowerGroup = new THREE.Group();
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-// 5. إنشاء طبقات البتلات وتوزيعها لتشكيل الزهرة
-const petals = [];
-const layers = [
-{ count: 6, scale: 0.6, angleOffset: 0.8 },
-{ count: 10, scale: 0.8, angleOffset: 1.1 },
-{ count: 14, scale: 1.0, angleOffset: 1.4 }
-];
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2 + 100;
 
-layers.forEach((layer) => {
-for (let i = 0; i < layer.count; i++) {
-const petalMesh = new THREE.Mesh(petalGeometry, petalMaterial);
-const angle = (i / layer.count) * Math.PI * 2;
+            // Phase 1: Grow Stem
+            if (progress < 1) {
+                progress += 0.008;
+            } else {
+                if (!animationFinished) {
+                    animationFinished = true;
+                    document.getElementById('messageContainer').classList.add('visible');
+                }
+            }
 
-const pivotGroup = new THREE.Group();
-petalMesh.scale.set(layer.scale, layer.scale, layer.scale);
-petalMesh.position.y = 0;
+            const currentProgress = Math.min(progress, 1);
 
-// الزاوية الابتدائية (مغلقة)
-pivotGroup.rotation.y = angle;
-petalMesh.rotation.x = 0.1;
+            // Draw Stem
+            const stemHeight = 250 * currentProgress;
+            ctx.strokeStyle = '#4caf50';
+            ctx.lineWidth = 6;
+            ctx.lineCap = 'round';
+            ctx.beginPath();
+            ctx.moveTo(centerX, canvas.height);
+            ctx.quadraticCurveTo(centerX - 20, canvas.height - stemHeight / 2, centerX, canvas.height - stemHeight);
+            ctx.stroke();
 
-pivotGroup.add(petalMesh);
-flowerGroup.add(pivotGroup);
+            // Draw Leaves
+            if (currentProgress > 0.4) {
+                let leafProgress = (currentProgress - 0.4) / 0.6;
+                ctx.fillStyle = '#66bb6a';
+                
+                // Left leaf
+                ctx.save();
+                ctx.translate(centerX - 5, canvas.height - stemHeight * 0.5);
+                ctx.rotate(-Math.PI / 4);
+                ctx.scale(leafProgress, leafProgress);
+                ctx.beginPath();
+                ctx.ellipse(30, 0, 40, 15, 0, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
 
-// حفظ البتلات لتحريكها لاحقاً
-petals.push({ mesh: petalMesh, maxRotation: layer.angleOffset });
-}
-});
+                // Right leaf
+                ctx.save();
+                ctx.translate(centerX + 5, canvas.height - stemHeight * 0.7);
+                ctx.rotate(Math.PI / 4);
+                ctx.scale(leafProgress, leafProgress);
+                ctx.beginPath();
+                ctx.ellipse(30, 0, 40, 15, 0, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
 
-scene.add(flowerGroup);
+            // Draw Flower Bloom at the top of the stem
+            const flowerX = centerX;
+            const flowerY = canvas.height - stemHeight;
 
-// 6. مركز الزهرة المضيء (Glow Core)
-const coreGeo = new THREE.SphereGeometry(0.4, 32, 32);
-const coreMat = new THREE.MeshBasicMaterial({ color: 0xffffff });
-const core = new THREE.Mesh(coreGeo, coreMat);
-core.position.y = 0.3;
-scene.add(core);
+            if (currentProgress > 0.5) {
+                let bloomProgress = (currentProgress - 0.5) / 0.5;
+                // Ease out elastic effect for blooming petals
+                let easeBloom = Math.sin(bloomProgress * Math.PI / 2);
 
-// 7. أنيميشن التفتح والدوران (Animation Loop)
-let progress = 0;
+                const petallayers = 3;
+                const petalsCount = 10;
 
-function animate() {
-requestAnimationFrame(animate);
+                for (let layer = petallayers; layer >= 1; layer--) {
+                    let scale = easeBloom * (1.2 - layer * 0.15);
+                    let angleStep = (Math.PI * 2) / petalsCount;
 
-// تدوير الزهرة بالكامل ببطء
-flowerGroup.rotation.y += 0.005;
+                    ctx.save();
+                    ctx.translate(flowerX, flowerY);
 
-// حركة تفتح البتلات تدريجياً
-if (progress < 1) {
-progress += 0.005;
-petals.forEach(item => {
-item.mesh.rotation.x = progress * item.maxRotation;
-});
-}
+                    for (let i = 0; i < petalsCount; i++) {
+                        ctx.save();
+                        ctx.rotate(i * angleStep + (layer * 0.2));
+                        ctx.scale(scale, scale);
 
-renderer.render(scene, camera);
-}
+                        let gradient = ctx.createRadialGradient(0, -50, 5, 0, -50, 60);
+                        if (layer === 1) {
+                            gradient.addColorStop(0, '#ffeb3b');
+                            gradient.addColorStop(1, '#ff9800');
+                        } else if (layer === 2) {
+                            gradient.addColorStop(0, '#ff4081');
+                            gradient.addColorStop(1, '#c51162');
+                        } else {
+                            gradient.addColorStop(0, '#ff80ab');
+                            gradient.addColorStop(1, '#ad1457');
+                        }
 
-animate();
+                        ctx.fillStyle = gradient;
+                        ctx.shadowBlur = 15;
+                        ctx.shadowColor = '#ff4081';
 
-// إعادة ضبط الحجم عند تغيير حجم الشاشة
-window.addEventListener('resize', () => {
-camera.aspect = window.innerWidth / window.innerHeight;
-camera.updateProjectionMatrix();
-renderer.setSize(window.innerWidth, window.innerHeight);
-});
-</script>
+                        ctx.beginPath();
+                        ctx.moveTo(0, 0);
+                        ctx.bezierCurveTo(-35, -40, -35, -100, 0, -130);
+                        ctx.bezierCurveTo(35, -100, 35, -40, 0, 0);
+                        ctx.fill();
+                        ctx.restore();
+                    }
+                    ctx.restore();
+                }
+
+                // Center flower core
+                ctx.save();
+                ctx.translate(flowerX, flowerY);
+                ctx.scale(easeBloom, easeBloom);
+                let coreGrad = ctx.createRadialGradient(0, 0, 0, 0, 0, 25);
+                coreGrad.addColorStop(0, '#ffeb3b');
+                coreGrad.addColorStop(1, '#ff5722');
+                ctx.fillStyle = coreGrad;
+                ctx.beginPath();
+                ctx.arc(0, 0, 25, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+
+                // Generate celebration sparkles after bloom
+                if (animationFinished && Math.random() < 0.4) {
+                    let angle = Math.random() * Math.PI * 2;
+                    let dist = Math.random() * 120;
+                    particles.push(new Particle(flowerX + Math.cos(angle) * dist, flowerY + Math.sin(angle) * dist));
+                }
+            }
+
+            // Update and render particles
+            for (let i = particles.length - 1; i >= 0; i--) {
+                particles[i].update();
+                particles[i].draw();
+                if (particles[i].alpha <= 0) {
+                    particles.splice(i, 1);
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        // Start animation loop after a short pause
+        setTimeout(animate, 500);
+    </script>
 </body>
 </html>
