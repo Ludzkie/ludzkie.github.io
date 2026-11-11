@@ -23,7 +23,7 @@
             z-index: 1;
         }
 
-        /* Credits Scroll Container */
+        /* Credits Scroll Container - Starts off-screen at the bottom and moves upward */
         .credits-wrapper {
             position: absolute;
             bottom: -100%;
@@ -33,7 +33,6 @@
             z-index: 2;
             pointer-events: none;
             text-align: center;
-            transition: transform 0.1s linear;
         }
 
         .credits-content {
@@ -91,11 +90,6 @@
         window.addEventListener('resize', resize);
         resize();
 
-        let progress = 0;
-        let openProgress = 0;
-        let creditsStarted = false;
-        let creditTop = canvas.height;
-
         // Background ambient particles (dark theme sparkles)
         class Sparkle {
             constructor() {
@@ -128,6 +122,10 @@
 
         const sparkles = Array.from({ length: 70 }, () => new Sparkle());
 
+        // Position the text container starting right below the screen bottom
+        let creditTop = canvas.height;
+        const wrapper = document.getElementById('creditsWrapper');
+
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -137,150 +135,21 @@
                 s.draw();
             });
 
-            const centerX = canvas.width / 2;
-            const centerY = canvas.height / 2 + 50;
+            // Move text upward continuously
+            creditTop -= 0.8; 
+            wrapper.style.top = `${creditTop}px`;
+            wrapper.style.bottom = 'auto'; // Disable bottom anchor so top positioning takes effect
 
-            // Phase 1: Stem grows upward
-            if (progress < 1) {
-                progress += 0.01;
-            } else if (openProgress < 1) {
-                // Phase 2: Venus flytrap style dramatic opening
-                openProgress += 0.008;
-            } else {
-                if (!creditsStarted) {
-                    creditsStarted = true;
-                }
-            }
-
-            const currentProgress = Math.min(progress, 1);
-            const stemHeight = 220 * currentProgress;
-
-            // Draw dark glowing stem
-            ctx.strokeStyle = '#2a1b2d';
-            ctx.lineWidth = 8;
-            ctx.lineCap = 'round';
-            ctx.beginPath();
-            ctx.moveTo(centerX, canvas.height);
-            ctx.quadraticCurveTo(centerX - 15, canvas.height - stemHeight / 2, centerX, canvas.height - stemHeight);
-            ctx.stroke();
-
-            // Core flower position
-            const flowerX = centerX;
-            const flowerY = canvas.height - stemHeight;
-
-            // Draw Venus Flytrap / Carnivorous Massive Bloom
-            if (currentProgress > 0.5) {
-                let openAngle = openProgress * (Math.PI * 0.75); // Opens wide like a trap/lobes
-
-                ctx.save();
-                ctx.translate(flowerX, flowerY);
-
-                // Glow effect behind the flower
-                let glowGrad = ctx.createRadialGradient(0, 0, 10, 0, 0, 180);
-                glowGrad.addColorStop(0, 'rgba(255, 105, 180, 0.4)');
-                glowGrad.addColorStop(1, 'rgba(20, 7, 24, 0)');
-                ctx.fillStyle = glowGrad;
-                ctx.beginPath();
-                ctx.arc(0, 0, 180, 0, Math.PI * 2);
-                ctx.fill();
-
-                // Left Lobe / Trap Leaf
-                ctx.save();
-                ctx.rotate(-openAngle);
-                let leftGrad = ctx.createLinearGradient(-120, -120, 0, 0);
-                leftGrad.addColorStop(0, '#ff758c');
-                leftGrad.addColorStop(0.5, '#c51162');
-                leftGrad.addColorStop(1, '#2b0b18');
-                ctx.fillStyle = leftGrad;
-                ctx.strokeStyle = '#ffb3c6';
-                ctx.lineWidth = 3;
-
-                ctx.beginPath();
-                ctx.moveTo(0, 0);
-                ctx.bezierCurveTo(-80, -40, -140, -120, -100, -180);
-                ctx.bezierCurveTo(-50, -160, -20, -80, 0, 0);
-                ctx.closePath();
-                ctx.fill();
-                ctx.stroke();
-
-                // Cilia / spikes along the edge of left lobe (Venus flytrap style)
-                ctx.strokeStyle = '#ffd1dc';
-                ctx.lineWidth = 2;
-                for(let i = 0; i < 5; i++) {
-                    let t = i / 4;
-                    let bx = -100 + t * 50;
-                    let by = -180 + t * 30;
-                    ctx.beginPath();
-                    ctx.moveTo(bx, by);
-                    ctx.lineTo(bx - 15, by - 15);
-                    ctx.stroke();
-                }
-                ctx.restore();
-
-                // Right Lobe / Trap Leaf
-                ctx.save();
-                ctx.rotate(openAngle);
-                let rightGrad = ctx.createLinearGradient(0, -120, 120, 0);
-                rightGrad.addColorStop(0, '#ff758c');
-                rightGrad.addColorStop(0.5, '#c51162');
-                rightGrad.addColorStop(1, '#2b0b18');
-                ctx.fillStyle = rightGrad;
-                ctx.strokeStyle = '#ffb3c6';
-                ctx.lineWidth = 3;
-
-                ctx.beginPath();
-                ctx.moveTo(0, 0);
-                ctx.bezierCurveTo(80, -40, 140, -120, 100, -180);
-                ctx.bezierCurveTo(50, -160, 20, -80, 0, 0);
-                ctx.closePath();
-                ctx.fill();
-                ctx.stroke();
-
-                // Cilia / spikes along right lobe
-                for(let i = 0; i < 5; i++) {
-                    let t = i / 4;
-                    let bx = 100 - t * 50;
-                    let by = -180 + t * 30;
-                    ctx.beginPath();
-                    ctx.moveTo(bx, by);
-                    ctx.lineTo(bx + 15, by - 15);
-                    ctx.stroke();
-                }
-                ctx.restore();
-
-                // Inner Glowing Core (Revealed when open)
-                let coreAlpha = Math.min(openProgress * 1.5, 1);
-                ctx.save();
-                ctx.globalAlpha = coreAlpha;
-                let coreGrad = ctx.createRadialGradient(0, -20, 0, 0, -20, 50);
-                coreGrad.addColorStop(0, '#fff');
-                coreGrad.addColorStop(0.4, '#ff85a1');
-                coreGrad.addColorStop(1, 'transparent');
-                ctx.fillStyle = coreGrad;
-                ctx.beginPath();
-                ctx.arc(0, -20, 50, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.restore();
-
-                ctx.restore();
-            }
-
-            // Handle Credits Scrolling Upward Cinematic Effect
-            if (creditsStarted) {
-                creditTop -= 0.8; // Scroll speed
-                const wrapper = document.getElementById('creditsWrapper');
-                wrapper.style.bottom = `${creditTop}px`;
-                // If it scrolls completely past the top, loop or stop
-                if (creditTop < -wrapper.offsetHeight) {
-                    // Optional: reset if you want it to loop, or let it finish
-                }
+            // Optional: loop the credits back to the bottom once they fully scroll past the top
+            if (creditTop < -wrapper.offsetHeight) {
+                creditTop = canvas.height;
             }
 
             requestAnimationFrame(animate);
         }
 
         // Start loop
-        setTimeout(animate, 400);
+        animate();
     </script>
 </body>
 </html>
