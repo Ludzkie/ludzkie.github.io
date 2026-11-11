@@ -30,7 +30,7 @@
             position: absolute;
             top: 0;
             width: 100%;
-            height: 3000px; /* Tall enough to span alongside the scrolling text */
+            height: 3000px; /* Tall enough to span alongside the text */
             z-index: 2;
             pointer-events: none;
         }
@@ -63,15 +63,15 @@
             padding: 5px;
         }
 
-        /* Credits Scroll Container */
+        /* Static Scroll Container - Positioned normally in the flow */
         .credits-wrapper {
-            position: absolute;
-            top: 100vh;
+            position: relative;
             width: 100%;
             display: flex;
             justify-content: center;
             z-index: 3;
             text-align: center;
+            margin-top: 100px; /* Gives a nice starting offset from the top */
         }
 
         .credits-content {
@@ -147,7 +147,7 @@
         window.addEventListener('resize', resize);
         resize();
 
-        // Sparkle background
+        // Sparkle background animation
         class Sparkle {
             constructor() {
                 this.x = Math.random() * canvas.width;
@@ -179,9 +179,6 @@
 
         const sparkles = Array.from({ length: 70 }, () => new Sparkle());
 
-        let creditTop = window.innerHeight;
-        const wrapper = document.getElementById('creditsWrapper');
-
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -190,20 +187,8 @@
                 s.draw();
             });
 
-            if (!window.userIsScrolling) {
-                creditTop -= 0.8; 
-                wrapper.style.top = `${creditTop}px`;
-
-                if (creditTop < -wrapper.offsetHeight) {
-                    creditTop = window.innerHeight;
-                }
-            }
-
             requestAnimationFrame(animate);
         }
-
-        window.addEventListener('wheel', () => { window.userIsScrolling = true; });
-        window.addEventListener('touchstart', () => { window.userIsScrolling = true; });
 
         animate();
     </script>
