@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday!</title>
+    <title>Happy Birthday, My Everything</title>
     <style>
         body, html {
             margin: 0;
@@ -11,54 +11,74 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background: radial-gradient(circle at center, #1a0b2e 0%, #05020a 100%);
+            background: radial-gradient(circle at center, #140718 0%, #050207 100%);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         canvas {
             display: block;
-        }
-
-        .message-container {
             position: absolute;
-            top: 15%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* Credits Scroll Container */
+        .credits-wrapper {
+            position: absolute;
+            bottom: -100%;
             width: 100%;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(-20px);
-            transition: opacity 2s ease, transform 2s ease;
+            display: flex;
+            justify-content: center;
+            z-index: 2;
             pointer-events: none;
+            text-align: center;
+            transition: transform 0.1s linear;
         }
 
-        .message-container.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .credits-content {
+            width: 80%;
+            max-width: 700px;
+            color: #ffd1dc;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            text-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+            padding-bottom: 100px;
         }
 
-        h1 {
-            color: #ff758c;
-            font-size: clamp(2.5rem, 5vw, 5rem);
-            margin: 0;
-            text-shadow: 0 0 20px rgba(255, 117, 140, 0.6), 0 0 40px rgba(255, 117, 140, 0.4);
+        .credits-content h2 {
+            color: #ff85a1;
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            text-shadow: 0 0 20px rgba(255, 133, 161, 0.8), 0 0 40px rgba(255, 105, 180, 0.4);
             letter-spacing: 2px;
         }
 
-        p {
-            color: #ffeb3b;
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            margin-top: 10px;
-            text-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
+        .credits-content p {
+            margin-bottom: 25px;
         }
     </style>
 </head>
 <body>
 
-    <div class="message-container" id="messageContainer">
-        <h1>Happy Birthday!</h1>
-        <p>Wishing you a day as bright and beautiful as this bloom.</p>
-    </div>
-
     <canvas id="canvas"></canvas>
+
+    <div class="credits-wrapper" id="creditsWrapper">
+        <div class="credits-content">
+            <h2>Happy Birthday, My Wifey</h2>
+            <p>Happy birthday to my wifey, my everything. I sit here trying to write how much you mean to me. No words can feel enough. Today is not another day on the calendar. Today is the day the world became brighter because you came into it. Today is the day I celebrate you—the person who has changed my life for the better.</p>
+            
+            <p>When I think about us, I think about moments, not just one or two. I think about every memory we have built together. From late-night talks and random dates to times when we do not need words to know each other, every moment with you is held close. You turn days into my favorite days simply by being there. When I look back at all that we have shared, I see how lucky I am to call you mine.</p>
+            
+            <p>There are things about you that make me fall more in love with you each day. I love your uniqueness. I love the way you think. The way you carry yourself. I love that no one else in the world is like you. You do not try to be anyone, and that realness is very magnetic. There are also things you do that mean a lot to me. You do cute dances when you are happy or excited. Your laugh is my favorite sound in the world. When you smile or dance, everything else fades away.</p>
+            
+            <p>You are my forever partner in life; you are my best friend, my safe place, my peace, and my everything. You have shown me what real love feels like. Real love is patient, genuine, and steady. On your birthday, I want you to feel a fraction of the happiness, warmth, and love that you bring into my life each day. You deserve the best that this world can give. I hope this new year of your life brings you joy, good health, and all the dreams you work toward.</p>
+            
+            <p>No matter what life throws at us, no matter how much time passes or how much we grow, one thing will never change. I will stay with you. We are together through every high and every low until the end of time. I want to be there for every future birthday, every future little dance, and for all the memories we have not made yet.</p>
+            
+            <p style="color: #ff85a1; font-weight: bold; font-size: 1.3rem;">Happy birthday again, my wifey.<br>Thank you for being you. Thank you for loving me. Thank you for being my everything.<br>I love you more than words can explain, today and always.</p>
+        </div>
+    </div>
 
     <script>
         const canvas = document.getElementById('canvas');
@@ -72,31 +92,33 @@
         resize();
 
         let progress = 0;
-        let animationFinished = false;
+        let openProgress = 0;
+        let creditsStarted = false;
+        let creditTop = canvas.height;
 
-        // Particle system for celebration sparkles
-        class Particle {
-            constructor(x, y) {
-                this.x = x;
-                this.y = y;
-                this.size = Math.random() * 4 + 1;
-                this.speedX = (Math.random() - 0.5) * 4;
-                this.speedY = (Math.random() - 0.5) * 4 - 1;
-                this.color = `hsl(${Math.random() * 60 + 320}, 100%, 75%)`;
-                this.alpha = 1;
-                this.decay = Math.random() * 0.015 + 0.005;
+        // Background ambient particles (dark theme sparkles)
+        class Sparkle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2.5;
+                this.speedY = -Math.random() * 0.5 - 0.2;
+                this.alpha = Math.random();
+                this.fade = Math.random() * 0.02 + 0.005;
             }
             update() {
-                this.x += this.speedX;
                 this.y += this.speedY;
-                this.alpha -= this.decay;
+                this.alpha -= this.fade;
+                if (this.y < 0 || this.alpha <= 0) {
+                    this.y = canvas.height + 10;
+                    this.x = Math.random() * canvas.width;
+                    this.alpha = 1;
+                }
             }
             draw() {
                 ctx.save();
-                ctx.globalAlpha = Math.max(0, this.alpha);
-                ctx.fillStyle = this.color;
-                ctx.shadowBlur = 10;
-                ctx.shadowColor = this.color;
+                ctx.globalAlpha = this.alpha * 0.7;
+                ctx.fillStyle = '#ffb3c6';
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
@@ -104,147 +126,161 @@
             }
         }
 
-        let particles = [];
+        const sparkles = Array.from({ length: 70 }, () => new Sparkle());
 
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            const centerX = canvas.width / 2;
-            const centerY = canvas.height / 2 + 100;
+            // Draw background sparkles
+            sparkles.forEach(s => {
+                s.update();
+                s.draw();
+            });
 
-            // Phase 1: Grow Stem
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2 + 50;
+
+            // Phase 1: Stem grows upward
             if (progress < 1) {
-                progress += 0.008;
+                progress += 0.01;
+            } else if (openProgress < 1) {
+                // Phase 2: Venus flytrap style dramatic opening
+                openProgress += 0.008;
             } else {
-                if (!animationFinished) {
-                    animationFinished = true;
-                    document.getElementById('messageContainer').classList.add('visible');
+                if (!creditsStarted) {
+                    creditsStarted = true;
                 }
             }
 
             const currentProgress = Math.min(progress, 1);
+            const stemHeight = 220 * currentProgress;
 
-            // Draw Stem
-            const stemHeight = 250 * currentProgress;
-            ctx.strokeStyle = '#4caf50';
-            ctx.lineWidth = 6;
+            // Draw dark glowing stem
+            ctx.strokeStyle = '#2a1b2d';
+            ctx.lineWidth = 8;
             ctx.lineCap = 'round';
             ctx.beginPath();
             ctx.moveTo(centerX, canvas.height);
-            ctx.quadraticCurveTo(centerX - 20, canvas.height - stemHeight / 2, centerX, canvas.height - stemHeight);
+            ctx.quadraticCurveTo(centerX - 15, canvas.height - stemHeight / 2, centerX, canvas.height - stemHeight);
             ctx.stroke();
 
-            // Draw Leaves
-            if (currentProgress > 0.4) {
-                let leafProgress = (currentProgress - 0.4) / 0.6;
-                ctx.fillStyle = '#66bb6a';
-                
-                // Left leaf
-                ctx.save();
-                ctx.translate(centerX - 5, canvas.height - stemHeight * 0.5);
-                ctx.rotate(-Math.PI / 4);
-                ctx.scale(leafProgress, leafProgress);
-                ctx.beginPath();
-                ctx.ellipse(30, 0, 40, 15, 0, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.restore();
-
-                // Right leaf
-                ctx.save();
-                ctx.translate(centerX + 5, canvas.height - stemHeight * 0.7);
-                ctx.rotate(Math.PI / 4);
-                ctx.scale(leafProgress, leafProgress);
-                ctx.beginPath();
-                ctx.ellipse(30, 0, 40, 15, 0, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.restore();
-            }
-
-            // Draw Flower Bloom at the top of the stem
+            // Core flower position
             const flowerX = centerX;
             const flowerY = canvas.height - stemHeight;
 
+            // Draw Venus Flytrap / Carnivorous Massive Bloom
             if (currentProgress > 0.5) {
-                let bloomProgress = (currentProgress - 0.5) / 0.5;
-                // Ease out elastic effect for blooming petals
-                let easeBloom = Math.sin(bloomProgress * Math.PI / 2);
+                let openAngle = openProgress * (Math.PI * 0.75); // Opens wide like a trap/lobes
 
-                const petallayers = 3;
-                const petalsCount = 10;
-
-                for (let layer = petallayers; layer >= 1; layer--) {
-                    let scale = easeBloom * (1.2 - layer * 0.15);
-                    let angleStep = (Math.PI * 2) / petalsCount;
-
-                    ctx.save();
-                    ctx.translate(flowerX, flowerY);
-
-                    for (let i = 0; i < petalsCount; i++) {
-                        ctx.save();
-                        ctx.rotate(i * angleStep + (layer * 0.2));
-                        ctx.scale(scale, scale);
-
-                        let gradient = ctx.createRadialGradient(0, -50, 5, 0, -50, 60);
-                        if (layer === 1) {
-                            gradient.addColorStop(0, '#ffeb3b');
-                            gradient.addColorStop(1, '#ff9800');
-                        } else if (layer === 2) {
-                            gradient.addColorStop(0, '#ff4081');
-                            gradient.addColorStop(1, '#c51162');
-                        } else {
-                            gradient.addColorStop(0, '#ff80ab');
-                            gradient.addColorStop(1, '#ad1457');
-                        }
-
-                        ctx.fillStyle = gradient;
-                        ctx.shadowBlur = 15;
-                        ctx.shadowColor = '#ff4081';
-
-                        ctx.beginPath();
-                        ctx.moveTo(0, 0);
-                        ctx.bezierCurveTo(-35, -40, -35, -100, 0, -130);
-                        ctx.bezierCurveTo(35, -100, 35, -40, 0, 0);
-                        ctx.fill();
-                        ctx.restore();
-                    }
-                    ctx.restore();
-                }
-
-                // Center flower core
                 ctx.save();
                 ctx.translate(flowerX, flowerY);
-                ctx.scale(easeBloom, easeBloom);
-                let coreGrad = ctx.createRadialGradient(0, 0, 0, 0, 0, 25);
-                coreGrad.addColorStop(0, '#ffeb3b');
-                coreGrad.addColorStop(1, '#ff5722');
+
+                // Glow effect behind the flower
+                let glowGrad = ctx.createRadialGradient(0, 0, 10, 0, 0, 180);
+                glowGrad.addColorStop(0, 'rgba(255, 105, 180, 0.4)');
+                glowGrad.addColorStop(1, 'rgba(20, 7, 24, 0)');
+                ctx.fillStyle = glowGrad;
+                ctx.beginPath();
+                ctx.arc(0, 0, 180, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Left Lobe / Trap Leaf
+                ctx.save();
+                ctx.rotate(-openAngle);
+                let leftGrad = ctx.createLinearGradient(-120, -120, 0, 0);
+                leftGrad.addColorStop(0, '#ff758c');
+                leftGrad.addColorStop(0.5, '#c51162');
+                leftGrad.addColorStop(1, '#2b0b18');
+                ctx.fillStyle = leftGrad;
+                ctx.strokeStyle = '#ffb3c6';
+                ctx.lineWidth = 3;
+
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.bezierCurveTo(-80, -40, -140, -120, -100, -180);
+                ctx.bezierCurveTo(-50, -160, -20, -80, 0, 0);
+                ctx.closePath();
+                ctx.fill();
+                ctx.stroke();
+
+                // Cilia / spikes along the edge of left lobe (Venus flytrap style)
+                ctx.strokeStyle = '#ffd1dc';
+                ctx.lineWidth = 2;
+                for(let i = 0; i < 5; i++) {
+                    let t = i / 4;
+                    let bx = -100 + t * 50;
+                    let by = -180 + t * 30;
+                    ctx.beginPath();
+                    ctx.moveTo(bx, by);
+                    ctx.lineTo(bx - 15, by - 15);
+                    ctx.stroke();
+                }
+                ctx.restore();
+
+                // Right Lobe / Trap Leaf
+                ctx.save();
+                ctx.rotate(openAngle);
+                let rightGrad = ctx.createLinearGradient(0, -120, 120, 0);
+                rightGrad.addColorStop(0, '#ff758c');
+                rightGrad.addColorStop(0.5, '#c51162');
+                rightGrad.addColorStop(1, '#2b0b18');
+                ctx.fillStyle = rightGrad;
+                ctx.strokeStyle = '#ffb3c6';
+                ctx.lineWidth = 3;
+
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.bezierCurveTo(80, -40, 140, -120, 100, -180);
+                ctx.bezierCurveTo(50, -160, 20, -80, 0, 0);
+                ctx.closePath();
+                ctx.fill();
+                ctx.stroke();
+
+                // Cilia / spikes along right lobe
+                for(let i = 0; i < 5; i++) {
+                    let t = i / 4;
+                    let bx = 100 - t * 50;
+                    let by = -180 + t * 30;
+                    ctx.beginPath();
+                    ctx.moveTo(bx, by);
+                    ctx.lineTo(bx + 15, by - 15);
+                    ctx.stroke();
+                }
+                ctx.restore();
+
+                // Inner Glowing Core (Revealed when open)
+                let coreAlpha = Math.min(openProgress * 1.5, 1);
+                ctx.save();
+                ctx.globalAlpha = coreAlpha;
+                let coreGrad = ctx.createRadialGradient(0, -20, 0, 0, -20, 50);
+                coreGrad.addColorStop(0, '#fff');
+                coreGrad.addColorStop(0.4, '#ff85a1');
+                coreGrad.addColorStop(1, 'transparent');
                 ctx.fillStyle = coreGrad;
                 ctx.beginPath();
-                ctx.arc(0, 0, 25, 0, Math.PI * 2);
+                ctx.arc(0, -20, 50, 0, Math.PI * 2);
                 ctx.fill();
                 ctx.restore();
 
-                // Generate celebration sparkles after bloom
-                if (animationFinished && Math.random() < 0.4) {
-                    let angle = Math.random() * Math.PI * 2;
-                    let dist = Math.random() * 120;
-                    particles.push(new Particle(flowerX + Math.cos(angle) * dist, flowerY + Math.sin(angle) * dist));
-                }
+                ctx.restore();
             }
 
-            // Update and render particles
-            for (let i = particles.length - 1; i >= 0; i--) {
-                particles[i].update();
-                particles[i].draw();
-                if (particles[i].alpha <= 0) {
-                    particles.splice(i, 1);
+            // Handle Credits Scrolling Upward Cinematic Effect
+            if (creditsStarted) {
+                creditTop -= 0.8; // Scroll speed
+                const wrapper = document.getElementById('creditsWrapper');
+                wrapper.style.bottom = `${creditTop}px`;
+                // If it scrolls completely past the top, loop or stop
+                if (creditTop < -wrapper.offsetHeight) {
+                    // Optional: reset if you want it to loop, or let it finish
                 }
             }
 
             requestAnimationFrame(animate);
         }
 
-        // Start animation loop after a short pause
-        setTimeout(animate, 500);
+        // Start loop
+        setTimeout(animate, 400);
     </script>
 </body>
 </html>
