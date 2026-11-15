@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Reviewer Hub - Main Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #e0f7fa;
+            background-color: #0b132b;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background: #1c2541;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.15);
+            border: 1px solid #3a506b;
+            text-align: center;
+        }
+        h1 {
+            color: #00e5ff;
+            border-bottom: 2px solid #3a506b;
+            padding-bottom: 15px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+        }
+        .subtitle {
+            color: #c0d6df;
+            margin-bottom: 35px;
+            font-size: 1.05em;
+        }
+        .menu-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .subject-card {
+            display: block;
+            padding: 22px 25px;
+            background-color: #11192e;
+            color: #00e5ff;
+            text-decoration: none;
+            border-radius: 6px;
+            border: 1px solid #00e5ff;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        .subject-card:hover {
+            background-color: #00e5ff;
+            color: #0b132b;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        .subject-title {
+            display: block;
+            font-size: 1.25em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .subject-desc {
+            display: block;
+            font-size: 0.9em;
+            color: #80e5ff;
+        }
+        .subject-card:hover .subject-desc {
+            color: #1c2541;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 0.85em;
+            color: #4cc9f0;
+            border-top: 1px solid #3a506b;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Quarter 3 Class Notes</h1>
+    <p class="subtitle">Select a subject below to view the reviewer.</p>
+
+    <div class="menu-grid">
+        <!-- Change "ap.html" below if you named your AP notes file something else -->
+        <a href="ap.html" class="subject-card">
+            <span class="subject-title">Aralin Panlipunan (AP 9)</span>
+            <span class="subject-desc">Lesson 1: Ang Siklo o Paikot na Daloy ng Ekonomiya (7 Parts)</span>
+        </a>
+    </div>
+
+    <footer>
+        Shared Class Reviewer &bull; Quarter 3
+    </footer>
+</div>
+
+</body>
+</html>
