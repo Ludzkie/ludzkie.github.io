@@ -9,7 +9,13 @@
 <body>
 
 <div class="container">
-    <div class="badge">Quarter 3 &bull; Study Hub</div>
+    <div class="top-bar">
+        <div class="badge">Quarter 3 &bull; Study Hub</div>
+        <button type="button" class="btn-theme" id="openThemeModal" aria-haspopup="dialog" aria-controls="themeModal">
+            &#127912; Theme
+        </button>
+    </div>
+
     <h1>Quarter 3 Notes - By Ludzkie</h1>
     <p class="subtitle">Select a subject below to view the reviewer.</p>
 
@@ -41,5 +47,73 @@
     </footer>
 </div>
 
+<!-- Theme Pop-Up Modal -->
+<div class="theme-modal-backdrop" id="themeModal" role="dialog" aria-modal="true" aria-labelledby="themeModalTitle" hidden>
+    <div class="theme-modal">
+        <div class="theme-modal-header">
+            <h2 id="themeModalTitle">Choose Color Theme</h2>
+            <button type="button" class="theme-close" id="closeThemeModal" aria-label="Close theme picker">&times;</button>
+        </div>
+        <p class="theme-modal-desc">Pick a preset palette. Your choice saves automatically on this device across all reviewer pages.</p>
+
+        <div class="swatch-grid">
+            <button type="button" class="swatch-option" data-theme="cyber" aria-pressed="false">
+                <span class="swatch-dots">
+                    <i style="background:#00f5d4"></i>
+                    <i style="background:#a855f7"></i>
+                    <i style="background:#f43f5e"></i>
+                </span>
+                <span class="swatch-name">Cyber Neon</span>
+            </button>
+
+            <button type="button" class="swatch-option" data-theme="sunset" aria-pressed="false">
+                <span class="swatch-dots">
+                    <i style="background:#fb923c"></i>
+                    <i style="background:#f43f5e"></i>
+                    <i style="background:#facc15"></i>
+                </span>
+                <span class="swatch-name">Sunset Pulse</span>
+            </button>
+
+            <button type="button" class="swatch-option" data-theme="emerald" aria-pressed="false">
+                <span class="swatch-dots">
+                    <i style="background:#10b981"></i>
+                    <i style="background:#38bdf8"></i>
+                    <i style="background:#a3e635"></i>
+                </span>
+                <span class="swatch-name">Emerald Mint</span>
+            </button>
+
+            <button type="button" class="swatch-option" data-theme="royal" aria-pressed="false">
+                <span class="swatch-dots">
+                    <i style="background:#818cf8"></i>
+                    <i style="background:#c084fc"></i>
+                    <i style="background:#e879f9"></i>
+                </span>
+                <span class="swatch-name">Royal Violet</span>
+            </button>
+
+            <button type="button" class="swatch-option" data-theme="solar" aria-pressed="false">
+                <span class="swatch-dots">
+                    <i style="background:#facc15"></i>
+                    <i style="background:#38bdf8"></i>
+                    <i style="background:#fb7185"></i>
+                </span>
+                <span class="swatch-name">Solar Gold</span>
+            </button>
+
+            <button type="button" class="swatch-option" data-theme="berry" aria-pressed="false">
+                <span class="swatch-dots">
+                    <i style="background:#ec4899"></i>
+                    <i style="background:#a855f7"></i>
+                    <i style="background:#2dd4bf"></i>
+                </span>
+                <span class="swatch-name">Berry Pop</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="theme.js"></script>
 </body>
 </html>
