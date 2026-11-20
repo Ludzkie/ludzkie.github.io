@@ -4,88 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class Reviewer Hub - Main Menu</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #e0f7fa;
-            background-color: #0b132b;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
-        .container {
-            max-width: 700px;
-            width: 100%;
-            background: #1c2541;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.15);
-            border: 1px solid #3a506b;
-            text-align: center;
-        }
-        h1 {
-            color: #00e5ff;
-            border-bottom: 2px solid #3a506b;
-            padding-bottom: 15px;
-            margin-top: 0;
-            margin-bottom: 15px;
-            text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
-        }
-        .subtitle {
-            color: #c0d6df;
-            margin-bottom: 35px;
-            font-size: 1.05em;
-        }
-        .menu-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        .subject-card {
-            display: block;
-            padding: 22px 25px;
-            background-color: #11192e;
-            color: #00e5ff;
-            text-decoration: none;
-            border-radius: 6px;
-            border: 1px solid #00e5ff;
-            transition: all 0.3s ease;
-            text-align: left;
-        }
-        .subject-card:hover {
-            background-color: #00e5ff;
-            color: #0b132b;
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
-            transform: translateY(-2px);
-        }
-        .subject-title {
-            display: block;
-            font-size: 1.25em;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .subject-desc {
-            display: block;
-            font-size: 0.9em;
-            color: #80e5ff;
-        }
-        .subject-card:hover .subject-desc {
-            color: #1c2541;
-        }
-        footer {
-            margin-top: 30px;
-            font-size: 0.85em;
-            color: #4cc9f0;
-            border-top: 1px solid #3a506b;
-            padding-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -97,11 +16,14 @@
         <a href="ap.html" class="subject-card">
             <span class="subject-title">Aralin Panlipunan</span>
         </a>
+        <a href="values.html" class="subject-card">
+            <span class="subject-title">Values</span>
+        </a>
+        <a href="computer.html" class="subject-card">
+            <span class="subject-title">Computer</span>
+        </a>
         <a href="tle.html" class="subject-card">
             <span class="subject-title">TLE Accounting</span>
-        </a>
-         <a href="values.html" class="subject-card">
-            <span class="subject-title">Values</span>
         </a>
     </div>
 
