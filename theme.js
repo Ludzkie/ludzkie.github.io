@@ -41,14 +41,19 @@
 
         if (!modal || !openBtn) return;
 
+        let hideTimer = null;
+
         function openModal() {
+            clearTimeout(hideTimer);
             modal.hidden = false;
-            requestAnimationFrame(() => modal.classList.add('open'));
+            modal.offsetHeight; // force reflow so transition runs cleanly
+            modal.classList.add('open');
         }
 
         function closeModal() {
             modal.classList.remove('open');
-            setTimeout(() => {
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
                 if (!modal.classList.contains('open')) {
                     modal.hidden = true;
                 }
