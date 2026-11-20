@@ -3,856 +3,558 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Math Exam Review Notes - Geometry & Proofs</title>
-    <!-- MathJax for rendering math equations cleanly -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Math 9 – 3rd Quarter Reviewer</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Renders LaTeX math equations cleanly in the browser -->
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f6f8;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 980px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-        .btn-back {
-            display: inline-block;
-            margin-bottom: 20px;
-            padding: 8px 16px;
-            background-color: #7f8c8d;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-        .btn-back:hover {
-            background-color: #626d6e;
-        }
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            border-bottom: 2px solid #eaeaea;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-        }
-        h2 {
-            color: #2980b9;
-            border-bottom: 1px solid #eaeaea;
-            padding-bottom: 8px;
-            margin-top: 45px;
-        }
-        h3 {
-            color: #34495e;
-            margin-top: 25px;
-        }
-        h4 {
-            color: #2c3e50;
-            margin-top: 18px;
-            margin-bottom: 8px;
-        }
-        ul, ol {
-            margin-top: 5px;
-            margin-bottom: 15px;
-        }
-        li {
-            margin-bottom: 6px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-            color: #2c3e50;
-        }
-        tr:nth-child(even) {
-            background-color: #fbfbfb;
-        }
-        .formula-box {
-            text-align: center;
-            font-weight: bold;
-            background-color: #f2f2f2;
-            padding: 12px;
-            border-radius: 4px;
-            border: 1px solid #e2e2e2;
-            margin: 15px 0;
-        }
-        .example-box {
-            background-color: #eef7fa;
-            border-left: 4px solid #2980b9;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 0 4px 4px 0;
-        }
-        .example-title {
-            font-weight: bold;
-            color: #2980b9;
-            margin-bottom: 5px;
-        }
-        .diagram-container {
+        .graph-grid {
             display: flex;
-            gap: 20px;
             flex-wrap: wrap;
+            gap: 16px;
             justify-content: center;
-            margin: 20px 0;
+            margin: 18px 0;
         }
-        .diagram-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: #fafafa;
-            border: 1px solid #e0e0e0;
-            border-radius: 6px;
-            padding: 15px;
-            flex: 1;
-            min-width: 280px;
-        }
-        .diagram-caption {
-            font-size: 0.85em;
-            color: #555;
-            margin-top: 8px;
+        .graph-card {
+            border: 1px solid rgba(128, 128, 128, 0.35);
+            border-radius: 10px;
+            padding: 12px;
             text-align: center;
-            font-style: italic;
+            background: rgba(128, 128, 128, 0.05);
+            max-width: 280px;
+            flex: 1 1 240px;
         }
-        footer {
-            text-align: center;
-            margin-top: 50px;
+        .graph-card svg {
+            width: 100%;
+            height: auto;
+            max-width: 240px;
+        }
+        .graph-caption {
             font-size: 0.9em;
-            color: #7f8c8d;
-            border-top: 1px solid #eaeaea;
-            padding-top: 20px;
+            margin-top: 8px;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <a href="index.html" class="btn-back">&larr; Back to Main Page</a>
+    <a href="menu.html" class="btn-back">&larr; Back to Main Page</a>
 
-    <h1>Master Math Exam Review Notes: Geometry, Proofs & Triangles</h1>
+    <h1>Math 9 – 3rd Quarter Notes</h1>
 
-    <!-- ========================================== -->
-    <!-- SECTION 1: QUADRILATERALS -->
-    <!-- ========================================== -->
-    <h2>1. Quadrilaterals</h2>
-    
-    <h3>Line Relationships & Geometry Basics</h3>
-    
-    <div class="diagram-container">
-        <div class="diagram-box">
-            <svg width="280" height="140" viewBox="0 0 280 140" xmlns="http://www.w3.org/2000/svg">
-                <line x1="20" y1="40" x2="260" y2="40" stroke="#2980b9" stroke-width="2"/>
-                <line x1="20" y1="100" x2="260" y2="100" stroke="#2980b9" stroke-width="2"/>
-                <line x1="80" y1="15" x2="200" y2="125" stroke="#e74c3c" stroke-width="2"/>
-                <text x="210" y="30" fill="#2980b9" font-weight="bold" font-size="12">Line m</text>
-                <text x="210" y="115" fill="#2980b9" font-weight="bold" font-size="12">Line n</text>
-                <text x="185" y="115" fill="#e74c3c" font-weight="bold" font-size="12">t</text>
-            </svg>
-            <div class="diagram-caption">Figure 1.1: Parallelism (\(m \parallel n\)) cut by transversal \(t\)</div>
-        </div>
-        <div class="diagram-box">
-            <svg width="280" height="140" viewBox="0 0 280 140" xmlns="http://www.w3.org/2000/svg">
-                <line x1="40" y1="80" x2="240" y2="80" stroke="#2c3e50" stroke-width="2"/>
-                <line x1="140" y1="20" x2="140" y2="120" stroke="#2c3e50" stroke-width="2"/>
-                <rect x="140" y="70" width="10" height="10" fill="none" stroke="#e74c3c" stroke-width="1.5"/>
-                <text x="155" y="35" fill="#2c3e50" font-size="12" font-weight="bold">Line A</text>
-                <text x="175" y="75" fill="#2c3e50" font-size="12" font-weight="bold">Line B</text>
-            </svg>
-            <div class="diagram-caption">Figure 1.2: Perpendicularity (\(A \perp B\)) forming \(90^\circ\) right angles</div>
-        </div>
-    </div>
+    <!-- QUADRATIC FUNCTIONS AND THEIR KEY FEATURES -->
+    <h2>Quadratic Functions and Their Key Features</h2>
 
+    <h3>Definition and Forms</h3>
     <ul>
-        <li><strong>Parallelism (\(\parallel\)):</strong> Two or more lines, rays, or line segments that lie within the same plane and maintain a constant perpendicular distance, ensuring they never intersect regardless of extension length.</li>
-        <li><strong>Perpendicularity (\(\perp\)):</strong> Two lines, rays, or line segments that intersect at a single point to form exact \(90^\circ\) right angles.</li>
-        <li><strong>Coplanar Lines:</strong> Lines that lie entirely within the exact same two-dimensional flat plane.</li>
-        <li><strong>Skew Lines:</strong> Non-coplanar lines that do not intersect and are not parallel (they exist across different three-dimensional planes).</li>
-        <li><strong>Etc. (Transversal Angle Relationships):</strong> When a transversal line intersects two parallel lines, specific angle pairs are established:
+        <li><strong>Quadratic Function:</strong> A mathematical relationship in which the highest exponent (degree) of the independent variable is <strong>2</strong>[cite: 1, 6].</li>
+        <li><strong>Standard / General Form:</strong> Commonly expressed as $f(x) = ax^2 + bx + c$ (or $y = ax^2 + bx + c$), where $a$, $b$, and $c$ are constants (real numbers) and $a \neq 0$[cite: 1, 3, 14].</li>
+        <li><strong>Graph (Parabola):</strong> Unlike linear functions that produce a straight line, a quadratic function produces a symmetrical U-shaped curve called a <strong>parabola</strong>[cite: 1, 6].</li>
+        <li><strong>Direction of Opening ($a$):</strong>
             <ul>
-                <li><em>Corresponding Angles:</em> Equal in measure (\(\angle 1 = \angle 5\)).</li>
-                <li><em>Alternate Interior Angles:</em> Equal in measure (\(\angle 3 = \angle 6\)).</li>
-                <li><em>Alternate Exterior Angles:</em> Equal in measure (\(\angle 1 = \angle 8\)).</li>
-                <li><em>Consecutive Interior Angles:</em> Supplementary; sum to \(180^\circ\) (\(\angle 3 + \angle 5 = 180^\circ\)).</li>
+                <li>If $a &gt; 0$, the parabola opens <strong>upward</strong>[cite: 1, 3].</li>
+                <li>If $a &lt; 0$, the parabola opens <strong>downward</strong>[cite: 1, 3].</li>
             </ul>
         </li>
     </ul>
 
-    <h3>What's a Polygon & Quadrilateral</h3>
-
-    <div class="diagram-container">
-        <div class="diagram-box">
-            <svg width="260" height="140" viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="50,110 90,30 170,30 210,110" fill="#e8f8f5" stroke="#16a085" stroke-width="2"/>
-                <text x="40" y="125" font-size="11" fill="#2c3e50" font-weight="bold">A</text>
-                <text x="85" y="20" font-size="11" fill="#2c3e50" font-weight="bold">B</text>
-                <text x="175" y="20" font-size="11" fill="#2c3e50" font-weight="bold">C</text>
-                <text x="215" y="125" font-size="11" fill="#2c3e50" font-weight="bold">D</text>
+    <div class="graph-grid">
+        <div class="graph-card">
+            <svg viewBox="0 0 220 190">
+                <!-- Axes -->
+                <line x1="20" y1="150" x2="200" y2="150" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
+                <line x1="55" y1="15" x2="55" y2="175" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
+                <!-- Axis of symmetry -->
+                <line x1="115" y1="20" x2="115" y2="165" stroke="#888" stroke-dasharray="4,4" stroke-width="1.5"/>
+                <!-- Upward Parabola -->
+                <path d="M 65 30 Q 115 230 165 30" fill="none" stroke="#c2185b" stroke-width="2.5"/>
+                <!-- Vertex -->
+                <circle cx="115" cy="130" r="4.5" fill="#222"/>
+                <text x="122" y="138" font-size="11" fill="currentColor">vertex (minimum)</text>
+                <text x="120" y="30" font-size="10" fill="#666">axis of symmetry</text>
             </svg>
-            <div class="diagram-caption">Figure 1.3: General Quadrilateral ABCD (Interior Sum = \(360^\circ\))</div>
+            <div class="graph-caption"><strong>Opens Upward ($a &gt; 0$)</strong><br>Vertex is the minimum point[cite: 1, 6].</div>
+        </div>
+
+        <div class="graph-card">
+            <svg viewBox="0 0 220 190">
+                <!-- Axes -->
+                <line x1="20" y1="150" x2="200" y2="150" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
+                <line x1="55" y1="15" x2="55" y2="175" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
+                <!-- Axis of symmetry -->
+                <line x1="115" y1="20" x2="115" y2="165" stroke="#888" stroke-dasharray="4,4" stroke-width="1.5"/>
+                <!-- Downward Parabola -->
+                <path d="M 65 160 Q 115 -40 165 160" fill="none" stroke="#c2185b" stroke-width="2.5"/>
+                <!-- Vertex -->
+                <circle cx="115" cy="60" r="4.5" fill="#222"/>
+                <!-- x-intercepts -->
+                <circle cx="71" cy="150" r="4" fill="#c2185b"/>
+                <circle cx="159" cy="150" r="4" fill="#c2185b"/>
+                <text x="122" y="56" font-size="11" fill="currentColor">vertex (maximum)</text>
+                <text x="22" y="144" font-size="10" fill="#c2185b">x-intercepts</text>
+            </svg>
+            <div class="graph-caption"><strong>Opens Downward ($a &lt; 0$)</strong><br>Vertex is the maximum point[cite: 1, 6].</div>
         </div>
     </div>
 
+    <h3>Key Features of a Parabola</h3>
     <ul>
-        <li><strong>Polygon:</strong> A closed two-dimensional plane figure formed by three or more straight line segments (sides) that intersect only at their endpoints (vertices).
+        <li><strong>Vertex:</strong> The turning point where the parabola changes direction (from decreasing to increasing when opening upward, or from increasing to decreasing when opening downward)[cite: 2, 6]. Its $y$- or $k$-coordinate in $(x, y)$ or $(h, k)$ represents the <strong>maximum</strong> or <strong>minimum value</strong> of the function[cite: 2, 6].</li>
+        <li><strong>Axis (Line) of Symmetry:</strong> The vertical line passing through the vertex that divides the parabola into two equal mirror-image halves, with equation $x = h$[cite: 2, 6].</li>
+        <li><strong>$x$-Intercept(s) / Zeros / Roots:</strong> The point(s) where the graph intersects the horizontal $x$-axis (where $y = 0$ or $f(x) = 0$)[cite: 2, 3, 6, 26]. A parabola can have:
             <ul>
-                <li><em>Interior Angle Sum Formula:</em> \(S = (n - 2) \times 180^\circ\), where \(n\) represents the total number of sides.</li>
+                <li><strong>No $x$-intercepts</strong> if it does not meet the $x$-axis[cite: 2];</li>
+                <li><strong>One $x$-intercept</strong> if it touches the $x$-axis at one point (tangent to the $x$-axis)[cite: 2]; or</li>
+                <li><strong>Two $x$-intercepts</strong> if it intersects the $x$-axis at two distinct points[cite: 2].</li>
             </ul>
         </li>
-        <li><strong>Quadrilateral:</strong> A four-sided polygon (\(n = 4\)).
-            <ul>
-                <li><em>Interior Angle Sum:</em> \(S = (4 - 2) \times 180^\circ = 360^\circ\). The four interior angles always sum to exactly \(360^\circ\).</li>
-            </ul>
-        </li>
+        <li><strong>$y$-Intercept:</strong> The point where the graph crosses the vertical $y$-axis, representing the value of $y$ when $x = 0$ (equal to $c$ in standard form)[cite: 2, 3, 6].</li>
     </ul>
 
-    <div class="example-box">
-        <div class="example-title">Worked Example: Finding a Missing Angle in a Quadrilateral</div>
-        <p>A quadrilateral has three interior angles measuring \(85^\circ\), \(110^\circ\), and \(95^\circ\). Find the measure of the fourth interior angle \(x\).</p>
-        <p><strong>Solution:</strong> The sum of interior angles in any quadrilateral is \(360^\circ\).</p>
-        <p>\(85^\circ + 110^\circ + 95^\circ + x = 360^\circ\)</p>
-        <p>\(290^\circ + x = 360^\circ \implies x = 360^\circ - 290^\circ = 70^\circ\)</p>
-    </div>
+    <h3>Forms of Quadratic Equations &amp; Vertex Shifts</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Form</th>
+                <th>Equation</th>
+                <th>Vertex / Key Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Standard Form</strong></td>
+                <td>$y = ax^2 + bx + c$[cite: 3]</td>
+                <td>$y$-intercept is $(0, c)$; $x$-coordinate of vertex is $x = -\frac{b}{2a}$[cite: 3].</td>
+            </tr>
+            <tr>
+                <td><strong>Vertex Form</strong></td>
+                <td>$f(x) = a(x - h)^2 + k$[cite: 4]</td>
+                <td>Vertex is $(h, k)$; $h$ is horizontal shift (left/right) and $k$ is vertical shift (up/down); axis of symmetry is $x = h$[cite: 4].</td>
+            </tr>
+            <tr>
+                <td><strong>Factored (Intercept) Form</strong></td>
+                <td>$y = a(x - p)(x - q)$[cite: 5, 6]</td>
+                <td>$p$ and $q$ are the $x$-intercepts; $x$-coordinate of vertex is midpoint $x = \frac{p + q}{2}$[cite: 6].</td>
+            </tr>
+        </tbody>
+    </table>
 
-    <h3>Detailed Quadrilateral Breakdown & Visual Characteristics</h3>
-
-    <!-- PARALLELOGRAM -->
-    <h4>1. Parallelogram</h4>
-    <div class="diagram-box" style="max-width: 380px; margin: 15px auto;">
-        <svg width="300" height="150" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="50,110 90,30 250,30 210,110" fill="#e8f4f8" stroke="#2980b9" stroke-width="2"/>
-            <line x1="50" y1="110" x2="250" y2="30" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4"/>
-            <line x1="90" y1="30" x2="210" y2="110" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4"/>
-            <text x="35" y="115" font-weight="bold" fill="#2c3e50">A</text>
-            <text x="80" y="20" font-weight="bold" fill="#2c3e50">B</text>
-            <text x="260" y="25" font-weight="bold" fill="#2c3e50">C</text>
-            <text x="215" y="125" font-weight="bold" fill="#2c3e50">D</text>
-            <text x="145" y="75" font-weight="bold" fill="#c0392b" font-size="11">M</text>
-        </svg>
-        <div class="diagram-caption">Figure 1.4: Parallelogram ABCD with bisecting diagonals at M</div>
-    </div>
-    <ul>
-        <li><strong>Definition:</strong> A quadrilateral with two pairs of parallel opposite sides.</li>
-        <li><strong>Characteristics:</strong>
-            <ul>
-                <li>Opposite sides are parallel (\(AB \parallel CD\), \(AD \parallel BC\)).</li>
-                <li>Opposite sides are congruent (\(AB \cong CD\), \(AD \cong BC\)).</li>
-                <li>Opposite interior angles are congruent (\(\angle A \cong \angle C\), \(\angle B \cong \angle D\)).</li>
-                <li>Consecutive interior angles are supplementary (\(m\angle A + m\angle B = 180^\circ\)).</li>
-                <li>Diagonals bisect each other at central midpoint \(M\) (\(AM \cong MC\), \(BM \cong MD\)).</li>
-            </ul>
-        </li>
-    </ul>
-
-    <!-- RECTANGLE -->
-    <h4>2. Rectangle</h4>
-    <div class="diagram-box" style="max-width: 380px; margin: 15px auto;">
-        <svg width="300" height="150" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
-            <rect x="50" y="30" width="200" height="80" fill="#eefaf1" stroke="#27ae60" stroke-width="2"/>
-            <line x1="50" y1="30" x2="250" y2="110" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4"/>
-            <line x1="50" y1="110" x2="250" y2="30" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4"/>
-            <rect x="50" y="30" width="10" height="10" fill="none" stroke="#27ae60" stroke-width="1.5"/>
-            <rect x="240" y="30" width="10" height="10" fill="none" stroke="#27ae60" stroke-width="1.5"/>
-            <rect x="240" y="100" width="10" height="10" fill="none" stroke="#27ae60" stroke-width="1.5"/>
-            <rect x="50" y="100" width="10" height="10" fill="none" stroke="#27ae60" stroke-width="1.5"/>
-            <text x="35" y="25" font-weight="bold" fill="#2c3e50">A</text>
-            <text x="260" y="25" font-weight="bold" fill="#2c3e50">B</text>
-            <text x="260" y="125" font-weight="bold" fill="#2c3e50">C</text>
-            <text x="35" y="125" font-weight="bold" fill="#2c3e50">D</text>
-        </svg>
-        <div class="diagram-caption">Figure 1.5: Rectangle ABCD with congruent diagonals (\(AC \cong BD\))</div>
-    </div>
-    <ul>
-        <li><strong>Definition:</strong> A parallelogram containing four right angles (\(90^\circ\)).</li>
-        <li><strong>Characteristics:</strong>
-            <ul>
-                <li>Inherits all standard parallelogram properties.</li>
-                <li>Four interior angles equal \(90^\circ\).</li>
-                <li>Diagonals are congruent (\(AC \cong BD\)) and bisect each other.</li>
-            </ul>
-        </li>
-    </ul>
-
-    <!-- RHOMBUS -->
-    <h4>3. Rhombus</h4>
-    <div class="diagram-box" style="max-width: 380px; margin: 15px auto;">
-        <svg width="300" height="160" viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="150,10 230,80 150,150 70,80" fill="#fef5e7" stroke="#d35400" stroke-width="2"/>
-            <line x1="150" y1="10" x2="150" y2="150" stroke="#e74c3c" stroke-width="1.5"/>
-            <line x1="70" y1="80" x2="230" y2="80" stroke="#e74c3c" stroke-width="1.5"/>
-            <rect x="150" y="80" width="10" height="10" fill="none" stroke="#e74c3c" stroke-width="1.5"/>
-            <text x="145" y="8" font-weight="bold" fill="#2c3e50">A</text>
-            <text x="240" y="85" font-weight="bold" fill="#2c3e50">B</text>
-            <text x="145" y="165" font-weight="bold" fill="#2c3e50">C</text>
-            <text x="50" y="85" font-weight="bold" fill="#2c3e50">D</text>
-        </svg>
-        <div class="diagram-caption">Figure 1.6: Rhombus ABCD with perpendicular diagonals (\(AC \perp BD\))</div>
-    </div>
-    <ul>
-        <li><strong>Definition:</strong> A parallelogram with four congruent sides.</li>
-        <li><strong>Characteristics:</strong>
-            <ul>
-                <li>Inherits all standard parallelogram properties.</li>
-                <li>All four sides are equal in length (\(AB = BC = CD = DA\)).</li>
-                <li>Diagonals are perpendicular (\(AC \perp BD\)).</li>
-                <li>Diagonals bisect interior vertex angles.</li>
-            </ul>
-        </li>
-    </ul>
-
-    <!-- SQUARE -->
-    <h4>4. Square</h4>
-    <div class="diagram-box" style="max-width: 380px; margin: 15px auto;">
-        <svg width="300" height="160" viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
-            <rect x="90" y="25" width="110" height="110" fill="#f4ecf7" stroke="#8e44ad" stroke-width="2"/>
-            <line x1="90" y1="25" x2="200" y2="135" stroke="#e74c3c" stroke-width="1.5"/>
-            <line x1="90" y1="135" x2="200" y2="25" stroke="#e74c3c" stroke-width="1.5"/>
-            <rect x="90" y="25" width="10" height="10" fill="none" stroke="#8e44ad" stroke-width="1.5"/>
-            <text x="75" y="20" font-weight="bold" fill="#2c3e50">A</text>
-            <text x="210" y="20" font-weight="bold" fill="#2c3e50">B</text>
-            <text x="210" y="145" font-weight="bold" fill="#2c3e50">C</text>
-            <text x="75" y="145" font-weight="bold" fill="#2c3e50">D</text>
-        </svg>
-        <div class="diagram-caption">Figure 1.7: Square ABCD combining Rectangle & Rhombus properties</div>
-    </div>
-    <ul>
-        <li><strong>Definition:</strong> A regular quadrilateral that is both a rectangle (four right angles) and a rhombus (four equal sides).</li>
-        <li><strong>Characteristics:</strong>
-            <ul>
-                <li>Four congruent sides and four \(90^\circ\) right interior angles.</li>
-                <li>Diagonals are congruent, perpendicular, and bisect vertex angles into \(45^\circ\) segments.</li>
-            </ul>
-        </li>
-    </ul>
-
-    <!-- TRAPEZOIDS -->
-    <h4>5. Trapezoid & Trapezoid Types</h4>
-    
-    <div class="diagram-container">
-        <!-- Right Trapezoid -->
-        <div class="diagram-box">
-            <svg width="240" height="140" viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="50,110 50,30 150,30 200,110" fill="#fef9e7" stroke="#f39c12" stroke-width="2"/>
-                <rect x="50" y="30" width="10" height="10" fill="none" stroke="#f39c12" stroke-width="1.5"/>
-                <rect x="50" y="100" width="10" height="10" fill="none" stroke="#f39c12" stroke-width="1.5"/>
+    <div class="graph-grid">
+        <div class="graph-card">
+            <svg viewBox="0 0 200 180">
+                <line x1="15" y1="120" x2="185" y2="120" stroke="currentColor" stroke-width="1.2"/>
+                <line x1="100" y1="15" x2="100" y2="165" stroke="currentColor" stroke-width="1.2"/>
+                <!-- y = x^2 -->
+                <path d="M 45 25 Q 100 215 155 25" fill="none" stroke="#c2185b" stroke-width="2"/>
+                <!-- y = x^2 + 3 -->
+                <path d="M 55 15 Q 100 165 145 15" fill="none" stroke="#1976d2" stroke-width="1.8" stroke-dasharray="3,2"/>
+                <circle cx="100" cy="120" r="3.5" fill="#c2185b"/>
+                <circle cx="100" cy="90" r="3.5" fill="#1976d2"/>
+                <text x="106" y="132" font-size="10" fill="currentColor">(0, 0)</text>
+                <text x="106" y="88" font-size="10" fill="#1976d2">(0, k)</text>
             </svg>
-            <div class="diagram-caption">Figure 1.8: Right Trapezoid</div>
+            <div class="graph-caption"><strong>$y = ax^2$ vs. $y = ax^2 + k$</strong><br>Vertex at $(0, 0)$ or $(0, k)$ on $y$-axis[cite: 4, 5].</div>
         </div>
-        <!-- Isosceles Trapezoid -->
-        <div class="diagram-box">
-            <svg width="240" height="140" viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="40,110 70,30 170,30 200,110" fill="#fef9e7" stroke="#f39c12" stroke-width="2"/>
-                <line x1="50" y1="65" x2="60" y2="75" stroke="#f39c12" stroke-width="2"/>
-                <line x1="180" y1="75" x2="190" y2="65" stroke="#f39c12" stroke-width="2"/>
+
+        <div class="graph-card">
+            <svg viewBox="0 0 200 180">
+                <line x1="15" y1="120" x2="185" y2="120" stroke="currentColor" stroke-width="1.2"/>
+                <line x1="100" y1="15" x2="100" y2="165" stroke="currentColor" stroke-width="1.2"/>
+                <!-- y = (x + 2)^2 -->
+                <path d="M 25 25 Q 65 215 105 25" fill="none" stroke="#c2185b" stroke-width="2"/>
+                <!-- y = (x - 2)^2 - 3 -->
+                <path d="M 95 40 Q 135 245 175 40" fill="none" stroke="#2e7d32" stroke-width="2"/>
+                <circle cx="65" cy="120" r="3.5" fill="#c2185b"/>
+                <circle cx="135" cy="142" r="3.5" fill="#2e7d32"/>
+                <text x="35" y="134" font-size="10" fill="#c2185b">(h, 0)</text>
+                <text x="122" y="156" font-size="10" fill="#2e7d32">(h, k)</text>
             </svg>
-            <div class="diagram-caption">Figure 1.9: Isosceles Trapezoid (Equal Legs)</div>
-        </div>
-        <!-- Scalene Trapezoid -->
-        <div class="diagram-box">
-            <svg width="240" height="140" viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="30,110 80,30 140,30 210,110" fill="#fef9e7" stroke="#f39c12" stroke-width="2"/>
-            </svg>
-            <div class="diagram-caption">Figure 1.10: Scalene Trapezoid</div>
+            <div class="graph-caption"><strong>$y = a(x - h)^2$ &amp; $y = a(x - h)^2 + k$</strong><br>Vertex at $(h, 0)$ or $(h, k)$[cite: 4, 5].</div>
         </div>
     </div>
 
-    <ul>
-        <li><strong>Definition:</strong> A quadrilateral with <strong>exactly one pair</strong> of parallel sides (bases). The non-parallel sides are legs.</li>
-        <li><strong>Trapezoid Types:</strong>
-            <ul>
-                <li><em>Right Trapezoid:</em> Contains at least two right angles adjacent to the height line.</li>
-                <li><em>Isosceles Trapezoid:</em> Non-parallel legs are congruent in length, and base angles along each base are equal.</li>
-                <li><em>Scalene Trapezoid:</em> Neither legs nor interior angles are equal in measure.</li>
-            </ul>
+    <h3>Step-by-Step Example: Finding Features from Standard Form</h3>
+    <p><strong>Given:</strong> $y = x^2 - 6x + 9$, where $a = 1$, $b = -6$, and $c = 9$[cite: 3].</p>
+    <ol>
+        <li><strong>Opening &amp; Minimum:</strong> Since $a = 1 &gt; 0$, the parabola opens <strong>upward</strong>, so the vertex is the <strong>minimum point</strong>[cite: 3].</li>
+        <li><strong>Find $x$-coordinate of the vertex:</strong>
+            $$x = -\frac{b}{2a} = -\frac{-6}{2(1)} = \frac{6}{2} = 3 \quad \text{[cite: 3]}$$
         </li>
+        <li><strong>Substitute $x = 3$ to find $y$:</strong>
+            $$y = (3)^2 - 6(3) + 9 = 9 - 18 + 9 = 0 \quad \text{[cite: 3]}$$
+            Vertex: <strong>$(3, 0)$</strong>; Minimum value: <strong>$0$</strong>[cite: 3].
+        </li>
+        <li><strong>Find the $y$-intercept ($x = 0$):</strong> Since $c = 9$, the graph passes through <strong>$(0, 9)$</strong>[cite: 3, 4].</li>
+        <li><strong>Find the $x$-intercept ($y = 0$):</strong>
+            $$x^2 - 6x + 9 = 0 \implies \sqrt{(x - 3)^2} = \sqrt{0} \implies x - 3 = 0 \implies x = 3 \quad \text{[cite: 4]}$$
+            The graph touches the $x$-axis at <strong>$(3, 0)$</strong>[cite: 4].
+        </li>
+    </ol>
+
+    <!-- TRANSFORMING BETWEEN GENERAL FORM AND VERTEX FORM -->
+    <h2>Transforming Between General Form and Vertex Form</h2>
+
+    <h3>A. General Form $\rightarrow$ Perfect Square Trinomial (PST) $\rightarrow$ Vertex Form</h3>
+    <p>Transforming $y = ax^2 + bx + c$ to $y = a(x - h)^2 + k$ clearly identifies the maximum or minimum value and helps in graphing and modeling real-world systems[cite: 7, 8, 14].</p>
+    <ol>
+        <li><strong>Regroup:</strong> Group the terms containing $x$ in parentheses[cite: 8, 14].</li>
+        <li><strong>Complete the Square (PST):</strong> Compute $\text{last term} = \left(\frac{\text{middle term}}{2}\right)^2$ to create a Perfect Square Trinomial (PST)[cite: 8, 9, 14].</li>
+        <li><strong>Subtract &amp; Simplify:</strong> Subtract the number added to the grouped terms from the constant outside the parentheses, then simplify[cite: 8, 9, 14].</li>
+        <li><strong>Factor as Square of a Binomial:</strong> Rewrite the PST inside the parentheses as the square of a binomial[cite: 8, 9, 14].</li>
+    </ol>
+
+    <p><strong>Example A1:</strong> Transform $y = x^2 + 8x + 5$ into vertex form[cite: 8].</p>
+    <ol>
+        <li>$y = (x^2 + 8x) + 5$[cite: 8]</li>
+        <li>$\text{last term} = \left(\frac{8}{2}\right)^2 = (4)^2 = 16 \implies \text{PST: } x^2 + 8x + 16$[cite: 8]</li>
+        <li>$y = (x^2 + 8x + 16) + 5 - 16 = (x^2 + 8x + 16) - 11$[cite: 9]</li>
+        <li><strong>Vertex Form:</strong> $y = (x + 4)^2 - 11$[cite: 9]</li>
+    </ol>
+
+    <p><strong>Example A2:</strong> Transform $y = x^2 - 2x - 6$ into vertex form[cite: 9].</p>
+    <ol>
+        <li>$y = (x^2 - 2x) - 6$[cite: 9]</li>
+        <li>$\text{last term} = \left(\frac{-2}{2}\right)^2 = (-1)^2 = 1 \implies \text{PST: } x^2 - 2x + 1$[cite: 9]</li>
+        <li>$y = (x^2 - 2x + 1) - (6 - 1) = (x^2 - 2x + 1) - 7$[cite: 9]</li>
+        <li><strong>Vertex Form:</strong> $y = (x - 1)^2 - 7$[cite: 9]</li>
+    </ol>
+
+    <h3>B. Vertex Form $\rightarrow$ General Form</h3>
+    <ol>
+        <li><strong>Expand Binomial:</strong> Rewrite the square of a binomial in expanded form[cite: 10, 14].</li>
+        <li><strong>Multiply &amp; Combine Like Terms:</strong> Multiply by the coefficient $a$ of the grouped terms and combine like terms to simplify[cite: 10, 11, 14].</li>
+    </ol>
+
+    <p><strong>Example B1:</strong> Transform $y = (x - 7)^2 + 3$ into general form[cite: 10].</p>
+    <ol>
+        <li>$y = (x - 7)(x - 7) + 3 = x^2 - 7x - 7x + 49 + 3 = x^2 - 14x + 49 + 3$[cite: 10]</li>
+        <li><strong>General Form:</strong> $y = x^2 - 14x + 52$[cite: 10]</li>
+    </ol>
+
+    <p><strong>Example B2:</strong> Transform $y = 2(x + 5)^2 - 12$ into general form[cite: 10].</p>
+    <ol>
+        <li>$y = 2(x + 5)(x + 5) - 12 = 2(x^2 + 5x + 5x + 25) - 12 = 2(x^2 + 10x + 25) - 12$[cite: 10]</li>
+        <li><strong>General Form:</strong> $y = 2x^2 + 20x + 50 - 12 \implies \mathbf{y = 2x^2 + 20x + 38}$[cite: 11]</li>
+    </ol>
+
+    <!-- SKETCHING GRAPHS, PARAMETER EFFECTS, AND ZEROS -->
+    <h2>Sketching Graphs, Parameter Effects, and Zeros</h2>
+
+    <h3>Methods of Sketching a Quadratic Graph</h3>
+    <ul>
+        <li><strong>Using a Table of Values:</strong> Choose $x$-values (ideally including negative numbers, zero, and positive numbers), compute corresponding $y$-values using the function, plot the points on the Cartesian plane, and connect them smoothly to form a parabola[cite: 11, 12, 23].</li>
+        <li><strong>Using Equations / Key Features:</strong> Determine the vertex $(h, k)$ (by transforming to vertex form or using $h = -\frac{b}{2a}$ and $k = -\frac{b^2 - 4ac}{4a}$), solve for $x$-intercepts ($y = 0$) and $y$-intercept ($x = 0$), plot the points, and connect them to form a parabola[cite: 12, 13, 25].</li>
     </ul>
 
-    <!-- KITE -->
-    <h4>6. Kite</h4>
-    <div class="diagram-box" style="max-width: 380px; margin: 15px auto;">
-        <svg width="300" height="160" viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="150,10 220,70 150,150 80,70" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
-            <line x1="150" y1="10" x2="150" y2="150" stroke="#e74c3c" stroke-width="1.5"/>
-            <line x1="80" y1="70" x2="220" y2="70" stroke="#e74c3c" stroke-width="1.5"/>
-            <rect x="150" y="70" width="10" height="10" fill="none" stroke="#e74c3c" stroke-width="1.5"/>
-            <text x="145" y="8" font-weight="bold" fill="#2c3e50">A</text>
-            <text x="230" y="75" font-weight="bold" fill="#2c3e50">B</text>
-            <text x="145" y="165" font-weight="bold" fill="#2c3e50">C</text>
-            <text x="65" y="75" font-weight="bold" fill="#2c3e50">D</text>
-        </svg>
-        <div class="diagram-caption">Figure 1.11: Kite ABCD with perpendicular diagonals</div>
-    </div>
+    <h3>Effects of Parameters $a$, $h$, and $k$ on $y = a(x - h)^2 + k$</h3>
     <ul>
-        <li><strong>Definition:</strong> A quadrilateral with two distinct pairs of adjacent, congruent sides.</li>
-        <li><strong>Characteristics:</strong>
-            <ul>
-                <li>Two pairs of adjacent equal sides (\(AB \cong AD\), \(BC \cong DC\)).</li>
-                <li>Diagonals intersect at perpendicular \(90^\circ\) angles (\(AC \perp BD\)).</li>
-                <li>Main diagonal bisects the cross diagonal into equal halves.</li>
-                <li>One pair of opposite angles between non-congruent sides is congruent (\(\angle B \cong \angle D\)).</li>
-            </ul>
-        </li>
+        <li><strong>Effect of $a$:</strong> Affects vertical stretch/compression and opening direction[cite: 19, 26]. Larger $|a|$ (e.g., $a = 3$) makes the graph <strong>narrower</strong>; smaller $0 &lt; |a| &lt; 1$ (e.g., $a = \frac{1}{3}$) makes it <strong>wider</strong>[cite: 19, 26]. If $a &gt; 0$, it opens <strong>upward</strong>; if $a &lt; 0$, it opens <strong>downward</strong>[cite: 19, 26].</li>
+        <li><strong>Effect of $h$:</strong> Controls horizontal position of the vertex and axis of symmetry ($x = h$) along the $x$-axis without changing shape or orientation[cite: 18, 22, 26]. If $h &gt; 0$, it shifts <strong>right</strong>; if $h &lt; 0$, it shifts <strong>left</strong>[cite: 18, 26].</li>
+        <li><strong>Effect of $k$:</strong> Controls vertical position of the vertex along the $y$-axis without affecting width or opening direction[cite: 17, 26]. If $k &gt; 0$, it shifts <strong>upward</strong>; if $k &lt; 0$, it shifts <strong>downward</strong>[cite: 17, 26].</li>
     </ul>
 
+    <div class="graph-grid">
+        <div class="graph-card">
+            <svg viewBox="0 0 210 190">
+                <line x1="15" y1="95" x2="195" y2="95" stroke="currentColor" stroke-width="1.2"/>
+                <line x1="105" y1="10" x2="105" y2="180" stroke="currentColor" stroke-width="1.2"/>
+                <!-- f(x) = 3x^2 (narrow) -->
+                <path d="M 80 15 Q 105 175 130 15" fill="none" stroke="#c2185b" stroke-width="2"/>
+                <!-- f(x) = x^2 (standard) -->
+                <path d="M 60 15 Q 105 175 150 15" fill="none" stroke="#1976d2" stroke-width="1.8"/>
+                <!-- f(x) = (1/3)x^2 (wide) -->
+                <path d="M 30 35 Q 105 155 180 35" fill="none" stroke="#2e7d32" stroke-width="1.8"/>
+                <!-- f(x) = -x^2 (downward) -->
+                <path d="M 60 175 Q 105 15 150 175" fill="none" stroke="#666" stroke-width="1.5" stroke-dasharray="3,2"/>
+                <text x="128" y="25" font-size="9" fill="#c2185b">3x²</text>
+                <text x="150" y="30" font-size="9" fill="#1976d2">x²</text>
+                <text x="162" y="50" font-size="9" fill="#2e7d32">⅓x²</text>
+                <text x="148" y="172" font-size="9" fill="#666">-x²</text>
+            </svg>
+            <div class="graph-caption"><strong>Effect of $a$</strong><br>Larger $|a|$ is narrower; smaller $|a|$ is wider; negative $a$ flips downward[cite: 19, 26].</div>
+        </div>
 
-    <!-- ========================================== -->
-    <!-- SECTION 2: PROPERTIES OF A PARALLELOGRAM -->
-    <!-- ========================================== -->
-    <h2>2. Properties of a Parallelogram</h2>
+        <div class="graph-card">
+            <svg viewBox="0 0 210 190">
+                <!-- Axes -->
+                <line x1="15" y1="75" x2="195" y2="75" stroke="currentColor" stroke-width="1.2"/>
+                <line x1="55" y1="10" x2="55" y2="180" stroke="currentColor" stroke-width="1.2"/>
+                <!-- Axis of symmetry x=4 -->
+                <line x1="115" y1="15" x2="115" y2="175" stroke="#888" stroke-dasharray="3,3" stroke-width="1.3"/>
+                <!-- y = x^2 - 8x + 7 -->
+                <path d="M 50 15 Q 115 295 180 15" fill="none" stroke="#c2185b" stroke-width="2.2"/>
+                <!-- Vertex (4, -9) -->
+                <circle cx="115" cy="155" r="4" fill="#222"/>
+                <!-- x-intercepts (1,0) and (7,0) -->
+                <circle cx="70" cy="75" r="3.5" fill="#c2185b"/>
+                <circle cx="160" cy="75" r="3.5" fill="#c2185b"/>
+                <!-- y-intercept (0,7) -->
+                <circle cx="55" cy="30" r="3.5" fill="#c2185b"/>
+                <text x="121" y="162" font-size="9.5" fill="currentColor">V(4, -9)</text>
+                <text x="68" y="68" font-size="9" fill="#c2185b">(1,0)</text>
+                <text x="155" y="68" font-size="9" fill="#c2185b">(7,0)</text>
+                <text x="20" y="32" font-size="9" fill="#c2185b">(0,7)</text>
+            </svg>
+            <div class="graph-caption"><strong>Graph of $y = x^2 - 8x + 7$</strong><br>Vertex $(4, -9)$, $x$-intercepts $(1, 0), (7, 0)$, $y$-intercept $(0, 7)$[cite: 13, 15].</div>
+        </div>
+    </div>
 
-    <p>Given a standard parallelogram \(ABCD\):</p>
+    <h3>Step-by-Step Example: Sketching from General Form</h3>
+    <p><strong>Given:</strong> Sketch the graph of $y = x^2 - 8x + 7$ ($a = 1$, $b = -8$, $c = 7$)[cite: 13].</p>
+    <ol>
+        <li><strong>Find the vertex $(h, k)$:</strong>
+            $$h = -\frac{b}{2a} = -\frac{-8}{2(1)} = 4 \quad \text{[cite: 13]}$$
+            $$k = -\frac{b^2 - 4ac}{4a} = -\frac{(-8)^2 - 4(1)(7)}{4(1)} = -\frac{64 - 28}{4} = -\frac{36}{4} = -9 \quad \text{[cite: 13]}$$
+            Vertex: <strong>$(4, -9)$</strong>; Axis of symmetry: $x = 4$[cite: 13, 15].
+        </li>
+        <li><strong>Find the $x$-intercepts ($y = 0$):</strong>
+            $$0 = x^2 - 8x + 7 \implies 0 = (x - 1)(x - 7) \implies x = 1 \text{ or } x = 7 \quad \text{[cite: 13]}$$
+            $x$-intercepts: <strong>$(1, 0)$</strong> and <strong>$(7, 0)$</strong>[cite: 13, 15].
+        </li>
+        <li><strong>Find the $y$-intercept ($x = 0$):</strong>
+            $$y = (0)^2 - 8(0) + 7 = 7 \implies \mathbf{(0, 7)} \quad \text{[cite: 15]}$$
+        </li>
+        <li><strong>Plot &amp; Connect:</strong> Plot the vertex, intercepts, and symmetric points on the Cartesian plane and connect them smoothly to form an upward-opening parabola[cite: 13, 15].</li>
+    </ol>
+
+    <h3>Finding Zeros (Roots / $x$-Intercepts) in Factored Form</h3>
+    <p>For $f(x) = a(x - r_1)(x - r_2)$, the zeros are the values of $x$ where $f(x) = 0$[cite: 26, 28].</p>
+    <p><strong>Example:</strong> Find the zeros of $f(x) = 5(x - 3)(x + 2)$[cite: 28].</p>
+    <ol>
+        <li>Set $f(x) = 0$ and divide both sides by $5$: $0 = 5(x - 3)(x + 2) \implies 0 = (x - 3)(x + 2)$[cite: 28].</li>
+        <li>Set each factor equal to zero: $x - 3 = 0 \implies x = 3$, and $x + 2 = 0 \implies x = -2$[cite: 28].</li>
+        <li><strong>Zeros / $x$-intercepts:</strong> $x = 3$ and $x = -2$, corresponding to <strong>$(3, 0)$</strong> and <strong>$(-2, 0)$</strong>[cite: 28].</li>
+    </ol>
+
+    <!-- SOLVING QUADRATIC EQUATIONS AND WORD PROBLEMS -->
+    <h2>Solving Quadratic Equations and Word Problems</h2>
+
+    <p>A <strong>quadratic equation</strong> in general form is $ax^2 + bx + c = 0$ ($a \neq 0$), and the values of the variable that make it true are called <strong>roots</strong> or <strong>solutions</strong>[cite: 31].</p>
+
+    <h3>A. Extracting Square Roots (Square Root Property)</h3>
     <ul>
-        <li><strong>Opposite sides:</strong> Opposite sides are parallel (\(AB \parallel CD\), \(AD \parallel BC\)) and congruent (\(AB \cong CD\), \(AD \cong BC\)).</li>
-        <li><strong>Opposite angles:</strong> Opposite interior angles are congruent (\(\angle A \cong \angle C\), \(\angle B \cong \angle D\)).</li>
-        <li><strong>Consecutive angles:</strong> Interior angles following each other along a side are supplementary (\(m\angle A + m\angle B = 180^\circ\)).</li>
-        <li><strong>Adjacent angles:</strong> Angles sharing a common side add up to \(180^\circ\).</li>
-        <li><strong>Diagonals:</strong> Line segments connecting non-adjacent vertices (\(AC\) and \(BD\)).</li>
-        <li><strong>Bisect:</strong> Diagonals bisect each other into equal halves at their mutual midpoint \(M\).</li>
+        <li>Useful when the squared term is isolated (no linear $x$ term)[cite: 31].</li>
+        <li>For $x^2 = k$: if $k &gt; 0$, two real solutions $x = \sqrt{k}$ or $x = -\sqrt{k}$; if $k = 0$, one real solution $x = 0$; if $k &lt; 0$, no real number solution[cite: 31].</li>
+    </ul>
+    <p><strong>Example:</strong> Solve $(y + 2)^2 = 81$[cite: 32].</p>
+    <ol>
+        <li>Take square roots on both sides: $\sqrt{(y + 2)^2} = \sqrt{81} \implies y + 2 = \pm 9$[cite: 32].</li>
+        <li>Solve both cases: $y + 2 = 9 \implies y = 7$, and $y + 2 = -9 \implies y = -11$[cite: 32].</li>
+        <li><strong>Roots:</strong> $y = 7$ or $y = -11$[cite: 32].</li>
+    </ol>
+
+    <h3>B. Factoring (Zero Factor Property)</h3>
+    <ul>
+        <li><strong>Zero Factor Property:</strong> If $ab = 0$, then $a = 0$ or $b = 0$[cite: 32].</li>
+    </ul>
+    <p><strong>Example:</strong> Solve $x(3x + 6) = 9$[cite: 34].</p>
+    <ol>
+        <li>Expand and write in standard form: $3x^2 + 6x = 9 \implies 3x^2 + 6x - 9 = 0$[cite: 34].</li>
+        <li>Divide all terms by GCF $3$: $x^2 + 2x - 3 = 0$[cite: 34].</li>
+        <li>Factor (factors of $-3$ whose sum is $2$ are $-1$ and $3$): $(x - 1)(x + 3) = 0$[cite: 34].</li>
+        <li>Equate each factor to zero: $x - 1 = 0 \implies x = 1$; $x + 3 = 0 \implies x = -3$[cite: 34].</li>
+        <li><strong>Solution Set:</strong> $\{1, -3\}$[cite: 34].</li>
+    </ol>
+
+    <h3>C. Quadratic Formula</h3>
+    <p>For $ax^2 + bx + c = 0$ ($a \neq 0$)[cite: 31]:</p>
+    $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \quad \text{[cite: 40]}$$
+
+    <p><strong>Example:</strong> Solve $8d^2 - 22d = -15$[cite: 39].</p>
+    <ol>
+        <li>Standard form: $8d^2 - 22d + 15 = 0$, so $a = 8$, $b = -22$, $c = 15$[cite: 39].</li>
+        <li>Substitute into the quadratic formula:
+            $$d = \frac{-(-22) \pm \sqrt{(-22)^2 - 4(8)(15)}}{2(8)} = \frac{22 \pm \sqrt{484 - 480}}{16} = \frac{22 \pm \sqrt{4}}{16} = \frac{22 \pm 2}{16} \quad \text{[cite: 39]}$$
+        </li>
+        <li>Solve both cases: $d = \frac{22 + 2}{16} = \frac{24}{16} = \frac{3}{2}$, and $d = \frac{22 - 2}{16} = \frac{20}{16} = \frac{5}{4}$[cite: 39].</li>
+        <li><strong>Solution Set:</strong> $\left\{\frac{3}{2}, \frac{5}{4}\right\}$[cite: 39].</li>
+    </ol>
+
+    <h3>D. Word Problem Example</h3>
+    <p><strong>Problem:</strong> A garden is made of a square section of side $x\text{ m}$ and an adjacent rectangle of dimensions $x$ by $(x + 4)\text{ m}$. The total area is $160\text{ m}^2$. Find $x$[cite: 37].</p>
+    <ol>
+        <li>Total area: $x^2 + x(x + 4) = x^2 + x^2 + 4x = 2x^2 + 4x$[cite: 37].</li>
+        <li>Set equal to $160$: $2x^2 + 4x = 160 \implies 2x^2 + 4x - 160 = 0$[cite: 37].</li>
+        <li>Divide by $2$: $x^2 + 2x - 80 = 0 \implies (x + 10)(x - 8) = 0$[cite: 37].</li>
+        <li>Solve: $x = -10$ (reject, since length cannot be negative) or $x = 8$[cite: 37].</li>
+        <li><strong>Answer:</strong> $x = 8\text{ meters}$[cite: 37].</li>
+    </ol>
+
+    <!-- SIMILARITY OF POLYGONS, TRIANGLES, AND SPECIAL RIGHT TRIANGLES -->
+    <h2>Similarity of Polygons, Triangles, and Special Right Triangles</h2>
+
+    <h3>Similar vs. Congruent Figures</h3>
+    <ul>
+        <li><strong>Similar Polygons:</strong> Polygons with the same shape but not necessarily the same size; corresponding interior angles are congruent (equal) and corresponding side lengths are proportional with a constant ratio called the <strong>scale factor</strong>[cite: 41]. Written using $\sim$ (e.g., $\triangle ABC \sim \triangle PQR$)[cite: 41].</li>
+        <li><strong>Congruent Figures:</strong> Figures that are exact in both shape and size, with all corresponding sides and angles equal[cite: 41].</li>
     </ul>
 
-    <div class="example-box">
-        <div class="example-title">Worked Example: Parallelogram Angle & Side Calculation</div>
-        <p>In parallelogram \(ABCD\), if \(m\angle A = (4x + 10)^\circ\) and consecutive angle \(m\angle B = (2x + 20)^\circ\), solve for \(x\) and determine the measure of \(\angle C\).</p>
-        <p><strong>Solution:</strong> Consecutive angles in a parallelogram are supplementary.</p>
-        <p>\((4x + 10) + (2x + 20) = 180^\circ\)</p>
-        <p>\(6x + 30 = 180 \implies 6x = 150 \implies x = 25\)</p>
-        <p>Substitute \(x = 25\) into \(m\angle A\): \(m\angle A = 4(25) + 10 = 110^\circ\).</p>
-        <p>Since opposite angles are congruent, \(m\angle C = m\angle A = 110^\circ\).</p>
-    </div>
-
-
-    <!-- ========================================== -->
-    <!-- SECTION 3: TRAPEZOIDS AND KITES -->
-    <!-- ========================================== -->
-    <h2>3. Trapezoids and Kites</h2>
-
-    <div class="diagram-container">
-        <div class="diagram-box">
-            <svg width="280" height="160" viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="40,130 80,40 200,40 240,130" fill="#fef9e7" stroke="#f39c12" stroke-width="2"/>
-                <line x1="60" y1="85" x2="220" y2="85" stroke="#27ae60" stroke-width="2" stroke-dasharray="3"/>
-                <line x1="80" y1="40" x2="80" y2="130" stroke="#8e44ad" stroke-width="1.5" stroke-dasharray="2"/>
-                <rect x="80" y="120" width="10" height="10" fill="none" stroke="#8e44ad" stroke-width="1"/>
-                <text x="125" y="32" font-size="11" fill="#7f8c8d">Base 1 (b₁)</text>
-                <text x="120" y="150" font-size="11" fill="#7f8c8d">Base 2 (b₂)</text>
-                <text x="115" y="78" font-size="11" fill="#27ae60" font-weight="bold">Median</text>
-                <text x="85" y="90" font-size="11" fill="#8e44ad">Altitude (h)</text>
-            </svg>
-            <div class="diagram-caption">Figure 3.1: Trapezoid Bases, Altitude, and Midsegment/Median</div>
-        </div>
-    </div>
-
-    <h3>Trapezoid Elements & Formulas</h3>
+    <h3>Triangle Similarity Theorems &amp; Right Triangle Similarity</h3>
     <ul>
-        <li><strong>Trapezoid Properties:</strong> Exactly one pair of parallel bases; consecutive interior angles between distinct bases are supplementary.</li>
-        <li><strong>Bases:</strong> The two parallel sides (\(b_1\) and \(b_2\)).</li>
-        <li><strong>Legs:</strong> The two non-parallel sides.</li>
-        <li><strong>Altitude:</strong> Perpendicular line segment measuring the height distance (\(h\)) between bases.</li>
-        <li><strong>Median (Midsegment):</strong> The line segment connecting the midpoints of the two non-parallel legs.</li>
-        <li><strong>Midpoint:</strong> The central point that cuts a leg segment into two equal lengths.</li>
+        <li><strong>AA Similarity Theorem (Angle-Angle):</strong> Two triangles are similar if two pairs of corresponding angles are congruent[cite: 43].</li>
+        <li><strong>SSS Similarity Theorem (Side-Side-Side):</strong> Two triangles are similar if their corresponding side lengths are proportional[cite: 43].</li>
+        <li><strong>SAS Similarity Theorem (Side-Angle-Side):</strong> Two triangles are similar if two pairs of corresponding sides are proportional and the included angles are congruent[cite: 44].</li>
+        <li><strong>Right Triangle Similarity:</strong> If an altitude is drawn from the right angle to the hypotenuse of a right triangle, the two smaller triangles formed are similar to each other and to the original triangle ($\triangle ACB \sim \triangle ADC \sim \triangle CDB$)[cite: 44, 45].</li>
     </ul>
 
-    <div class="formula-box">
-        Trapezoid Median Formula: \(\text{Median} = \frac{b_1 + b_2}{2}\)
+    <div class="graph-grid">
+        <div class="graph-card">
+            <svg viewBox="0 0 220 150">
+                <!-- Triangle ABC -->
+                <polygon points="45,25 15,120 85,120" fill="none" stroke="currentColor" stroke-width="2"/>
+                <text x="42" y="18" font-size="11" fill="currentColor">A</text>
+                <text x="5" y="132" font-size="11" fill="currentColor">B</text>
+                <text x="87" y="132" font-size="11" fill="currentColor">C</text>
+                <!-- Triangle PQR -->
+                <polygon points="160,45 135,120 195,120" fill="none" stroke="#c2185b" stroke-width="2"/>
+                <text x="157" y="38" font-size="11" fill="#c2185b">P</text>
+                <text x="125" y="132" font-size="11" fill="#c2185b">Q</text>
+                <text x="197" y="132" font-size="11" fill="#c2185b">R</text>
+            </svg>
+            <div class="graph-caption"><strong>Similar Triangles ($\triangle ABC \sim \triangle PQR$)</strong><br>Corresponding angles congruent; sides proportional[cite: 41, 42].</div>
+        </div>
+
+        <div class="graph-card">
+            <svg viewBox="0 0 220 150">
+                <!-- Right triangle ACB with altitude CD -->
+                <polygon points="20,120 200,120 130,30" fill="none" stroke="currentColor" stroke-width="2"/>
+                <line x1="130" y1="30" x2="130" y2="120" stroke="#c2185b" stroke-width="2"/>
+                <!-- Right angle boxes -->
+                <polyline points="122,36 128,43 135,37" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                <polyline points="130,111 139,111 139,120" fill="none" stroke="#c2185b" stroke-width="1.3"/>
+                <text x="10" y="125" font-size="11" fill="currentColor">A</text>
+                <text x="204" y="125" font-size="11" fill="currentColor">B</text>
+                <text x="127" y="22" font-size="11" fill="currentColor">C</text>
+                <text x="127" y="135" font-size="11" fill="#c2185b">D</text>
+                <text x="65" y="136" font-size="10" fill="#666">hypotenuse</text>
+            </svg>
+            <div class="graph-caption"><strong>Right Triangle Similarity</strong><br>$\triangle ACB \sim \triangle ADC \sim \triangle CDB$[cite: 44, 45].</div>
+        </div>
     </div>
 
-    <div class="example-box">
-        <div class="example-title">Worked Example: Trapezoid Median Calculation</div>
-        <p>A trapezoid has base lengths measuring \(14\text{ cm}\) and \(22\text{ cm}\). Calculate the length of its median.</p>
-        <p><strong>Solution:</strong></p>
-        <p>\(\text{Median} = \frac{14 + 22}{2} = \frac{36}{2} = 18\text{ cm}\).</p>
+    <h3>Special Right Triangles</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Special Right Triangle</th>
+                <th>Side Ratio</th>
+                <th>Key Relationships</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>$30^\circ\text{--}60^\circ\text{--}90^\circ$ Triangle</strong></td>
+                <td>$1 : \sqrt{3} : 2$[cite: 48, 50]</td>
+                <td>Shorter leg is opposite $30^\circ$; hypotenuse $= 2 \times \text{shorter leg}$; longer leg $= \text{shorter leg} \times \sqrt{3}$[cite: 48, 49, 50].</td>
+            </tr>
+            <tr>
+                <td><strong>$45^\circ\text{--}45^\circ\text{--}90^\circ$ Triangle</strong></td>
+                <td>$1 : 1 : \sqrt{2}$[cite: 49, 50]</td>
+                <td>Isosceles right triangle (two legs equal); hypotenuse (diagonal) $= \text{leg} \times \sqrt{2}$[cite: 49, 50].</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="graph-grid">
+        <div class="graph-card">
+            <svg viewBox="0 0 200 160">
+                <polygon points="50,20 50,135 130,135" fill="none" stroke="currentColor" stroke-width="2"/>
+                <rect x="50" y="123" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                <text x="55" y="48" font-size="10" fill="#c2185b">30°</text>
+                <text x="103" y="130" font-size="10" fill="#c2185b">60°</text>
+                <text x="30" y="82" font-size="11" fill="currentColor">√3</text>
+                <text x="86" y="150" font-size="11" fill="currentColor">1</text>
+                <text x="96" y="75" font-size="11" fill="#c2185b">2</text>
+            </svg>
+            <div class="graph-caption"><strong>$30^\circ\text{--}60^\circ\text{--}90^\circ$ Triangle</strong><br>Ratio $1 : \sqrt{3} : 2$[cite: 48, 50].</div>
+        </div>
+
+        <div class="graph-card">
+            <svg viewBox="0 0 200 160">
+                <polygon points="45,30 45,135 150,135" fill="none" stroke="currentColor" stroke-width="2"/>
+                <rect x="45" y="123" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                <text x="50" y="55" font-size="10" fill="#c2185b">45°</text>
+                <text x="122" y="130" font-size="10" fill="#c2185b">45°</text>
+                <text x="32" y="86" font-size="11" fill="currentColor">1</text>
+                <text x="94" y="150" font-size="11" fill="currentColor">1</text>
+                <text x="104" y="78" font-size="11" fill="#c2185b">√2</text>
+            </svg>
+            <div class="graph-caption"><strong>$45^\circ\text{--}45^\circ\text{--}90^\circ$ Triangle</strong><br>Ratio $1 : 1 : \sqrt{2}$[cite: 49, 50].</div>
+        </div>
     </div>
 
-    <h3>Isosceles Trapezoids & Kites</h3>
+    <h3>Step-by-Step Examples: Special Right Triangles</h3>
+    <p><strong>Example 1 ($30^\circ\text{--}60^\circ\text{--}90^\circ$):</strong> Given hypotenuse $= 18$, find the shorter leg ($a$) and longer leg ($b$)[cite: 49].</p>
     <ul>
-        <li><strong>Isosceles Trapezoids:</strong>
-            <ul>
-                <li>Non-parallel legs are congruent in length (\(\text{Leg}_1 \cong \text{Leg}_2\)).</li>
-                <li>Base angles along each base are congruent.</li>
-                <li>Diagonals are congruent.</li>
-            </ul>
-        </li>
-        <li><strong>Kites:</strong>
-            <ul>
-                <li>Two pairs of adjacent equal sides.</li>
-                <li>Diagonals intersect perpendicularly (\(d_1 \perp d_2\)).</li>
-            </ul>
-        </li>
+        <li>$\text{shorter leg } (a) = \frac{18}{2} = 9$[cite: 49]</li>
+        <li>$\text{longer leg } (b) = 9 \cdot \sqrt{3} = 9\sqrt{3}$[cite: 49]</li>
     </ul>
 
-    <div class="formula-box">
-        Kite Area Formula: \(\text{Area} = \frac{d_1 \times d_2}{2}\)
-    </div>
-
-
-    <!-- ========================================== -->
-    <!-- SECTION 4: INDUCTIVE & DEDUCTIVE REASONING -->
-    <!-- ========================================== -->
-    <h2>4. Inductive and Deductive Reasoning</h2>
-
-    <div class="diagram-container">
-        <div class="diagram-box">
-            <svg width="320" height="120" viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
-                <rect x="20" y="15" width="110" height="35" fill="#e8f4f8" stroke="#2980b9" rx="4"/>
-                <text x="30" y="37" font-size="11" fill="#2980b9" font-weight="bold">Observations</text>
-                <text x="140" y="37" font-size="14" fill="#7f8c8d">&rarr;</text>
-                <rect x="160" y="15" width="110" height="35" fill="#fef9e7" stroke="#f39c12" rx="4"/>
-                <text x="175" y="37" font-size="11" fill="#d35400" font-weight="bold">Conjecture</text>
-                <!-- Deductive Row -->
-                <rect x="20" y="70" width="110" height="35" fill="#e8f8f5" stroke="#16a085" rx="4"/>
-                <text x="32" y="92" font-size="11" fill="#16a085" font-weight="bold">General Rules</text>
-                <text x="140" y="92" font-size="14" fill="#7f8c8d">&rarr;</text>
-                <rect x="160" y="70" width="110" height="35" fill="#f4ecf7" stroke="#8e44ad" rx="4"/>
-                <text x="170" y="92" font-size="11" fill="#8e44ad" font-weight="bold">Logical Proof</text>
-            </svg>
-            <div class="diagram-caption">Figure 4.1: Inductive Reasoning (Top) vs. Deductive Reasoning (Bottom)</div>
-        </div>
-    </div>
-
+    <p><strong>Example 2 ($45^\circ\text{--}45^\circ\text{--}90^\circ$):</strong> Given leg $= 4$, find the hypotenuse ($c$)[cite: 49].</p>
     <ul>
-        <li><strong>Inductive Reasoning:</strong> Process of drawing a general conclusion based on repeated specific observations, examples, or patterns.
-            <ul>
-                <li><strong>Conjecture:</strong> An unproven mathematical statement or hypothesis based on inductive reasoning.</li>
-            </ul>
-        </li>
-        <li><strong>Deductive Reasoning:</strong> Process of reaching a logically certain conclusion using accepted definitions, postulates, axioms, and proven theorems.</li>
-        <li><strong>Postulates:</strong> Fundamental geometry statements accepted as true without formal proof.</li>
-        <li><strong>Theorem:</strong> A statement logically proven true using undefined terms, definitions, postulates, and previous theorems.</li>
-        <li><strong>Undefined Terms:</strong> Core foundational concepts accepted without formal definitions: Point, Line, and Plane.</li>
-        <li><strong>Axioms:</strong> General mathematical rules accepted as true across logic and algebra.</li>
+        <li>$\text{hypotenuse } (c) = \text{leg} \cdot \sqrt{2} = 4\sqrt{2}$[cite: 49]</li>
     </ul>
 
+    <!-- DIRECT AND INVERSE VARIATION -->
+    <h2>Direct and Inverse Variation</h2>
 
-    <!-- ========================================== -->
-    <!-- SECTION 5: CONGRUENT TRIANGLES -->
-    <!-- ========================================== -->
-    <h2>5. Congruent Triangles</h2>
-
-    <div class="diagram-container">
-        <!-- Triangle Segments -->
-        <div class="diagram-box">
-            <svg width="280" height="150" viewBox="0 0 280 150" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="140,20 40,130 240,130" fill="#e8f8f5" stroke="#16a085" stroke-width="2"/>
-                <line x1="140" y1="20" x2="140" y2="130" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="3"/>
-                <line x1="140" y1="20" x2="140" y2="130" stroke="#2980b9" stroke-width="1.5"/>
-                <text x="145" y="75" font-size="11" fill="#e74c3c">Altitude / Median</text>
-            </svg>
-            <div class="diagram-caption">Figure 5.1: Triangle Altitude & Median Segments</div>
-        </div>
-        <!-- Isosceles Triangle -->
-        <div class="diagram-box">
-            <svg width="280" height="150" viewBox="0 0 280 150" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="140,20 50,130 230,130" fill="#fef5e7" stroke="#d35400" stroke-width="2"/>
-                <line x1="90" y1="70" x2="100" y2="80" stroke="#d35400" stroke-width="2"/>
-                <line x1="180" y1="80" x2="190" y2="70" stroke="#d35400" stroke-width="2"/>
-                <text x="115" y="45" font-size="11" fill="#d35400">Vertex Angle</text>
-                <text x="65" y="120" font-size="11" fill="#d35400">Base Angle</text>
-                <text x="175" y="120" font-size="11" fill="#d35400">Base Angle</text>
-            </svg>
-            <div class="diagram-caption">Figure 5.2: Isosceles Triangle Parts</div>
-        </div>
-    </div>
-
-    <h3>Triangle Elements & Segments</h3>
+    <h3>A. Direct Variation</h3>
     <ul>
-        <li><strong>Triangle:</strong> A three-sided polygon whose interior angles sum to \(180^\circ\).</li>
-        <li><strong>Angle Bisector:</strong> A ray/segment dividing an angle into two congruent angles.</li>
-        <li><strong>Altitude:</strong> A perpendicular segment drawn from a vertex to the line containing the opposite side.</li>
-        <li><strong>Median:</strong> A segment connecting a vertex to the midpoint of the opposite side.</li>
-        <li><strong>Midline (Midsegment):</strong> A segment connecting midpoints of two sides of a triangle.
-            <ul>
-                <li><strong>Midline Theorem:</strong> The midline is parallel to the third base side and half its length (\(\text{Midline} = \frac{1}{2} \times \text{Base}\)).</li>
-            </ul>
-        </li>
-        <li><strong>Perpendicular Bisector:</strong> A line perpendicular to a side at its midpoint.
-            <ul>
-                <li><strong>Perpendicular Bisector Theorem:</strong> Points on a perpendicular bisector are equidistant from the endpoints.</li>
-            </ul>
-        </li>
+        <li><strong>Definition:</strong> A relationship where $y$ increases as $x$ increases (or both decrease together), written as $y = kx$ ($k \neq 0$), where $k$ is the <strong>constant of variation</strong> ($k = \frac{y}{x}$)[cite: 46, 47, 58].</li>
+        <li><strong>Graph &amp; Proportion:</strong> Its graph is a straight line passing through the origin $(0, 0)$, and a proportion is $\frac{y_2}{y_1} = \frac{x_2}{x_1}$[cite: 46, 51, 58].</li>
     </ul>
 
-    <h3>Isosceles Triangles</h3>
+    <div class="graph-grid">
+        <div class="graph-card">
+            <svg viewBox="0 0 210 175">
+                <line x1="30" y1="145" x2="190" y2="145" stroke="currentColor" stroke-width="1.3"/>
+                <line x1="30" y1="15" x2="30" y2="145" stroke="currentColor" stroke-width="1.3"/>
+                <!-- Straight line through origin -->
+                <line x1="30" y1="145" x2="175" y2="25" stroke="#c2185b" stroke-width="2.3"/>
+                <circle cx="30" cy="145" r="3.5" fill="#222"/>
+                <circle cx="78" cy="105" r="3.5" fill="#c2185b"/>
+                <circle cx="126" cy="65" r="3.5" fill="#c2185b"/>
+                <text x="12" y="158" font-size="10" fill="currentColor">(0,0)</text>
+                <text x="115" y="55" font-size="10" fill="#c2185b">y = kx</text>
+                <text x="175" y="160" font-size="10" fill="currentColor">x</text>
+                <text x="18" y="22" font-size="10" fill="currentColor">y</text>
+            </svg>
+            <div class="graph-caption"><strong>Direct Variation Graph ($y = kx$)</strong><br>A straight line passing through the origin $(0, 0)$[cite: 46, 58].</div>
+        </div>
+    </div>
+
+    <p><strong>Example (Direct Variation):</strong> If $y$ varies directly as $x$, and $y = 4$ when $x = 2$, find $y$ when $x = 7$[cite: 52].</p>
+    <ol>
+        <li>Find $k$: $4 = k(2) \implies k = 2$[cite: 52].</li>
+        <li>Substitute $k = 2$ and $x = 7$ into $y = 2x$: $y = 2(7) = \mathbf{14}$[cite: 53].</li>
+    </ol>
+
+    <h3>B. Inverse Variation</h3>
     <ul>
-        <li><strong>Legs:</strong> The two congruent sides.</li>
-        <li><strong>Base:</strong> The non-congruent third side.</li>
-        <li><strong>Vertex Angle:</strong> The angle contained between the congruent legs.</li>
-        <li><strong>Base Angles:</strong> The two angles adjacent to the base.
-            <ul>
-                <li><strong>Base Angles Theorem:</strong> If two sides of a triangle are congruent, the angles opposite those sides are congruent.</li>
-            </ul>
-        </li>
+        <li><strong>Definition:</strong> A relationship where two variables vary in opposite directions (as one increases, the other decreases), written as $y = \frac{k}{x}$ ($k$ is a constant, $k = xy$)[cite: 47, 54, 58].</li>
+        <li><strong>Inverse Proportion:</strong> Since $x_1 y_1 = x_2 y_2$, the proportion is $\frac{y_2}{y_1} = \frac{x_1}{x_2}$[cite: 54, 56].</li>
     </ul>
 
-<h3>Congruence Postulates & Right Triangles</h3>
+    <p><strong>Example (Inverse Variation):</strong> If $10$ painters can paint a mall wall in $8$ days, how many days will it take $16$ painters[cite: 56]? Let $c =$ number of painters and $d =$ number of days[cite: 56].</p>
+    <ol>
+        <li>Use $c = \frac{k}{d}$: $10 = \frac{k}{8} \implies k = 80$[cite: 56].</li>
+        <li>For $c = 16$: $16 = \frac{80}{d} \implies d = \frac{80}{16} = \mathbf{5\text{ days}}$[cite: 56, 57].</li>
+    </ol>
 
-    <p>Two triangles are <strong>congruent</strong> (\(\cong\)) if and only if all corresponding pairs of sides are equal in length and all corresponding pairs of angles are equal in measure. The foundational rule for working with congruent figures is <strong>CPCTC</strong>: <em>Corresponding Parts of Congruent Triangles are Congruent</em>.</p>
-
-    <h4>1. General Triangle Congruence Postulates & Theorems</h4>
-    <p>Rather than measuring all 3 sides and all 3 angles (6 pairs total), geometry allows us to prove two triangles congruent using minimum combinations of 3 corresponding parts.</p>
-
-    <div class="diagram-container">
-        <!-- SSS Diagram -->
-        <div class="diagram-box">
-            <svg width="240" height="130" viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
-                <!-- Triangle 1 -->
-                <polygon points="20,100 60,30 100,100" fill="#e8f4f8" stroke="#2980b9" stroke-width="2"/>
-                <!-- Triangle 2 -->
-                <polygon points="140,100 180,30 220,100" fill="#e8f4f8" stroke="#2980b9" stroke-width="2"/>
-                <!-- Side Marks T1 -->
-                <line x1="37" y1="62" x2="43" y2="68" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="77" y1="62" x2="83" y2="68" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="79" y1="60" x2="85" y2="66" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="57" y1="100" x2="57" y2="108" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="63" y1="100" x2="63" y2="108" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="60" y1="100" x2="60" y2="108" stroke="#e74c3c" stroke-width="2"/>
-                <!-- Side Marks T2 -->
-                <line x1="157" y1="62" x2="163" y2="68" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="197" y1="62" x2="203" y2="68" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="199" y1="60" x2="205" y2="66" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="177" y1="100" x2="177" y2="108" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="183" y1="100" x2="183" y2="108" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="180" y1="100" x2="180" y2="108" stroke="#e74c3c" stroke-width="2"/>
-            </svg>
-            <div class="diagram-caption">Figure 5.3: SSS (Side-Side-Side) Postulate</div>
-        </div>
-
-        <!-- SAS Diagram -->
-        <div class="diagram-box">
-            <svg width="240" height="130" viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
-                <!-- Triangle 1 -->
-                <polygon points="20,100 60,30 100,100" fill="#e8f8f5" stroke="#16a085" stroke-width="2"/>
-                <!-- Triangle 2 -->
-                <polygon points="140,100 180,30 220,100" fill="#e8f8f5" stroke="#16a085" stroke-width="2"/>
-                <!-- Side Marks -->
-                <line x1="37" y1="62" x2="43" y2="68" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="157" y1="62" x2="163" y2="68" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="60" y1="100" x2="60" y2="108" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="180" y1="100" x2="180" y2="108" stroke="#e74c3c" stroke-width="2"/>
-                <!-- Included Angle Arcs -->
-                <path d="M 32 100 A 15 15 0 0 0 28 86" fill="none" stroke="#e74c3c" stroke-width="2"/>
-                <path d="M 152 100 A 15 15 0 0 0 148 86" fill="none" stroke="#e74c3c" stroke-width="2"/>
-            </svg>
-            <div class="diagram-caption">Figure 5.4: SAS (Side-Angle-Side) Postulate</div>
-        </div>
-
-        <!-- ASA Diagram -->
-        <div class="diagram-box">
-            <svg width="240" height="130" viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
-                <!-- Triangle 1 -->
-                <polygon points="20,100 60,30 100,100" fill="#fef5e7" stroke="#d35400" stroke-width="2"/>
-                <!-- Triangle 2 -->
-                <polygon points="140,100 180,30 220,100" fill="#fef5e7" stroke="#d35400" stroke-width="2"/>
-                <!-- Included Side Marks -->
-                <line x1="60" y1="100" x2="60" y2="108" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="180" y1="100" x2="180" y2="108" stroke="#e74c3c" stroke-width="2"/>
-                <!-- Angle Arcs 1 -->
-                <path d="M 32 100 A 15 15 0 0 0 28 86" fill="none" stroke="#e74c3c" stroke-width="2"/>
-                <path d="M 152 100 A 15 15 0 0 0 148 86" fill="none" stroke="#e74c3c" stroke-width="2"/>
-                <!-- Angle Arcs 2 -->
-                <path d="M 88 100 A 15 15 0 0 1 92 86" fill="none" stroke="#e74c3c" stroke-width="2"/>
-                <path d="M 208 100 A 15 15 0 0 1 212 86" fill="none" stroke="#e74c3c" stroke-width="2"/>
-            </svg>
-            <div class="diagram-caption">Figure 5.5: ASA (Angle-Side-Angle) Postulate</div>
-        </div>
-
-        <!-- AAS Diagram -->
-        <div class="diagram-box">
-            <svg width="240" height="130" viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
-                <!-- Triangle 1 -->
-                <polygon points="20,100 60,30 100,100" fill="#f4ecf7" stroke="#8e44ad" stroke-width="2"/>
-                <!-- Triangle 2 -->
-                <polygon points="140,100 180,30 220,100" fill="#f4ecf7" stroke="#8e44ad" stroke-width="2"/>
-                <!-- Non-included Side Marks -->
-                <line x1="77" y1="62" x2="83" y2="68" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="197" y1="62" x2="203" y2="68" stroke="#e74c3c" stroke-width="2"/>
-                <!-- Angle Arcs 1 -->
-                <path d="M 32 100 A 15 15 0 0 0 28 86" fill="none" stroke="#e74c3c" stroke-width="2"/>
-                <path d="M 152 100 A 15 15 0 0 0 148 86" fill="none" stroke="#e74c3c" stroke-width="2"/>
-                <!-- Angle Arcs 2 -->
-                <path d="M 52 44 A 15 15 0 0 0 68 44" fill="none" stroke="#e74c3c" stroke-width="2"/>
-                <path d="M 172 44 A 15 15 0 0 0 188 44" fill="none" stroke="#e74c3c" stroke-width="2"/>
-            </svg>
-            <div class="diagram-caption">Figure 5.6: AAS (Angle-Angle-Side) Theorem</div>
-        </div>
-    </div>
-
-    <ul>
-        <li><strong>SSS (Side-Side-Side) Postulate:</strong> If three sides of one triangle are congruent to three sides of another triangle, then the two triangles are congruent (\(\triangle ABC \cong \triangle DEF\)).</li>
-        <li><strong>SAS (Side-Angle-Side) Postulate:</strong> If two sides and the <em>included angle</em> (the interior angle located directly between those two sides) of one triangle are congruent to two sides and the included angle of another triangle, the triangles are congruent.</li>
-        <li><strong>ASA (Angle-Side-Angle) Postulate:</strong> If two angles and the <em>included side</em> (the side shared directly between those two angles) of one triangle are congruent to two angles and the included side of another triangle, the triangles are congruent.</li>
-        <li><strong>AAS (Angle-Angle-Side) Theorem:</strong> If two angles and a <em>non-included side</em> of one triangle are congruent to two corresponding angles and non-included side of another triangle, the triangles are congruent.
-            <br><em>*Note on Textbook Classification:*</em> It is categorized as a <strong>theorem</strong> rather than a postulate because it can be proved logically using the ASA Postulate together with the Triangle Angle Sum Theorem (since knowing two interior angles automatically determines the exact measure of the third angle: \(\angle 3 = 180^\circ - (\angle 1 + \angle 2)\)).
-        </li>
-    </ul>
-
-    <div class="example-box">
-        <div class="example-title">Warning: Invalid Congruence Shortcuts (AAA and SSA)</div>
-        <ul>
-            <li><strong>AAA (Angle-Angle-Angle):</strong> Proves <em>Similarity</em> (\(\sim\)), NOT Congruence (\(\cong\)). Triangles can have identical angles but completely different side lengths (e.g., an equilateral triangle with side length 2 vs. side length 20).</li>
-            <li><strong>SSA (Side-Side-Angle / "ASS"):</strong> Does <strong>NOT</strong> prove congruence because it creates the "Ambiguous Case." Knowing two side lengths and a non-included angle can form two entirely different geometric triangles (one acute, one obtuse).</li>
-        </ul>
-    </div>
-
-    <h4>2. Right Triangle Congruence Theorems</h4>
-    <p>In a right-angled triangle, the side opposite the \(90^\circ\) right angle is the <strong>Hypotenuse</strong> (the longest side). The remaining two sides that form the right angle are called <strong>Legs</strong>. Because the \(90^\circ\) angle is always fixed and known, special simplified congruence theorems apply.</p>
-
-    <div class="diagram-container">
-        <!-- LL Diagram -->
-        <div class="diagram-box">
-            <svg width="220" height="130" viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="20,100 20,30 90,100" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
-                <polygon points="130,100 130,30 200,100" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
-                <rect x="20" y="90" width="10" height="10" fill="none" stroke="#2980b9" stroke-width="1.5"/>
-                <rect x="130" y="90" width="10" height="10" fill="none" stroke="#2980b9" stroke-width="1.5"/>
-                <!-- Ticks on legs -->
-                <line x1="20" y1="62" x2="26" y2="68" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="130" y1="62" x2="136" y2="68" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="52" y1="100" x2="52" y2="108" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="162" y1="100" x2="162" y2="108" stroke="#e74c3c" stroke-width="2"/>
-            </svg>
-            <div class="diagram-caption">Figure 5.7: LL (Leg-Leg) Theorem</div>
-        </div>
-
-        <!-- LA Diagram -->
-        <div class="diagram-box">
-            <svg width="220" height="130" viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="20,100 20,30 90,100" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
-                <polygon points="130,100 130,30 200,100" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
-                <rect x="20" y="90" width="10" height="10" fill="none" stroke="#2980b9" stroke-width="1.5"/>
-                <rect x="130" y="90" width="10" height="10" fill="none" stroke="#2980b9" stroke-width="1.5"/>
-                <!-- Tick on leg -->
-                <line x1="20" y1="62" x2="26" y2="68" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="130" y1="62" x2="136" y2="68" stroke="#e74c3c" stroke-width="2"/>
-                <!-- Angle arc -->
-                <path d="M 78 100 A 12 12 0 0 0 72 88" fill="none" stroke="#e74c3c" stroke-width="2"/>
-                <path d="M 188 100 A 12 12 0 0 0 182 88" fill="none" stroke="#e74c3c" stroke-width="2"/>
-            </svg>
-            <div class="diagram-caption">Figure 5.8: LA (Leg-Angle) Theorem</div>
-        </div>
-
-        <!-- HL Diagram -->
-        <div class="diagram-box">
-            <svg width="220" height="130" viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="20,100 20,30 90,100" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
-                <polygon points="130,100 130,30 200,100" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
-                <rect x="20" y="90" width="10" height="10" fill="none" stroke="#2980b9" stroke-width="1.5"/>
-                <rect x="130" y="90" width="10" height="10" fill="none" stroke="#2980b9" stroke-width="1.5"/>
-                <!-- Tick on leg -->
-                <line x1="20" y1="62" x2="26" y2="68" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="130" y1="62" x2="136" y2="68" stroke="#e74c3c" stroke-width="2"/>
-                <!-- Tick on hypotenuse -->
-                <line x1="52" y1="62" x2="58" y2="68" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="162" y1="62" x2="168" y2="68" stroke="#e74c3c" stroke-width="2"/>
-            </svg>
-            <div class="diagram-caption">Figure 5.9: HL (Hypotenuse-Leg) Theorem</div>
-        </div>
-
-        <!-- HA Diagram -->
-        <div class="diagram-box">
-            <svg width="220" height="130" viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="20,100 20,30 90,100" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
-                <polygon points="130,100 130,30 200,100" fill="#f0f4f8" stroke="#2980b9" stroke-width="2"/>
-                <rect x="20" y="90" width="10" height="10" fill="none" stroke="#2980b9" stroke-width="1.5"/>
-                <rect x="130" y="90" width="10" height="10" fill="none" stroke="#2980b9" stroke-width="1.5"/>
-                <!-- Tick on hypotenuse -->
-                <line x1="52" y1="62" x2="58" y2="68" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="162" y1="62" x2="168" y2="68" stroke="#e74c3c" stroke-width="2"/>
-                <!-- Angle arc -->
-                <path d="M 78 100 A 12 12 0 0 0 72 88" fill="none" stroke="#e74c3c" stroke-width="2"/>
-                <path d="M 188 100 A 12 12 0 0 0 182 88" fill="none" stroke="#e74c3c" stroke-width="2"/>
-            </svg>
-            <div class="diagram-caption">Figure 5.10: HA (Hypotenuse-Angle) Theorem</div>
-        </div>
-    </div>
-
-    <ul>
-        <li><strong>LL (Leg-Leg) Theorem:</strong> If the two legs of one right triangle are congruent to the two legs of another right triangle, then the triangles are congruent.
-            <br><em>*General Postulate Equivalent:*</em> This is a direct application of the <strong>SAS Postulate</strong>, where the $90^\circ$ right angle acts as the included angle between the two legs.
-        </li>
-        <li><strong>LA (Leg-Angle) Theorem:</strong> If a leg and an acute angle of one right triangle are congruent to a leg and an acute angle of another right triangle, the triangles are congruent.
-            <br><em>*General Postulate Equivalent:*</em> Derived from <strong>ASA</strong> (if the angle is adjacent to the leg) or <strong>AAS</strong> (if the angle is opposite the leg).
-        </li>
-        <li><strong>HL (Hypotenuse-Leg) Theorem:</strong> If the hypotenuse and one leg of a right triangle are congruent to the hypotenuse and one leg of another right triangle, the triangles are congruent.
-            <br><em>*Special Note:*</em> Even though this looks like "SSA" (which is normally invalid), the Pythagorean Theorem (\(a^2 + b^2 = c^2\)) guarantees that if the hypotenuse (\(c\)) and one leg (\(a\)) match, the third leg (\(b = \sqrt{c^2 - a^2}\)) must also match, rendering it equivalent to <strong>SSS</strong>.
-        </li>
-        <li><strong>HA (Hypotenuse-Angle) Theorem:</strong> If the hypotenuse and an acute angle of one right triangle are congruent to the hypotenuse and an acute angle of another right triangle, the triangles are congruent.
-            <br><em>*General Postulate Equivalent:*</em> Derived directly from the <strong>AAS Theorem</strong>.
-        </li>
-    </ul>
-
-    <div class="example-box">
-        <div class="example-title">Worked Example: Identifying Right Triangle Congruence</div>
-        <p>Two right triangles \(\triangle PQR\) and \(\triangle STU\) both have a right angle at vertices \(Q\) and \(T\). You are given that hypotenuse \(PR = 13\text{ cm}\), hypotenuse \(SU = 13\text{ cm}\), acute angle \(m\angle P = 35^\circ\), and acute angle \(m\angle S = 35^\circ\).</p>
-        <p><strong>Question:</strong> Are the triangles congruent, and which theorem proves it?</p>
-        <p><strong>Solution:</strong> Yes, \(\triangle PQR \cong \triangle STU\). Since both triangles share a congruent hypotenuse (\(PR \cong SU = 13\text{ cm}\)) and a congruent acute angle (\(\angle P \cong \angle S = 35^\circ\)), they are congruent by the <strong>HA (Hypotenuse-Angle) Theorem</strong> (or AAS).</p>
-    </div>
-
-
-    <!-- ========================================== -->
-    <!-- SECTION 6: CONSTRUCTIONS & PROOFS -->
-    <!-- ========================================== -->
-    <h2>6. Constructing Segments, Angles, Triangles, and Two-Column Proofs</h2>
-    <ul>
-        <li><strong>Geometric Construction:</strong> Drawing accurate figures using only an unmarked straightedge and a compass (copying segments/angles, perpendicular bisectors, angle bisectors, altitudes, medians).</li>
-        <li><strong>Two-Column Proofs:</strong> A structured table organizing logical arguments step-by-step:
-            <ul>
-                <li><strong>Statement Column (Left):</strong> Sequential claims leading from given information to the final conclusion.</li>
-                <li><strong>Reason Column (Right):</strong> Formal mathematical justifications (Givens, Definitions, Postulates, Theorems).</li>
-            </ul>
-        </li>
-    </ul>
-
-    <div class="example-box">
-        <div class="example-title">Sample Two-Column Proof: Proving Congruent Triangles</div>
-        <p><strong>Given:</strong> \(AB \parallel CD\), \(AB \cong CD\)</p>
-        <p><strong>Prove:</strong> \(\triangle ABC \cong \triangle CDA\)</p>
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 50%;">Statements (Left Column)</th>
-                    <th style="width: 50%;">Reasons (Right Column)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1. \(AB \parallel CD\), \(AB \cong CD\)</td>
-                    <td>1. Given</td>
-                </tr>
-                <tr>
-                    <td>2. \(\angle BAC \cong \angle DCA\)</td>
-                    <td>2. Alternate Interior Angles Theorem</td>
-                </tr>
-                <tr>
-                    <td>3. \(AC \cong AC\)</td>
-                    <td>3. Reflexive Property of Congruence</td>
-                </tr>
-                <tr>
-                    <td>4. \(\triangle ABC \cong \triangle CDA\)</td>
-                    <td>4. SAS Postulate (Side-Angle-Side)</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <blockquote>
+        <strong>Study Tip:</strong> Always check the sign of coefficients, balance terms carefully when completing the square, and verify whether solutions make sense in word problems (such as rejecting negative lengths)[cite: 8, 37].
+    </blockquote>
 
     <footer>
-        <a href="index.html" class="btn-back">&larr; Back to Main Page</a>
+        <a href="menu.html" class="btn-back">&larr; Back to Main Page</a>
     </footer>
 </div>
 
+<script src="theme.js"></script>
 </body>
 </html>
